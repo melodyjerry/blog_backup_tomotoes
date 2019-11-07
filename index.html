@@ -72,7 +72,7 @@
         <hgroup class="introduce">
           <h5 class="nickname" id="name">John Doe</h5>
           
-            <div id="yiyanmotto" class="motto">&nbsp;</div>
+            <div id="mymotto" class="motto"></div>
           
         </hgroup>
       </div>
@@ -175,7 +175,7 @@
             </h1>
             <h5 class="subtitle">
                 
-                    
+                    你用走 可是我用跑
                 
             </h5>
         </div>
@@ -381,9 +381,9 @@ $ git config --global user.email "your Email"</code></pre><h2 id="二、正式�
     <div class="footer-content">
         <span class="power">
             <i class="icon icon-lg icon-copyright"></i>
-            2017
+            2019
             <i class="icon icon-lg icon-heart"></i>
-            <a href="http://yoursite.com">tomotoes.com</a>
+            <a href="http://yoursite.com">melodyhub.ltd</a>
             <br/>
             Power by
             <a href="https://hexo.io/" target="_blank" rel="external nofollow">Hexo</a>&nbsp;·&nbsp;
@@ -517,7 +517,12 @@ postshow();
 
 /* 座右铭 */
 
-   getHitokoto();
+    elasticText({
+        id: "mymotto",
+        duration: 100,
+        effact: "easeOut",
+        content: ""
+    });
 
 
 
