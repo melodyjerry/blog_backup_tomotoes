@@ -47,7 +47,7 @@
     <published>2019-11-07T11:24:01.000Z</published>
     <updated>2019-11-07T13:26:35.856Z</updated>
     
-    <content type="html"><![CDATA[<p>前言： 使用CSDN平台撰写博客似乎是一件美事，只不过个人觉得太过于依赖他人平台，不如就自己搭建一个属于自己的博客。</p><hr><h1 id="安装篇"><a href="#安装篇" class="headerlink" title="安装篇"></a>安装篇</h1><hr><h2 id="一、安装-【hexo】-前的准备"><a href="#一、安装-【hexo】-前的准备" class="headerlink" title="一、安装 【hexo】 前的准备"></a>一、安装 【hexo】 前的准备</h2><h3 id="安装hexo前的必要工作"><a href="#安装hexo前的必要工作" class="headerlink" title="安装hexo前的必要工作"></a>安装hexo前的必要工作</h3><h4 id="1-安装以下两个程序："><a href="#1-安装以下两个程序：" class="headerlink" title="1).安装以下两个程序："></a>1).安装以下两个程序：</h4><table><thead><tr><th>程序</th><th>下载地址</th><th>说明</th></tr></thead><tbody><tr><td>Git</td><td><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git - Downloads</a></td><td>网速的同学，可以自行百度移步到国内镜像</td></tr><tr><td>Node.js</td><td><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js - Downloads</a></td><td>有LTS和Current两个版本，安装 LTS 版即可</td></tr></tbody></table><p>注意：关于Git和Node.js的安装可能会有问题，尤其是Git的安装。这里贴上几张安装界面的截图（来源见水印，作者GroovRain）。</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/11/07/bUgMBmks7VwjPIe.png" alt="image.png" title="">                </div>                <div class="image-caption">image.png</div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/11/07/9OkM4l2Szbe5RQs.png" alt="f3e0287f.png" title="">                </div>                <div class="image-caption">f3e0287f.png</div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/11/07/PKTDE54qpkQ1S8J.png" alt="774cdfb9.png" title="">                </div>                <div class="image-caption">774cdfb9.png</div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/11/07/8RYLQNsVoCZpxqB.png" alt="2e023781.png" title="">                </div>                <div class="image-caption">2e023781.png</div>            </figure><p>安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/11/07/pFcNrU8QYBVROGw.png" alt="image.png" title="">                </div>                <div class="image-caption">image.png</div>            </figure><h4 id="2-配置（可以在未来部署，并非一定现在）"><a href="#2-配置（可以在未来部署，并非一定现在）" class="headerlink" title="2).配置（可以在未来部署，并非一定现在）"></a>2).配置（<em>可以在未来部署，并非一定现在</em>）</h4><blockquote><p>因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。注意<code>git config</code>命令的<code>--global</code>参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</p></blockquote><pre><code>$ git config --global user.name  "your name"`$ git config --global user.email "your Email"</code></pre><h2 id="二、正式安装【hexo】"><a href="#二、正式安装【hexo】" class="headerlink" title="二、正式安装【hexo】"></a>二、正式安装【hexo】</h2><blockquote><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。——官方</p></blockquote><p>准备工作完成后，来安装hexo框架吧！<br> <strong>== 主要根据hexo官方的<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">文档</a>来安装hexo ==</strong></p><p>==使用 npm 安装 Hexo==</p><p><code>$ npm install -g hexo-cli</code></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/11/07/BZIuA2XzYeaDQ8k.png" alt="image.png" title="">                </div>                <div class="image-caption">image.png</div>            </figure><p>下一篇会将如何将这样，【hexo】就安装完成了。<br>其实安装hexo也就几分钟的事。只是第一次使用hexo框架难免会有困难，有事没事多看看别人的贴子，总会有意想不到的收获。</p><a id="more"></a><!-- more --><!-- more --><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    <content type="html"><![CDATA[<p>前言： 使用CSDN平台撰写博客似乎是一件美事，只不过个人觉得太过于依赖他人平台，不如就自己搭建一个属于自己的博客。</p><hr><h1 id="安装篇"><a href="#安装篇" class="headerlink" title="安装篇"></a>安装篇</h1><hr><h2 id="一、安装-【hexo】-前的准备"><a href="#一、安装-【hexo】-前的准备" class="headerlink" title="一、安装 【hexo】 前的准备"></a>一、安装 【hexo】 前的准备</h2><h3 id="安装hexo前的必要工作"><a href="#安装hexo前的必要工作" class="headerlink" title="安装hexo前的必要工作"></a>安装hexo前的必要工作</h3><h4 id="1-安装以下两个程序："><a href="#1-安装以下两个程序：" class="headerlink" title="1).安装以下两个程序："></a>1).安装以下两个程序：</h4><table><thead><tr><th>程序</th><th>下载地址</th><th>说明</th></tr></thead><tbody><tr><td>Git</td><td><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git - Downloads</a></td><td>网速的同学，可以自行百度移步到国内镜像</td></tr><tr><td>Node.js</td><td><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js - Downloads</a></td><td>有LTS和Current两个版本，安装 LTS 版即可</td></tr></tbody></table><p>注意：关于Git和Node.js的安装可能会有问题，尤其是Git的安装。这里贴上几张安装界面的截图（来源见水印，作者GroovRain）。<br><img src="https://i.loli.net/2019/11/07/bUgMBmks7VwjPIe.png" alt="image.png"><br><img src="https://i.loli.net/2019/11/07/9OkM4l2Szbe5RQs.png" alt="f3e0287f.png"><br><img src="https://i.loli.net/2019/11/07/PKTDE54qpkQ1S8J.png" alt="774cdfb9.png"><br><img src="https://i.loli.net/2019/11/07/8RYLQNsVoCZpxqB.png" alt="2e023781.png"><br>安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！<br><img src="https://i.loli.net/2019/11/07/pFcNrU8QYBVROGw.png" alt="image.png"></p><h4 id="2-配置（可以在未来部署，并非一定现在）"><a href="#2-配置（可以在未来部署，并非一定现在）" class="headerlink" title="2).配置（可以在未来部署，并非一定现在）"></a>2).配置（<em>可以在未来部署，并非一定现在</em>）</h4><blockquote><p>因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。注意<code>git config</code>命令的<code>--global</code>参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</p></blockquote><pre><code>$ git config --global user.name  "your name"`$ git config --global user.email "your Email"</code></pre><h2 id="二、正式安装【hexo】"><a href="#二、正式安装【hexo】" class="headerlink" title="二、正式安装【hexo】"></a>二、正式安装【hexo】</h2><blockquote><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。——官方</p></blockquote><p>准备工作完成后，来安装hexo框架吧！<br> <strong>== 主要根据hexo官方的<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">文档</a>来安装hexo ==</strong></p><p>==使用 npm 安装 Hexo==</p><p><code>$ npm install -g hexo-cli</code><br><img src="https://i.loli.net/2019/11/07/BZIuA2XzYeaDQ8k.png" alt="image.png"></p><p>下一篇会将如何将这样，【hexo】就安装完成了。<br>其实安装hexo也就几分钟的事。只是第一次使用hexo框架难免会有困难，有事没事多看看别人的贴子，总会有意想不到的收获。</p><a id="more"></a><!-- more --><!-- more --><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
     
     <summary type="html">
     
@@ -73,44 +73,7 @@
 &lt;td&gt;有LTS和Current两个版本，安装 LTS 版即可&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
-&lt;p&gt;注意：关于Git和Node.js的安装可能会有问题，尤其是Git的安装。这里贴上几张安装界面的截图（来源见水印，作者GroovRain）。&lt;/p&gt;
-&lt;figure class=&quot;image-bubble&quot;&gt;
-                &lt;div class=&quot;img-lightbox&quot;&gt;
-                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
-                    &lt;img src=&quot;https://i.loli.net/2019/11/07/bUgMBmks7VwjPIe.png&quot; alt=&quot;image.png&quot; title=&quot;&quot;&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;image-caption&quot;&gt;image.png&lt;/div&gt;
-            &lt;/figure&gt;
-&lt;figure class=&quot;image-bubble&quot;&gt;
-                &lt;div class=&quot;img-lightbox&quot;&gt;
-                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
-                    &lt;img src=&quot;https://i.loli.net/2019/11/07/9OkM4l2Szbe5RQs.png&quot; alt=&quot;f3e0287f.png&quot; title=&quot;&quot;&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;image-caption&quot;&gt;f3e0287f.png&lt;/div&gt;
-            &lt;/figure&gt;
-&lt;figure class=&quot;image-bubble&quot;&gt;
-                &lt;div class=&quot;img-lightbox&quot;&gt;
-                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
-                    &lt;img src=&quot;https://i.loli.net/2019/11/07/PKTDE54qpkQ1S8J.png&quot; alt=&quot;774cdfb9.png&quot; title=&quot;&quot;&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;image-caption&quot;&gt;774cdfb9.png&lt;/div&gt;
-            &lt;/figure&gt;
-&lt;figure class=&quot;image-bubble&quot;&gt;
-                &lt;div class=&quot;img-lightbox&quot;&gt;
-                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
-                    &lt;img src=&quot;https://i.loli.net/2019/11/07/8RYLQNsVoCZpxqB.png&quot; alt=&quot;2e023781.png&quot; title=&quot;&quot;&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;image-caption&quot;&gt;2e023781.png&lt;/div&gt;
-            &lt;/figure&gt;
-&lt;p&gt;安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！&lt;/p&gt;
-&lt;figure class=&quot;image-bubble&quot;&gt;
-                &lt;div class=&quot;img-lightbox&quot;&gt;
-                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
-                    &lt;img src=&quot;https://i.loli.net/2019/11/07/pFcNrU8QYBVROGw.png&quot; alt=&quot;image.png&quot; title=&quot;&quot;&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;image-caption&quot;&gt;image.png&lt;/div&gt;
-            &lt;/figure&gt;
-
+&lt;p&gt;注意：关于Git和Node.js的安装可能会有问题，尤其是Git的安装。这里贴上几张安装界面的截图（来源见水印，作者GroovRain）。&lt;br&gt;&lt;img src=&quot;https://i.loli.net/2019/11/07/bUgMBmks7VwjPIe.png&quot; alt=&quot;image.png&quot;&gt;&lt;br&gt;&lt;img src=&quot;https://i.loli.net/2019/11/07/9OkM4l2Szbe5RQs.png&quot; alt=&quot;f3e0287f.png&quot;&gt;&lt;br&gt;&lt;img src=&quot;https://i.loli.net/2019/11/07/PKTDE54qpkQ1S8J.png&quot; alt=&quot;774cdfb9.png&quot;&gt;&lt;br&gt;&lt;img src=&quot;https://i.loli.net/2019/11/07/8RYLQNsVoCZpxqB.png&quot; alt=&quot;2e023781.png&quot;&gt;&lt;br&gt;安装完成后，在开始菜单里找到“Git”-&amp;gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！&lt;br&gt;&lt;img src=&quot;https://i.loli.net/2019/11/07/pFcNrU8QYBVROGw.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;h4 id=&quot;2-配置（可以在未来部署，并非一定现在）&quot;&gt;&lt;a href=&quot;#2-配置（可以在未来部署，并非一定现在）&quot; class=&quot;headerlink&quot; title=&quot;2).配置（可以在未来部署，并非一定现在）&quot;&gt;&lt;/a&gt;2).配置（&lt;em&gt;可以在未来部署，并非一定现在&lt;/em&gt;）&lt;/h4&gt;&lt;blockquote&gt;
 &lt;p&gt;因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。注意&lt;code&gt;git config&lt;/code&gt;命令的&lt;code&gt;--global&lt;/code&gt;参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -121,16 +84,7 @@ $ git config --global user.email &quot;your Email&quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;准备工作完成后，来安装hexo框架吧！&lt;br&gt; &lt;strong&gt;== 主要根据hexo官方的&lt;a href=&quot;https://hexo.io/zh-cn/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;文档&lt;/a&gt;来安装hexo ==&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;==使用 npm 安装 Hexo==&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;$ npm install -g hexo-cli&lt;/code&gt;&lt;/p&gt;
-&lt;figure class=&quot;image-bubble&quot;&gt;
-                &lt;div class=&quot;img-lightbox&quot;&gt;
-                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
-                    &lt;img src=&quot;https://i.loli.net/2019/11/07/BZIuA2XzYeaDQ8k.png&quot; alt=&quot;image.png&quot; title=&quot;&quot;&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;image-caption&quot;&gt;image.png&lt;/div&gt;
-            &lt;/figure&gt;
-
-
+&lt;p&gt;&lt;code&gt;$ npm install -g hexo-cli&lt;/code&gt;&lt;br&gt;&lt;img src=&quot;https://i.loli.net/2019/11/07/BZIuA2XzYeaDQ8k.png&quot; alt=&quot;image.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;下一篇会将如何将这样，【hexo】就安装完成了。&lt;br&gt;其实安装hexo也就几分钟的事。只是第一次使用hexo框架难免会有困难，有事没事多看看别人的贴子，总会有意想不到的收获。&lt;/p&gt;
     
     </summary>
