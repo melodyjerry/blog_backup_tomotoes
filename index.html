@@ -72,7 +72,7 @@
         <hgroup class="introduce">
           <h5 class="nickname" id="name">Melody Jerry</h5>
           
-            <div id="mymotto" class="motto"></div>
+            <div id="yiyanmotto" class="motto">&nbsp;</div>
           
         </hgroup>
       </div>
@@ -164,20 +164,20 @@
     </div>
 </header>
 <header class="content-header index-header">
-    
-    
+
+
     <div class="container fade-scale">
         <div id="myheader">
             <h1 class="title">
-                 
-                    MelodyHub
+                
+                    <h1 class="archivestitle">MelodyHub</h1>
                 
             </h1>
-            <h5 class="subtitle">
+            <h3 class="subtitle">
                 
-                    你用走 可是我用跑
+                    <h3 id="subtitle" class="archivestitle">你用走 可是我用跑</h3>
                 
-            </h5>
+            </h3>
         </div>
     </div>
 
@@ -578,12 +578,7 @@ postshow();
 
 /* 座右铭 */
 
-    elasticText({
-        id: "mymotto",
-        duration: 100,
-        effact: "easeOut",
-        content: ""
-    });
+   getHitokoto();
 
 
 
