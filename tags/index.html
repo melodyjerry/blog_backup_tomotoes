@@ -179,13 +179,13 @@
                     <h1 id="pagetitle" class="archivestitle"></h1>
                     <script>
                         if(location.href.indexOf('about')!=-1){
-                            pagetitle.textContent = 'MelodyHub';
+                            pagetitle.textContent = '把月亮当朋友,偷偷把心事说给它听';
                         }else if(location.href.indexOf('tags')!=-1||location.href.indexOf('categories')!=-1){
                             var a=location.href.substring(location.href.length-5,location.href.length-1);
                             if(a==='tags'){
-                                pagetitle.textContent = '不积小流无以成江海';
+                                pagetitle.textContent = '没有光，那就自己变成光';
                             }else if(a==='ries'){
-                                pagetitle.textContent = '不积跬步无以至千里';
+                                pagetitle.textContent = '雪崩的时候，没有一片雪花是无辜的';
                             }
                         }
                     </script>
@@ -205,7 +205,7 @@
                 <div class="content flex-col">
                     <p><strong>Melody Jerry</strong></p>
                     <p><em>你用走 可是我用跑</em></p>
-                    <p>业精于勤荒于嬉，行成于思毁于随</p>
+                    <p>冲、冲、冲</p>
                 </div>
             </div>
         
@@ -225,6 +225,30 @@
     
 
     
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'true' == 'true',
+            appId: "UNKL0FXJFAFOKRM1mGyL3Y2s-gzGzoHsz",
+            appKey: "HjUUcTY42RErTnIt7O58GhvH",
+            avatar: "wavatar",
+            placeholder: "ヾﾉ≧∀≦)o来啊，来啊!",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
 
 
     </article>
