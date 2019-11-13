@@ -187,6 +187,392 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-Java笔记——对象、类"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a href="/blog/2019/11/13/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%AF%B9%E8%B1%A1%E3%80%81%E7%B1%BB/">Java笔记——对象、类</a>
+    </h3>
+  
+
+
+
+
+     <div class="post-meta">
+        <time class="post-time" title="2019-11-13 12:54:59" datetime="2019-11-13T04:54:59.000Z"  itemprop="datePublished">2019-11-13</time>
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        <h3 id="Java笔记——对象、类"><a href="#Java笔记——对象、类" class="headerlink" title="Java笔记——对象、类"></a>Java笔记——对象、类</h3><p>创建时间：2019.11.11</p>
+<p>说明：持续更新ing</p>
+<hr>
+<ol>
+<li><code>对象</code>和<code>类</code>的概念。</li>
+</ol>
+<ul>
+<li><blockquote>
+<p><code>对象</code>：对象是类的一个实例（实实在在存在的个体），有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p><code>类</code>：类是对现实生活中事物的描述。类是一个模板，它描述一类对象的行为和状态。</p>
+</blockquote>
+</li>
+</ul>
+<p>下图中<strong>男孩（boy）</strong>、<strong>女孩（girl）</strong>为<strong>类（class）</strong>，而具体的每个人为该类的<strong>对象（object）</strong>：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/12/P8M5LWHdIcs42yB.png" alt="菜鸟教程.png" title="">
+                </div>
+                <div class="image-caption">菜鸟教程.png</div>
+            </figure>
+
+<hr>
+<ol start="2">
+<li>问：类设计get方法和set方法的作用是什么？</li>
+</ol>
+<blockquote>
+<p>答1：一般类的成员变量被设置为private（私有的），这样设置安全性比较高，但是设置为私有的后其他的类和对象则无法调用该对象了，所以会有get和set方法，这两个方法一般设置为public，在其他的类中通过对象调用set或get方法即可操作私有的变量，增强程序的安全性，set为给对象赋值的方法，而get则是取得变量值的方法！</p>
+</blockquote>
+<blockquote>
+<p>答2：get set常用在自定义类，类创建了一个实例对象后，用set设置对象的某一个属性，get得到对象某一属性。如果不使用get set，你就得用点，点出来还得是个方法。其实就是给get set换个名而已。而且get set作为内部方法，可以访问私有数据</p>
+</blockquote>
+<blockquote>
+<p>答3：别说的那么专业化了，理解都要半天。<br>就这么理解吧，面向对象中，想对类的成员变量设置访问一些权限，于是，就将该字段设置为private的，这样别的类就不能访问了，然后在该内定义两个方法，一个专门用于获取，一个用于修改，这样，在你不想让别人乱动该字段的时候，就在该方法内写一些限制条件。<br>而为了规范起见（团队开发需要嘛），就根据人家老外的习惯，将方法名设置为set+字段名，get+字段名（名字乱改没问题），既然规范了，那就是别人都叫这名了，于是，有些框架给对象赋值就有方法了，方法名称由get或set开始的又有private变量名的，就找出来调用。hibernate1框架就这样弄得，至于后面的版本是不是这样就不大清楚了。<br>JavaBean就是一个JAVA类，既然是JAVA类就不需要什么组件了，这玩意直接深入到虚拟机了的</p>
+</blockquote>
+<hr>
+<ol start="3">
+<li></li>
+</ol>
+<ul>
+<li><p>Java中的对象<br>  现在让我们深入了解什么是对象。看看周围真实的世界，会发现身边有很多对象，车，狗，人等等。所有这些对象都有自己的状态和行为。<br>  拿一条狗来举例，它的状态有：名字、品种、颜色，行为有：叫、摇尾巴和跑。<br>  对比现实对象和软件对象，它们之间十分相似。<br>  <strong><em>软件对象也有状态和行为。软件对象的状态就是属性，行为通过方法体现。<br>  在软件开发中，方法操作对象内部状态的改变，对象的相互调用也是通过方法来完成。</em></strong></p>
+</li>
+<li><p>Java中的类<br>  类可以看成是创建Java对象的模板。<br>  通过下面一个简单的类来理解下Java中类的定义：</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Dog</span></span>{</span><br><span class="line">  String breed;</span><br><span class="line">  <span class="keyword">int</span> age;</span><br><span class="line">  String color;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">barking</span><span class="params">()</span></span>{</span><br><span class="line">  }</span><br><span class="line"> </span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">hungry</span><span class="params">()</span></span>{</span><br><span class="line">  }</span><br><span class="line"> </span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">sleeping</span><span class="params">()</span></span>{</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>一个类可以包含以下类型变量：<br><code>局部变量</code>：在方法、构造方法或者语句块中定义的变量被称为局部变量。变量声明和初始化都是在方法中，方法结束后，变量就会自动销毁。<br><code>成员变量</code>：成员变量是定义在类中，方法体之外的变量。这种变量在创建对象的时候实例化。成员变量可以被类中方法、构造方法和特定类的语句块访问。<br><code>类变量</code>：类变量也声明在类中，方法体之外，但必须声明为static类型。<br>一个类可以拥有多个方法，在上面的例子中：barking()、hungry()和sleeping()都是Dog类的方法。</p>
+<hr>
+<ol start="4">
+<li>类和对象的关系：</li>
+</ol>
+<ul>
+<li><p>现实生活中的对象：张三、李四。</p>
+</li>
+<li><p>【想要描述】提取对象中的共性内容。<strong>对具体的抽象。</strong></p>
+</li>
+<li><p>【描述时】这些对象的共性有：姓名、学号、年龄、性别、学习Java等等。（即<strong>定义类：描述事物的属性和行为，就是在定义属性和行为。<em>属性和行为共同成为类中的成员（成员变量和成员方法）。</em></strong>）</p>
+</li>
+<li><p>映射到Java中，<strong>描述就是class定义的类，具体对象就是new建立的实体</strong>。</p>
+</li>
+<li><p>这些描述在Java当中是用类的形式来体现的。而对象是通过Java的new操作符所产生的一个实体，这个的实体存在于==堆内存==当中。</p>
+  <img src="https://i.loli.net/2019/11/13/znyBu9gp1jtdEFs.png" alt="image.png" style="zoom:80%;">
+
+  <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义类，就是描述事物，就是在定义属性和行为。属性和行为共同成为类中的成员（成员变量和成员方法）。</span></span><br><span class="line"><span class="comment">//需求：描述车汽车（颜色，轮胎数）。</span></span><br><span class="line"><span class="class"><span class="keyword">class</span>	<span class="title">Car</span> </span>{</span><br><span class="line">    <span class="comment">//描述颜色</span></span><br><span class="line">    String color = <span class="string">"red"</span>;</span><br><span class="line">    <span class="comment">//描述轮胎数</span></span><br><span class="line">    <span class="keyword">int</span> num = <span class="number">4</span>;</span><br><span class="line">    <span class="comment">//运行行为。</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>{</span><br><span class="line">        System.out.println(color+<span class="string">".."</span>+num);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span>	<span class="title">CarDemo</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>{</span><br><span class="line">        <span class="comment">//生产汽车：在Java中通过new操作符来完成。</span></span><br><span class="line">        <span class="comment">//其实就是在堆内存中产生一个实体。</span></span><br><span class="line">        Car c = <span class="keyword">new</span> Car();	<span class="comment">//c就是一个【类类型】变量。记住：类类型变量只想对象。</span></span><br><span class="line">        <span class="comment">//需求：将已有车的颜色的颜色改成蓝色。指定该对象做使用。</span></span><br><span class="line">        <span class="comment">//在Java指挥方式是：【对象.对象成员】</span></span><br><span class="line">        c.color = <span class="string">"blue"</span>;</span><br><span class="line">        <span class="comment">//需求：想要车运行起来。</span></span><br><span class="line">        c.run();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+</li>
+</ul>
+<p><code>Car c = new Car();</code>在内存中的示意图——&gt;</p>
+<img src="https://i.loli.net/2019/11/13/1X4VFtqIwDN5Epx.png" alt="image.png" style="zoom:80%;">
+
+<p><code>c.run();</code>——&gt;输出这个车的颜色“蓝色”和轮胎数“4”。</p>
+<p>(1)倘若在<code>c.run();</code>后加入<code>Car c1=new Car();c1.run();</code>——&gt;</p>
+<img src="https://i.loli.net/2019/11/13/9TSkMDwUR2z4ILe.png" alt="image.png" style="zoom:80%;">
+
+<p>(2)若main的代码块改为：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span>	<span class="title">CarDemo</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>{</span><br><span class="line">		Car c = <span class="keyword">new</span> Car();</span><br><span class="line">		c.num = <span class="number">5</span>;</span><br><span class="line">		Car c1 = c;</span><br><span class="line">		c1.color = <span class="string">"green"</span>;</span><br><span class="line">		c.run();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在内存中的示意图——&gt;</p>
+<img src="https://i.loli.net/2019/11/13/DkndXsG9p7FguhB.png" alt="image.png" style="zoom:80%;">
+
+<blockquote>
+<p>对对象调用的基本概念：用new建立对象，在堆内存中产生对象。那么<strong>对象的特点在于封装数据，数据包含属性和行为</strong>。想要操作对象中的内容就指挥对象做事，指挥哪个对象要明确，操作什么也要明确，用<strong><code>对象.xyz</code></strong>的形式就能完成。</p>
+</blockquote>
+<p>【注意】：<br>如下图，</p>
+<img src="https://i.loli.net/2019/11/13/PkjShzpB5GDg3On.png" alt="image.png" style="zoom:80%;">
+
+<p>以前定义在函数里面，现在定义在函数外面                      </p>
+<hr>
+<p>5. </p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+    
+        <div>
+            <a href="/blog/2019/11/13/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%AF%B9%E8%B1%A1%E3%80%81%E7%B1%BB/" class="post-more waves-button">
+                阅读全文 »
+            </a>
+        </div>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Java/" rel="tag">Java</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Java笔记——面向对象"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a href="/blog/2019/11/13/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">Java笔记——面向对象</a>
+    </h3>
+  
+
+
+
+
+     <div class="post-meta">
+        <time class="post-time" title="2019-11-13 12:54:46" datetime="2019-11-13T04:54:46.000Z"  itemprop="datePublished">2019-11-13</time>
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        <h3 id="Java笔记——面向对象"><a href="#Java笔记——面向对象" class="headerlink" title="Java笔记——面向对象"></a>Java笔记——面向对象</h3><p>创建时间：2019.11.11</p>
+<p>说明：持续更新ing</p>
+<hr>
+<ol>
+<li><p><strong>Java作为一种面向对象语言</strong>。支持以下基本概念：<br> <strong><code>多态</code></strong> | <strong><code>继承</code></strong> | <strong><code>封装</code></strong> | <strong><code>抽象</code></strong><br>  <strong><code>类</code></strong>  | <strong><code>对象</code></strong> | <strong><code>实例</code></strong> | <strong><code>方法</code></strong> | <strong><code>重载</code></strong></p>
+</li>
+<li><p>“面向对象”和“面向过程”的区别：</p>
+</li>
+</ol>
+<ul>
+<li><code>面向过程</code>：如 C/C++</li>
+</ul>
+<blockquote>
+<p>例子：冰箱装大象。1、打开冰箱门；2、放进大象；3、关上冰箱门。<br>强调过程，“打开”、“存储”、“关闭”三个动作。<br><strong>注重过程，注重的是过程涉及的行为（即功能）。</strong></p>
+</blockquote>
+<ul>
+<li><code>面向对象</code>：如 Java</li>
+</ul>
+<blockquote>
+<p><strong>将功能封装进对象，强调具备了功能的对象。</strong></p>
+</blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/11/7WFrJqdjnfpTa4c.png" alt="image.png" title="">
+                </div>
+                <div class="image-caption">image.png</div>
+            </figure>
+
+<ul>
+<li><blockquote>
+<p><strong><em><code>面向对象</code>是基于<code>面向过程</code>的。</em></strong></p>
+</blockquote>
+</li>
+</ul>
+<ol start="3">
+<li>使用不同思想，对“冰箱装大象”的理解——&gt;</li>
+</ol>
+<p>问：“人开冰箱”事件，其中人、冰箱都是实物（对象），开是动作。若使用面向对象思维，“开”的这个动作是属于“人”还是属于“冰箱”？</p>
+<blockquote>
+<p>答：属于“冰箱”，“人”只是调用了“冰箱”的“开”的方法（或功能），用力作用了门一下并将门打开了。</p>
+</blockquote>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">人开门：名词提炼法。</span><br><span class="line">/*</span><br><span class="line">人{</span><br><span class="line">    开门（门）{</span><br><span class="line">        门.开（）;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line">门{</span><br><span class="line">    开（）{</span><br><span class="line">        操作门轴;</span><br><span class="line">        ……等等;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line">*/</span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="4">
+<li>面向对象的三个特征：<strong>封装</strong>、<strong>继承</strong>、<strong>多态</strong>。<br> 以后开发：<code>其实就是找对象使用，没有对象就创建一个对象</code>。<br> <strong><em>找对象，建立对象，使用对象，维护对象的关系。</em></strong></li>
+<li></li>
+</ol>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+    
+        <div>
+            <a href="/blog/2019/11/13/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="post-more waves-button">
+                阅读全文 »
+            </a>
+        </div>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Java/" rel="tag">Java</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Java笔记——语法"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a href="/blog/2019/11/13/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E8%AF%AD%E6%B3%95/">Java笔记——语法</a>
+    </h3>
+  
+
+
+
+
+     <div class="post-meta">
+        <time class="post-time" title="2019-11-13 12:54:20" datetime="2019-11-13T04:54:20.000Z"  itemprop="datePublished">2019-11-13</time>
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        <h3 id="Java笔记——语法"><a href="#Java笔记——语法" class="headerlink" title="Java笔记——语法"></a>Java笔记——语法</h3><p>创建时间：2019.11.11<br>说明：持续更新ing</p>
+<hr>
+<ol>
+<li>单引号’’中存放一个字符，不能存放字符串。双引号””中存放字符串。</li>
+<li><strong>Java是强类型语言。对于每一种数据都定义了明确的具体数据类型，在内存中总分配了不同的内存空间。</strong></li>
+<li>布尔型常量只有2个值：true、false</li>
+<li>标识符由字母：26个，大小写；数字：0-  8；符号：$ _  组成。</li>
+<li>标识符不能数字开头、不能使用关键字</li>
+<li>main不是关键字，但是是被JVM识别的名字，是程序的入口</li>
+<li>Java中的名称规范：</li>
+</ol>
+<ul>
+<li><p>包名：多单词组成，全为小写</p>
+<blockquote>
+<p>xxxyyyy</p>
+</blockquote>
+</li>
+<li><p>类名接口： 多单词组成，所有单词的首字母大写</p>
+<blockquote>
+<p>XxxYyyZzz</p>
+</blockquote>
+</li>
+<li><p>变量名和函数名：多单词组成时，第一个单词的首字母小写，其余首字母大写</p>
+<blockquote>
+<p>xxxYyyZzz</p>
+</blockquote>
+</li>
+<li><p>常量名：所有字母都大写。每个单词用_隔开</p>
+<blockquote>
+<p>XXX_YYY_ZZZ</p>
+</blockquote>
+</li>
+</ul>
+<ol start="8">
+<li>注释，写在代码前面</li>
+<li>对于整数：Java有三种表现形式。<br>· 十进制：0-9，满10进1<br>· 八进制：0-7，满8进1，<strong>用0开头表示</strong><br>· 十六进制：0-9，A-F或a-f（A\a是10，B\b是11…F\f是15），满16进1，<strong>用0x开头表示</strong></li>
+<li>null常量：只有一个值null。在对象、引用数据类型时会用上。</li>
+<li>二进制。一个字节8位0、1组合。</li>
+<li>八进制：3位二进制位代表1位八进制位；十六进制：4位二进制位代表1位十六进制位。<br><strong>进制转换：进制越大，表示越短，更方便地表示数据。</strong></li>
+<li>二进制计算：<br><code>5 + 4 = 9</code><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/11/hP5DS9bqTnHLZkw.png" alt="十进制转二进制.png" title="">
+                </div>
+                <div class="image-caption">十进制转二进制.png</div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/11/arJOKCdRLm6wfXZ.png" alt="进制之间转换.png" title="">
+                </div>
+                <div class="image-caption">进制之间转换.png</div>
+            </figure></li>
+<li>负数地二进制表现形式：<strong>对应的整数二进制取反加1</strong>。<br><code>负数的最高位都是1</code><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/11/53E4DtdvXCkjQLz.png" alt="负数的二进制.png" title="">
+                </div>
+                <div class="image-caption">负数的二进制.png</div>
+            </figure></li>
+<li></li>
+</ol>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+    
+        <div>
+            <a href="/blog/2019/11/13/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E8%AF%AD%E6%B3%95/" class="post-more waves-button">
+                阅读全文 »
+            </a>
+        </div>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Java/" rel="tag">Java</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-v1.4"
   class="article-card article-type-post" itemprop="blogPost">
 
