@@ -6,7 +6,7 @@
     
     
     
-    <title>标签: Java | MelodyHub | 你用走 可是我用跑</title>
+    <title>MelodyHub | 你用走 可是我用跑</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     
     <meta name="theme-color" content="#77AAFF">
@@ -41,7 +41,7 @@
     
     <meta property="og:type" content="website">
 <meta property="og:title" content="MelodyHub">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;Java&#x2F;index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;page&#x2F;2&#x2F;index.html">
 <meta property="og:site_name" content="MelodyHub">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
@@ -101,7 +101,7 @@
                   </a>
               </li>
             
-              <li class="waves-block waves-effect active">
+              <li class="waves-block waves-effect">
                   <a href="/blog/tags"  >
                     <i class="icon icon-lg icon-tags"></i>
                     <span>标 签</span><i class="icon icon-lg icon-caret-left"></i>
@@ -146,7 +146,7 @@
         <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">标签: Java</div>
+        <div class="flex-col header-title ellipsis">MelodyHub</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -163,29 +163,19 @@
         </a>
     </div>
 </header>
-<header class="content-header tags-header">
+<header class="content-header index-header">
 
 
     <div class="container fade-scale">
         <div id="myheader">
             <h1 class="title">
                 
+                    <h1 class="archivestitle">MelodyHub</h1>
+                
             </h1>
             <h3 class="subtitle">
                 
-                    <h1 id="pagetitle" class="archivestitle"></h1>
-                    <script>
-                        if(location.href.indexOf('about')!=-1){
-                            pagetitle.textContent = '把月亮当朋友,偷偷把心事说给它听';
-                        }else if(location.href.indexOf('tags')!=-1||location.href.indexOf('categories')!=-1){
-                            var a=location.href.substring(location.href.length-5,location.href.length-1);
-                            if(a==='tags'){
-                                pagetitle.textContent = '没有光，那就自己变成光';
-                            }else if(a==='ries'){
-                                pagetitle.textContent = '雪崩的时候，没有一片雪花是无辜的';
-                            }
-                        }
-                    </script>
+                    <h3 id="subtitle" class="archivestitle">你用走 可是我用跑</h3>
                 
             </h3>
         </div>
@@ -193,156 +183,82 @@
 
 </header>
 
+<div class="container body-wrap">
+    <ul class="post-list">
+    
+        <li class="post-list-item fade">
+            <article id="post-hello-world"
+  class="article-card article-type-post" itemprop="blogPost">
 
-    <div class="container body-wrap fade">
-        
-            
-            
-            <h5 class="tag-tip">
-                <i class="icon icon-tag"></i>
-                关于
-                <span style="color:rgb(100, 100, 100)">Java</span>
-                共5篇文章
-            </h5>
-            <div class="waterfall">
-            
-                <article class="archive-article" onclick="location.href='/blog/2019/11/23/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%8C%85/'">
-    <div class="archive-article-date">
-      
-      <time class="my-post-time">
-        <i class="icon icon-lg icon-file-text-o"></i>
-        &nbsp;
-          2019-11-23
-      </time>
-    </div>
-    <div class="archive-article-inner">
-      
+    
 
 
   
     <h3 class="post-title" itemprop="name">
-      <a href="/blog/2019/11/23/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%8C%85/">Java笔记——包</a>
+      <a href="/blog/2019/11/06/hello-world/">文章太长？截断！</a>
     </h3>
   
 
 
 
-      
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Java/" rel="tag">Java</a></li></ul>
+
+     <div class="post-meta">
+        <time class="post-time" title="2019-11-06 16:49:56" datetime="2019-11-06T08:49:56.000Z"  itemprop="datePublished">2019-11-06</time>
 
     </div>
-  </article>
-            
-                <article class="archive-article" onclick="location.href='/blog/2019/11/21/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%BB%A7%E6%89%BF/'">
-    <div class="archive-article-date">
-      
-      <time class="my-post-time">
-        <i class="icon icon-lg icon-file-text-o"></i>
-        &nbsp;
-          2019-11-21
-      </time>
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        <p>写的md文章太长，担心放到首页上浏览效果不好，怎么办？</p>
+<p>那就直接截断文章。</p>
+<p><strong>截断按钮文字不是通过配置文件_config.yml实现的，而是在文章内容里实现</strong>。</p>
+<p>只要在需要被截断的文章位置加上：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>就可以了！</p>
+<p>效果就像下面的这个按钮</p>
+<p>可以点点看哦👇</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+    
+        <div>
+            <a href="/blog/2019/11/06/hello-world/" class="post-more waves-button">
+                阅读全文 »
+            </a>
+        </div>
     </div>
-    <div class="archive-article-inner">
-      
+    
+</article>
 
+        </li>
+    
+    </ul>
 
-  
-    <h3 class="post-title" itemprop="name">
-      <a href="/blog/2019/11/21/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%BB%A7%E6%89%BF/">Java笔记——继承</a>
-    </h3>
-  
-
-
-
-      
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Java/" rel="tag">Java</a></li></ul>
-
+    
+<nav id="page-nav">
+    <div class="inner">
+    <a class="extend prev" rel="prev" href="/blog/">上一页</a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span>
     </div>
-  </article>
-            
-                <article class="archive-article" onclick="location.href='/blog/2019/11/15/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%AF%B9%E8%B1%A1%E3%80%81%E7%B1%BB/'">
-    <div class="archive-article-date">
-      
-      <time class="my-post-time">
-        <i class="icon icon-lg icon-file-text-o"></i>
-        &nbsp;
-          2019-11-15
-      </time>
-    </div>
-    <div class="archive-article-inner">
-      
+</nav>
 
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a href="/blog/2019/11/15/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%AF%B9%E8%B1%A1%E3%80%81%E7%B1%BB/">Java笔记——对象、类</a>
-    </h3>
-  
-
-
-
-      
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Java/" rel="tag">Java</a></li></ul>
-
-    </div>
-  </article>
-            
-                <article class="archive-article" onclick="location.href='/blog/2019/11/13/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/'">
-    <div class="archive-article-date">
-      
-      <time class="my-post-time">
-        <i class="icon icon-lg icon-file-text-o"></i>
-        &nbsp;
-          2019-11-13
-      </time>
-    </div>
-    <div class="archive-article-inner">
-      
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a href="/blog/2019/11/13/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">Java笔记——面向对象</a>
-    </h3>
-  
-
-
-
-      
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Java/" rel="tag">Java</a></li></ul>
-
-    </div>
-  </article>
-            
-                <article class="archive-article" onclick="location.href='/blog/2019/11/13/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E8%AF%AD%E6%B3%95/'">
-    <div class="archive-article-date">
-      
-      <time class="my-post-time">
-        <i class="icon icon-lg icon-file-text-o"></i>
-        &nbsp;
-          2019-11-13
-      </time>
-    </div>
-    <div class="archive-article-inner">
-      
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a href="/blog/2019/11/13/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E8%AF%AD%E6%B3%95/">Java笔记——语法</a>
-    </h3>
-  
-
-
-
-      
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Java/" rel="tag">Java</a></li></ul>
-
-    </div>
-  </article>
-            
-            </div>
-        
 
 </div>
 
