@@ -50,7 +50,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;11&#x2F;hP5DS9bqTnHLZkw.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;11&#x2F;arJOKCdRLm6wfXZ.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;11&#x2F;53E4DtdvXCkjQLz.png">
-<meta property="og:updated_time" content="2019-11-13T04:57:45.175Z">
+<meta property="og:updated_time" content="2019-11-23T02:14:35.731Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;11&#x2F;hP5DS9bqTnHLZkw.png">
     
@@ -262,6 +262,8 @@
 </blockquote>
 </li>
 </ul>
+<a id="more"></a>  //截断文章
+
 <ol start="8">
 <li>注释，写在代码前面</li>
 <li>对于整数：Java有三种表现形式。<br>· 十进制：0-9，满10进1<br>· 八进制：0-7，满8进1，<strong>用0开头表示</strong><br>· 十六进制：0-9，A-F或a-f（A\a是10，B\b是11…F\f是15），满16进1，<strong>用0x开头表示</strong></li>
@@ -316,7 +318,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新：<time datetime="2019-11-13T04:57:45.175Z" itemprop="dateUpdated">2019-11-13 12:57:45</time>
+    最后更新：<time datetime="2019-11-23T02:14:35.731Z" itemprop="dateUpdated">2019-11-23 10:14:35</time>
 </span>
 
 
@@ -363,7 +365,11 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/13/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E8%AF%AD%E6%B3%95/&title=《Java笔记——语法》 — MelodyHub&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/13/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E8%AF%AD%E6%B3%95/&title=《Java笔记——语法》 — MelodyHub&source=Java笔记——语法创建时间：2019.11.11说明：持续更新ing
+
+
+单引号’’中存放一个字符，不能存放字符串。双引号””中存放字符串。
+Java是..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -551,7 +557,11 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/13/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E8%AF%AD%E6%B3%95/&title=《Java笔记——语法》 — MelodyHub&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/13/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E8%AF%AD%E6%B3%95/&title=《Java笔记——语法》 — MelodyHub&source=Java笔记——语法创建时间：2019.11.11说明：持续更新ing
+
+
+单引号’’中存放一个字符，不能存放字符串。双引号””中存放字符串。
+Java是..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -698,6 +708,27 @@ if (window.console && window.console.log) {
 
 
 <!-- 公式渲染 -->
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 
 
 

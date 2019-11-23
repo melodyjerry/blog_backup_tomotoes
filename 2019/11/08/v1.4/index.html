@@ -39,15 +39,15 @@
 
 
     
-    <meta name="description" content="新增  主页动画，点击体验效果（这里）    文字跳动（menu、head中的文字均可跳动）,比如顶部的“你用走，可是我用跑”……    新增Valine评论（可以使用表情；发送前浏览）。想用别的，但是暂时先着Valine。可以试着来骚扰我（滑稽~~    有评论，邮件提示(还未测试)。接入Leancloud（文档）。    底部开启鼠标滑动渲染    开启“一言”api。menu中作者名（Mel">
+    <meta name="description" content="搞了半天时间，优化一些模板上的问题后，新博客1.4版本上线了">
 <meta name="keywords" content="发布">
 <meta property="og:type" content="article">
 <meta property="og:title" content="博客v1.4上线">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;08&#x2F;v1.4&#x2F;index.html">
 <meta property="og:site_name" content="MelodyHub">
-<meta property="og:description" content="新增  主页动画，点击体验效果（这里）    文字跳动（menu、head中的文字均可跳动）,比如顶部的“你用走，可是我用跑”……    新增Valine评论（可以使用表情；发送前浏览）。想用别的，但是暂时先着Valine。可以试着来骚扰我（滑稽~~    有评论，邮件提示(还未测试)。接入Leancloud（文档）。    底部开启鼠标滑动渲染    开启“一言”api。menu中作者名（Mel">
+<meta property="og:description" content="搞了半天时间，优化一些模板上的问题后，新博客1.4版本上线了">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-09T10:29:05.979Z">
+<meta property="og:updated_time" content="2019-11-23T02:18:33.831Z">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="MelodyHub" href="/blog/atom.xml">
@@ -225,7 +225,9 @@
             阅读本文可能花费您&nbsp;<span class="post-count">2</span>&nbsp;分钟
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h3><ul>
+            <p>搞了半天时间，优化一些模板上的问题后，新博客1.4版本上线了</p>
+<a id="more"></a>  //截断文章
+<h3 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h3><ul>
 <li><ol>
 <li>主页动画，点击体验效果（<a href="https://melodyhub.ltd/" target="_blank" rel="noopener">这里</a>）</li>
 </ol>
@@ -356,7 +358,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新：<time datetime="2019-11-09T10:29:05.979Z" itemprop="dateUpdated">2019-11-09 18:29:05</time>
+    最后更新：<time datetime="2019-11-23T02:18:33.831Z" itemprop="dateUpdated">2019-11-23 10:18:33</time>
 </span>
 
 
@@ -403,7 +405,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/08/v1.4/&title=《博客v1.4上线》 — MelodyHub&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/08/v1.4/&title=《博客v1.4上线》 — MelodyHub&source=搞了半天时间，优化一些模板上的问题后，新博客1.4版本上线了" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -591,7 +593,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/08/v1.4/&title=《博客v1.4上线》 — MelodyHub&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/08/v1.4/&title=《博客v1.4上线》 — MelodyHub&source=搞了半天时间，优化一些模板上的问题后，新博客1.4版本上线了" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -738,6 +740,27 @@ if (window.console && window.console.log) {
 
 
 <!-- 公式渲染 -->
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
 
 
 
