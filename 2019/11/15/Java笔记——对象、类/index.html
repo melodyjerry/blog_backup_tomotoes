@@ -39,26 +39,48 @@
 
 
     
-    <meta name="description" content="Java笔记——对象、类创建时间：2019.11.11 说明：持续更新ing   对象和类的概念。    对象：对象是类的一个实例（实实在在存在的个体），有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等。    类：类是对现实生活中事物的描述。类是一个模板，它描述一类对象的行为和状态。    下图中男孩（boy）、女孩（girl）为类（class），而具">
+    <meta name="description" content="Java笔记——对象、类创建时间：2019.11.11 说明：持续更新ing   对象和类的概念。    对象：对象是类的一个实例（实实在在存在的个体），有属性（状态）和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等。 属性(property)： 静态特征行为(behavior)： 动态特征    类：类是对现实生活中事物的描述。类是一个模板，它描述一类对">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java笔记——对象、类">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;15&#x2F;Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%AF%B9%E8%B1%A1%E3%80%81%E7%B1%BB&#x2F;index.html">
 <meta property="og:site_name" content="MelodyHub">
-<meta property="og:description" content="Java笔记——对象、类创建时间：2019.11.11 说明：持续更新ing   对象和类的概念。    对象：对象是类的一个实例（实实在在存在的个体），有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等。    类：类是对现实生活中事物的描述。类是一个模板，它描述一类对象的行为和状态。    下图中男孩（boy）、女孩（girl）为类（class），而具">
+<meta property="og:description" content="Java笔记——对象、类创建时间：2019.11.11 说明：持续更新ing   对象和类的概念。    对象：对象是类的一个实例（实实在在存在的个体），有属性（状态）和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等。 属性(property)： 静态特征行为(behavior)： 动态特征    类：类是对现实生活中事物的描述。类是一个模板，它描述一类对">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;16&#x2F;fB95MSm8EWJD6IV.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;12&#x2F;P8M5LWHdIcs42yB.png">
+<meta property="og:image" content="c:&#x2F;Users&#x2F;丶Melody&#x2F;AppData&#x2F;Roaming&#x2F;Typora&#x2F;typora-user-images&#x2F;image-20191116135106458.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;16&#x2F;ZPBq1pyImXLnwvV.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;16&#x2F;OaWtx2fr4o53ZwH.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;13&#x2F;znyBu9gp1jtdEFs.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;13&#x2F;1X4VFtqIwDN5Epx.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;13&#x2F;9TSkMDwUR2z4ILe.png">
 <meta property="og:image" content="c:&#x2F;Users&#x2F;丶Melody&#x2F;AppData&#x2F;Roaming&#x2F;Typora&#x2F;typora-user-images&#x2F;image-20191113105054592.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;13&#x2F;PkjShzpB5GDg3On.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;16&#x2F;28HpyTLnKOVsFQY.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;16&#x2F;gceJWarS2Puqz9w.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;16&#x2F;qIK3BjS4wrtvgMi.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;16&#x2F;6qrpXmf5a3bhojz.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;16&#x2F;pXLMjyKFzgal1oB.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;16&#x2F;Awpe2iSNX4OnvaQ.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;16&#x2F;49d7AMODXhKbsuy.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;16&#x2F;AO3z8orS9aXvWCd.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;14&#x2F;hMWBc8wnbZr7PtG.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;14&#x2F;5bCilLKw1uFWEGy.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20190606111353386.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODA4ODc3Mg==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-11-23T02:13:51.399Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;16&#x2F;4pmW9kbx6tvFeGU.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;16&#x2F;maOenK4ryJWhFGI.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;16&#x2F;QKyFju219pVgP6l.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;16&#x2F;3Sa6uLv4QGhB2n8.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;16&#x2F;yReDOpbWKHPd8Lg.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;16&#x2F;xceTj6DX23hzkwi.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;16&#x2F;VN1psGdfXIbwjMH.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;16&#x2F;hwZ1jA6agmVn374.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;16&#x2F;qI9VgpAnHw3jvao.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;16&#x2F;YKXwTL9SGduN2cI.png">
+<meta property="og:updated_time" content="2019-11-23T11:33:18.242Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;12&#x2F;P8M5LWHdIcs42yB.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;16&#x2F;fB95MSm8EWJD6IV.png">
     
         <link rel="alternate" type="application/atom+xml" title="MelodyHub" href="/blog/atom.xml">
     
@@ -213,7 +235,7 @@
         <div class="post-meta">
             <i class="icon icon-lg icon-calendar-o"></i>
             发表于
-            <time class="post-time" title="2019-11-15 17:54:59" datetime="2019-11-15T09:54:59.000Z"  itemprop="datePublished">2019-11-15</time>
+            <time class="post-time" title="2019-11-15 12:54:59" datetime="2019-11-15T04:54:59.000Z"  itemprop="datePublished">2019-11-15</time>
 
             <br id="mybreak"/>
             
@@ -232,27 +254,36 @@
         </div>
         <div class="post-count-custom">
             <i class="icon icon-lg icon-comment-o"></i>
-            阅读本文可能花费您&nbsp;<span class="post-count">15</span>&nbsp;分钟
+            阅读本文可能花费您&nbsp;<span class="post-count">22</span>&nbsp;分钟
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <h3 id="Java笔记——对象、类"><a href="#Java笔记——对象、类" class="headerlink" title="Java笔记——对象、类"></a>Java笔记——对象、类</h3><p>创建时间：2019.11.11</p>
 <p>说明：持续更新ing</p>
 <hr>
 <ol>
-<li><code>对象</code>和<code>类</code>的概念。</li>
+<li><strong><code>对象</code></strong>和<strong><code>类</code></strong>的概念。</li>
 </ol>
 <ul>
 <li><blockquote>
-<p><code>对象</code>：对象是类的一个实例（实实在在存在的个体），有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等。</p>
+<p><code>对象</code>：对象是类的一个实例（实实在在存在的个体），有<strong>属性（状态）</strong>和<strong>行为</strong>。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等。</p>
+<p>属性(property)： 静态特征<br>行为(behavior)： 动态特征</p>
 </blockquote>
 </li>
 <li><blockquote>
-<p><code>类</code>：类是对现实生活中事物的描述。类是一个模板，它描述一类对象的行为和状态。</p>
+<p><code>类</code>：类是对现实生活中事物的描述。类是一个模板，它描述一类对象的行为和状态。<strong>同种类型对象共性的抽象</strong></p>
 </blockquote>
 </li>
-</ul>
-<p>下图中<strong>男孩（boy）</strong>、<strong>女孩（girl）</strong>为<strong>类（class）</strong>，而具体的每个人为该类的<strong>对象（object）</strong>：</p>
-<figure class="image-bubble">
+<li><p>用老师的话来说，就是下面这样——&gt;</p>
+  <figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/16/fB95MSm8EWJD6IV.png" alt="image.png" title="">
+                </div>
+                <div class="image-caption">image.png</div>
+            </figure>
+</li>
+<li><p>下图中<strong>男孩（boy）</strong>、<strong>女孩（girl）</strong>为<strong>类（class）</strong>，而具体的每个人为该类的<strong>对象（object）</strong>：</p>
+  <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="https://i.loli.net/2019/11/12/P8M5LWHdIcs42yB.png" alt="菜鸟教程.png" title="">
@@ -260,36 +291,60 @@
                 <div class="image-caption">菜鸟教程.png</div>
             </figure>
 
-<a id="more"></a>  //截断文章
-
+</li>
+</ul>
 <hr>
 <ol start="2">
-<li>问：类设计get方法和set方法的作用是什么？<blockquote>
-<p>答1：一般类的成员变量被设置为private（私有的），这样设置安全性比较高，但是设置为私有的后其他的类和对象则无法调用该对象了，所以会有get和set方法，这两个方法一般设置为public，在其他的类中通过对象调用set或get方法即可操作私有的变量，增强程序的安全性，set为给对象赋值的方法，而get则是取得变量值的方法！</p>
-</blockquote>
-</li>
+<li>【定义类】</li>
 </ol>
-<blockquote>
-<p>答2：get set常用在自定义类，类创建了一个实例对象后，用set设置对象的某一个属性，get得到对象某一属性。如果不使用get set，你就得用点，点出来还得是个方法。其实就是给get set换个名而已。而且get set作为内部方法，可以访问私有数据</p>
-</blockquote>
-<blockquote>
-<p>答3：别说的那么专业化了，理解都要半天。<br>就这么理解吧，面向对象中，想对类的成员变量设置访问一些权限，于是，就将该字段设置为private的，这样别的类就不能访问了，然后在该内定义两个方法，一个专门用于获取，一个用于修改，这样，在你不想让别人乱动该字段的时候，就在该方法内写一些限制条件。<br>而为了规范起见（团队开发需要嘛），就根据人家老外的习惯，将方法名设置为set+字段名，get+字段名（名字乱改没问题），既然规范了，那就是别人都叫这名了，于是，有些框架给对象赋值就有方法了，方法名称由get或set开始的又有private变量名的，就找出来调用。hibernate1框架就这样弄得，至于后面的版本是不是这样就不大清楚了。<br>JavaBean就是一个JAVA类，既然是JAVA类就不需要什么组件了，这玩意直接深入到虚拟机了的</p>
-</blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="C:\Users\丶Melody\AppData\Roaming\Typora\typora-user-images\image-20191116135106458.png" alt="image-20191116135106458" title="">
+                </div>
+                <div class="image-caption">image-20191116135106458</div>
+            </figure>
+
 <hr>
 <ol start="3">
 <li></li>
 </ol>
 <ul>
+<li>Java中的类<br>  类可以看成是创建Java对象的模板。<br>  通过下面一个简单的类来理解下Java中类的定义：</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>{</span><br><span class="line">    <span class="keyword">int</span> id; </span><br><span class="line">    String name; </span><br><span class="line">    <span class="keyword">double</span> score1, score2, score3; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(<span class="keyword">int</span> id, String name)</span> </span>{</span><br><span class="line">        <span class="keyword">this</span>.id = id; </span><br><span class="line">        <span class="keyword">this</span>.name = name; </span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getAverageScore</span><span class="params">()</span> </span>{ </span><br><span class="line">        <span class="keyword">return</span> (score1 ＋ score2 + score3) / <span class="number">3</span>; </span><br><span class="line">    } </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>一个类可以包含以下类型变量：</p>
+<blockquote>
+<p><code>局部变量</code>：在方法、构造方法或者语句块中定义的变量被称为局部变量。变量声明和初始化都是在方法中，方法结束后，变量就会自动销毁。<br><code>成员变量</code>：成员变量是定义在类中，方法体之外的变量。这种变量在创建对象的时候实例化。成员变量可以被类中方法、构造方法和特定类的语句块访问。<br><code>类变量</code>：类变量也声明在类中，方法体之外，但必须声明为static类型。<br>一个类可以拥有多个方法。</p>
+</blockquote>
+<ul>
 <li>Java中的对象<br>现在让我们深入了解什么是对象。看看周围真实的世界，会发现身边有很多对象，车，狗，人等等。所有这些对象都有自己的状态和行为。<br>拿一条狗来举例，它的状态有：名字、品种、颜色，行为有：叫、摇尾巴和跑。<br>对比现实对象和软件对象，它们之间十分相似。</li>
 </ul>
 <p><strong><em>软件对象也有状态和行为。软件对象的状态就是属性，行为通过方法体现。<br>在软件开发中，方法操作对象内部状态的改变，对象的相互调用也是通过方法来完成。</em></strong></p>
 <ul>
-<li>Java中的类<br>类可以看成是创建Java对象的模板。<br>通过下面一个简单的类来理解下Java中类的定义：<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Dog</span></span>{</span><br><span class="line">  String breed;</span><br><span class="line">  <span class="keyword">int</span> age;</span><br><span class="line">  String color;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">barking</span><span class="params">()</span></span>{</span><br><span class="line">  }</span><br><span class="line"> </span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">hungry</span><span class="params">()</span></span>{</span><br><span class="line">  }</span><br><span class="line"> </span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">sleeping</span><span class="params">()</span></span>{</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-一个类可以包含以下类型变量：<br><code>局部变量</code>：在方法、构造方法或者语句块中定义的变量被称为局部变量。变量声明和初始化都是在方法中，方法结束后，变量就会自动销毁。<br><code>成员变量</code>：成员变量是定义在类中，方法体之外的变量。这种变量在创建对象的时候实例化。成员变量可以被类中方法、构造方法和特定类的语句块访问。<br><code>类变量</code>：类变量也声明在类中，方法体之外，但必须声明为static类型。<br>一个类可以拥有多个方法，在上面的例子中：barking()、hungry()和sleeping()都是Dog类的方法。</li>
+<li><p>创建对象——&gt;</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*有两种基本形式*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*1.对象声明和创建*/</span></span><br><span class="line">类名 对象名 = <span class="keyword">new</span> 类名();</span><br><span class="line">Student xiaoming = <span class="keyword">new</span> Student ();</span><br><span class="line"></span><br><span class="line"><span class="comment">/*2.先声明,后创建*/</span></span><br><span class="line">类名 对象名; <span class="comment">// 类(对象)变量</span></span><br><span class="line">对象名 = <span class="keyword">new</span> 类名(); <span class="comment">//实例化</span></span><br><span class="line">Student xiaobai ;</span><br><span class="line">xiaobai = <span class="keyword">new</span> Student();</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/16/ZPBq1pyImXLnwvV.png" alt="java对象内存映射像示意.png" title="">
+                </div>
+                <div class="image-caption">java对象内存映射像示意.png</div>
+            </figure></li>
+<li><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/16/OaWtx2fr4o53ZwH.png" alt="image.png" title="">
+                </div>
+                <div class="image-caption">image.png</div>
+            </figure>
+</li>
 </ul>
 <hr>
 <ol start="4">
-<li>类和对象的关系：</li>
+<li>类和对象的关系：<strong>类是具有相同==属性和方法==的集合，是对对象的抽象描述。</strong></li>
 </ol>
 <ul>
 <li><p>现实生活中的对象：张三、李四。</p>
@@ -331,15 +386,71 @@
 <ol start="5">
 <li><p>【方法】<br> 方法的定义：</p>
 <ul>
-<li><p>方法是类或对象的行为特征的抽象。</p>
+<li><p><strong>方法是类或对象的行为特征的抽象。</strong></p>
 </li>
 <li><p>Java中的方法不能独立存在，所有的方法必须定义在类中。</p>
 </li>
 <li><p>使用 “类名.方法” 或 “对象.方法” 的形式调用。</p>
 </li>
 <li><p>语法格式：</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">权限修饰符　返回值类型　方法名（参数类型　参数名） {</span><br><span class="line">	<span class="comment">// 方法体</span></span><br><span class="line">	<span class="comment">// 返回值</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">权限修饰符　返回值类型　方法名（参数类型　参数名<span class="number">1</span>,参数类型　参数名<span class="number">2</span>,...） {</span><br><span class="line">	<span class="comment">// 方法体</span></span><br><span class="line">	方法语句序列<span class="comment">//当返回类型非void时,最后一条被执行语句必须是return语句,返回对应类型的值</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
+<p>访问权限/权限修饰符（4P权限）：</p>
+<table>
+<thead>
+<tr>
+<th align="center">访问权限</th>
+<th align="center">类内</th>
+<th align="center">包层内</th>
+<th align="center">子类</th>
+<th align="center">包层外</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">public</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td align="center">protected</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">×</td>
+</tr>
+<tr>
+<td align="center">package （缺省）</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">×</td>
+<td align="center">×</td>
+</tr>
+<tr>
+<td align="center">private</td>
+<td align="center">√</td>
+<td align="center">×</td>
+<td align="center">×</td>
+<td align="center">×</td>
+</tr>
+</tbody></table>
+<p><code>return</code>语句：</p>
+</li>
+<li><p>结束方法调用，并返回值。</p>
+</li>
+<li><table>
+<thead>
+<tr>
+<th>return 表达式;</th>
+<th>return;</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>🔺方法被调用时,执行到方法内的return语句,则不论方法里是否还有语句未执行,立即结束方法的调用,并将return 后的表达式的值返回方法调用者<br>🔺利用return 语句返回值，仅能返回一个值<br>🔺return语句仅结束方法的执行</td>
+<td>🔺void型方法</td>
+</tr>
+</tbody></table>
 <p>方法分类：</p>
 </li>
 <li><p>无参数无返回值</p>
@@ -349,14 +460,14 @@
 <li><p>无参数有返回值</p>
 </li>
 <li><p>有参数有返回值</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Method</span> </span>{</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">aMethod</span><span class="params">()</span> </span>{</span><br><span class="line">        System.out.println(<span class="string">"无参数无返回值的方法"</span>);</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">bMethod</span><span class="params">(<span class="keyword">int</span> b)</span> </span>{</span><br><span class="line">        System.out.println(<span class="string">"有参数无返回值的方法"</span>);</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">cMethod</span><span class="params">()</span> </span>{</span><br><span class="line">        System.out.println(<span class="string">"无参数有返回值的方法"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">10</span>;</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">dMethod</span><span class="params">(<span class="keyword">int</span> d)</span> </span>{</span><br><span class="line">        System.out.println(<span class="string">"有参数有返回值的方法"</span>);</span><br><span class="line">        <span class="keyword">return</span> d;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        <span class="keyword">int</span> ret;　　　　　<span class="comment">// 创建Method类的对象</span></span><br><span class="line">        Method md = <span class="keyword">new</span> Method();　　　　　<span class="comment">// 通过对象.方法调用</span></span><br><span class="line">        md.aMethod();</span><br><span class="line">        md.bMethod(<span class="number">10</span>);</span><br><span class="line">        ret = md.cMethod();</span><br><span class="line">        ret = md.dMethod(<span class="number">10</span>);</span><br><span class="line">        System.out.println(ret);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Method</span> </span>{</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">aMethod</span><span class="params">()</span> </span>{</span><br><span class="line">        System.out.println(<span class="string">"无参数无返回值的方法"</span>);</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">bMethod</span><span class="params">(<span class="keyword">int</span> b)</span> </span>{</span><br><span class="line">        System.out.println(<span class="string">"有参数无返回值的方法"</span>);</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">cMethod</span><span class="params">()</span> </span>{</span><br><span class="line">        System.out.println(<span class="string">"无参数有返回值的方法"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">10</span>;</span><br><span class="line">    }</span><br><span class="line">   </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">dMethod</span><span class="params">(<span class="keyword">int</span> d)</span> </span>{</span><br><span class="line">       System.out.println(<span class="string">"有参数有返回值的方法"</span>);</span><br><span class="line">        <span class="keyword">return</span> d;</span><br><span class="line">   }</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        <span class="keyword">int</span> ret;　　　　　<span class="comment">// 创建Method类的对象</span></span><br><span class="line">       Method md = <span class="keyword">new</span> Method();　　　　　<span class="comment">// 通过对象.方法调用</span></span><br><span class="line">        md.aMethod();</span><br><span class="line">       md.bMethod(<span class="number">10</span>);</span><br><span class="line">        ret = md.cMethod();</span><br><span class="line">       ret = md.dMethod(<span class="number">10</span>);</span><br><span class="line">        System.out.println(ret);</span><br><span class="line">   }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <p>方法的参数：</p>
 </li>
 <li><p>方法可以没有参数，或者有多个参数，参数类型可以是任意类型</p>
 </li>
 <li><p>方法参数也是局部变量</p>
-<p>参数为引用数据类型时：</p>
+<p>  参数为<a href="https://www.cnblogs.com/wuxinyiwu/p/8588420.html" target="_blank" rel="noopener">引用数据类型</a><sup id="fnref:4"><a href="#fn:4" rel="footnote">4</a></sup>时：</p>
 </li>
 <li><p>当对象实例作为参数传递给方法时，传递的是对象的引用，为地址传递，接受参数的方法可以改变参数的值。</p>
 <p>参数为简单数据类型时：</p>
@@ -364,21 +475,42 @@
 <li><p>传递的是参数的副本，为值传递，接受参数的方法中不会改变参数的值。</p>
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MethodParam</span> </span>{</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 方法的参数为基本数据类型时，传递的是值的副本（值拷贝）</span></span><br><span class="line"><span class="comment">     * 方法中不会改变元参数的值</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>{<span class="comment">//a, b为形参</span></span><br><span class="line">        <span class="keyword">int</span> tmp;</span><br><span class="line">        tmp = a;</span><br><span class="line">        a = b;</span><br><span class="line">        b = tmp;</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">100</span>, y = <span class="number">200</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 方法的参数为引用数据类型时，传递的对象的引用（传地址）</span></span><br><span class="line"><span class="comment">     * 方法中可以改变参数的值</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">swap2</span><span class="params">(MethodParam mp)</span> </span>{</span><br><span class="line">        <span class="keyword">int</span> tmp = mp.x;</span><br><span class="line">        mp.x = mp.y;</span><br><span class="line">        mp.y = tmp;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        MethodParam mp = <span class="keyword">new</span> MethodParam();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> m = <span class="number">10</span>, n = <span class="number">20</span>;</span><br><span class="line">        System.out.println(<span class="string">"交换前：a = "</span>+m+<span class="string">",b = "</span>+n);</span><br><span class="line">        mp.swap(m, n);<span class="comment">// m,n为实参</span></span><br><span class="line">        System.out.println(<span class="string">"交换后：a = "</span>+m+<span class="string">",b = "</span>+n);</span><br><span class="line">        </span><br><span class="line">        System.out.println(<span class="string">"交换前：x = "</span>+mp.x+<span class="string">",y = "</span>+mp.y);</span><br><span class="line">        mp.swap2(mp);</span><br><span class="line">        System.out.println(<span class="string">"交换后：x = "</span>+mp.x+<span class="string">",y = "</span>+mp.y);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
+<p>普通方法调用——&gt;</p>
+<p><img src="https://i.loli.net/2019/11/16/28HpyTLnKOVsFQY.png" alt="image.png"></p>
+<p>成员方法和成员变量的关系——&gt;</p>
+<p><img src="https://i.loli.net/2019/11/16/gceJWarS2Puqz9w.png" alt="image.png"></p>
 </li>
 </ul>
 </li>
 </ol>
 <hr>
 <ol start="6">
-<li>【构造方法】</li>
+<li><p>【成员方法】和【构造方法】</p>
+<p> 【成员方法】</p>
+</li>
 </ol>
-<p>构造方法需满足以下三个条件 ：</p>
-<ul>
-<li><p>1、方法名与类名同名</p>
+<pre><code>——————————————————————————— 我 是 分 割 线 ————————————————————————————
+
+【构造方法】
+
+构造方法需满足以下三个条件 ：</code></pre><ul>
+<li><p>1、方法名与类名<strong>同名</strong></p>
 </li>
-<li><p>2、在方法中不能使用return 语句返回 </p>
+<li><p>2、在方法中不能使用  <strong><code>return</code></strong>  语句，即无返回值 </p>
 </li>
-<li><p>3、在方法名的前面没有返回值的类型声明 </p>
+<li><p>3、在方法名的前面*<em>没有返回值的类型声明 *</em><br>  （有看到“ 构造方法无返回值也不可以加void，但其实返回的是首地址 ”这话还得去证实，先放在这里）</p>
+</li>
+<li><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/16/qIK3BjS4wrtvgMi.png" alt="image.png" title="">
+                </div>
+                <div class="image-caption">image.png</div>
+            </figure>
+</li>
+<li><blockquote>
+<p>==老师推荐==：<strong><em>显式无参构造子,作为一种良好实践,定义了其他构造子，那就准备一个无参构造子</em></strong></p>
+</blockquote>
 </li>
 </ul>
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> me;</span><br><span class="line"><span class="keyword">public</span>  <span class="class"><span class="keyword">class</span> <span class="title">Me</span> </span>{</span><br><span class="line">    <span class="keyword">private</span>  String name; <span class="comment">//成员变量</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Me</span><span class="params">(String name)</span></span>{ <span class="comment">//构造方法</span></span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>{ <span class="comment">//成员方法</span></span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>{<span class="comment">//成员方法</span></span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
@@ -386,34 +518,99 @@
 <p> 我如果我在添加一age 如下 添加方法依然是成员方法 , </p>
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> me;</span><br><span class="line"><span class="keyword">public</span>  <span class="class"><span class="keyword">class</span> <span class="title">Me</span> </span>{</span><br><span class="line">    <span class="keyword">private</span>  String name; <span class="comment">//成员变量</span></span><br><span class="line">    <span class="keyword">private</span> String age; <span class="comment">//成员变量</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Me</span><span class="params">(String name)</span></span>{ <span class="comment">//构造方法</span></span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>{ <span class="comment">//成员方法</span></span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>{<span class="comment">//成员方法</span></span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getAge</span><span class="params">()</span> </span>{<span class="comment">//成员方法</span></span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(String age)</span> </span>{<span class="comment">//成员方法</span></span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<p>个人理解：无论多少方法，==除了构造方法以为都是成员方法==，当然这样理解可能有点偏见..</p>
+<p>个人理解：无论多少方法，==除了构造方法外，其余都是成员方法==，当然这样理解可能有点偏见..</p>
 <p>它们的区别：</p>
-<ol>
+<ul>
 <li><p>构造方法一般是给对象的数据进行初始化,没有返回值</p>
 </li>
 <li><p>成员方法一般实现对类中成员变量的操作，提供某些功能,有返回类型，可以为void类型</p>
 </li>
-</ol>
+</ul>
 <p>成员方法与构造方法调用的区别</p>
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> me;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Book</span> </span>{    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{        </span><br><span class="line">        Me me = <span class="keyword">new</span> Me(<span class="string">"张三"</span>);<span class="comment">//构造方法调用    </span></span><br><span class="line">        System.out.println(me);         </span><br><span class="line">        me.setName(<span class="string">"李四"</span>);<span class="comment">//成员方法调用       </span></span><br><span class="line">        System.out.println(me.getName());     </span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <p>从上面的demo中可以看出，<strong>==构造方法通过new运算符调用==</strong>，<strong>==成员方法通过对象调用==</strong>。</p>
-<p><strong>注意：</strong></p>
-<p><strong>类中除了构造方法以外的方法都是成员方法。</strong></p>
-<p><strong>原因是在类中，除了变量外的基本都是成员方法。</strong></p>
+<p><strong>注意：类中除了构造方法以外的方法都是成员方法。原因是在类中，除了变量外的基本都是成员方法。</strong></p>
+<p>——————————————————————————— 我 是 分 割 线 ————————————————————————————</p>
+<p>【this 关键字】</p>
+<p><a href="https://i.loli.net/2019/11/16/49d7AMODXhKbsuy.png" target="_blank" rel="noopener">https://i.loli.net/2019/11/16/49d7AMODXhKbsuy.png</a> </p>
+<p>——————————————————————————— 我 是 分 割 线 ————————————————————————————</p>
+<p>【重载构造方法之间的调用】</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/16/6qrpXmf5a3bhojz.png" alt="image.png" title="">
+                </div>
+                <div class="image-caption">image.png</div>
+            </figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/16/pXLMjyKFzgal1oB.png" alt="image.png" title="">
+                </div>
+                <div class="image-caption">image.png</div>
+            </figure>
+
+<p>【含对象成员的构造方法调用】</p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/16/Awpe2iSNX4OnvaQ.png" alt="image.png" title="">
+                </div>
+                <div class="image-caption">image.png</div>
+            </figure><p></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/16/49d7AMODXhKbsuy.png" alt="image.png" title="">
+                </div>
+                <div class="image-caption">image.png</div>
+            </figure> 
+
+<p>【无继承情况下的对象初始化顺序】</p><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/16/AO3z8orS9aXvWCd.png" alt="image.png" title="">
+                </div>
+                <div class="image-caption">image.png</div>
+            </figure><p></p>
 <hr>
 <ol start="7">
-<li>【成员方法】</li>
+<li>【创建对象】</li>
 </ol>
+<p>对象是根据类创建的。在Java中，使用<strong>关键字new</strong></p>
+<ul>
+<li><strong>声明</strong>：声明一个对象，包括对象名称和对象类型。</li>
+<li><strong>实例化</strong>：使用关键字new来创建一个对象。</li>
+<li><strong>初始化</strong>：使用new创建对象时，会调用构造方法初始化对象。</li>
+</ul>
+<p>下面是一个创建对象的例子：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Puppy</span></span>{   </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Puppy</span><span class="params">(String name)</span></span>{      </span><br><span class="line">        <span class="comment">//这个构造器仅有一个参数：name      </span></span><br><span class="line">        System.out.println(<span class="string">"小狗的名字是 : "</span> + name );    </span><br><span class="line">    }   </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>{      </span><br><span class="line">        <span class="comment">// 下面的语句将创建一个Puppy对象      </span></span><br><span class="line">        Puppy myPuppy = <span class="keyword">new</span> Puppy( <span class="string">"tommy"</span> );   </span><br><span class="line">    } </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>编译并运行上面的程序，会打印出下面的结果：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">小狗的名字是 : tommy</span><br></pre></td></tr></tbody></table></figure>
+
+<p>——————————————————————————— 我 是 分 割 线 ————————————————————————————</p>
+<p>【访问实例变量和方法】</p>
+<p>通过已创建的对象来访问成员变量和成员方法，如下所示：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 实例化对象 */</span> </span><br><span class="line">Object referenceVariable = <span class="keyword">new</span> Constructor(); </span><br><span class="line"><span class="comment">/* 访问类中的变量 */</span> </span><br><span class="line">referenceVariable.variableName; </span><br><span class="line"><span class="comment">/* 访问类中的方法 */</span> </span><br><span class="line">referenceVariable.methodName();</span><br></pre></td></tr></tbody></table></figure>
+
+<p>——————————————————————————— 我 是 分 割 线 ————————————————————————————</p>
+<p>【访问实例变量】和【调用成员方法】：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Puppy</span></span>{   </span><br><span class="line">    <span class="keyword">int</span> puppyAge;   </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Puppy</span><span class="params">(String name)</span></span>{      </span><br><span class="line">        <span class="comment">// 这个构造器仅有一个参数：name      </span></span><br><span class="line">        System.out.println(<span class="string">"小狗的名字是 : "</span> + name );    </span><br><span class="line">    }    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">( <span class="keyword">int</span> age )</span></span>{       </span><br><span class="line">        puppyAge = age;   </span><br><span class="line">    }    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">( )</span></span>{       </span><br><span class="line">        System.out.println(<span class="string">"小狗的年龄为 : "</span> + puppyAge );        			<span class="keyword">return</span> puppyAge;   </span><br><span class="line">    }   </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>{     </span><br><span class="line">        <span class="comment">/* 创建对象 */</span>      </span><br><span class="line">        Puppy myPuppy = <span class="keyword">new</span> Puppy( <span class="string">"tommy"</span> );      </span><br><span class="line">        <span class="comment">/* 通过方法来设定age */</span>    </span><br><span class="line">        myPuppy.setAge( <span class="number">2</span> );      </span><br><span class="line">        <span class="comment">/* 调用另一个方法获取age */</span>    </span><br><span class="line">        myPuppy.getAge( );     </span><br><span class="line">        <span class="comment">/*你也可以像下面这样访问成员变量 */</span>   </span><br><span class="line">        System.out.println(<span class="string">"变量值 : "</span> + myPuppy.puppyAge );   </span><br><span class="line">    } </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>编译并运行上面的程序，产生如下结果：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">小狗的名字是 : tommy</span><br><span class="line">小狗的年龄为 : <span class="number">2</span></span><br><span class="line">变量值 : <span class="number">2</span></span><br></pre></td></tr></tbody></table></figure>
+
 <hr>
 <ol start="8">
 <li><p>【方法重载，重构，覆盖，重写的区别】</p>
-<p>方法重载还是比较好理解的，就是在类的内部，定义多个方法，这些方法的方法名字相同，参数类型和参数个数不同，注意，返回值类型并不能区分重载 。</p>
+<p><strong>方法重载</strong>还是比较好理解的，就是在类的内部，定义多个方法，这些方法的方法名字相同，参数类型、参数顺序、参数个数不同，注意，返回值类型并不能区分重载 。</p>
 </li>
 </ol>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">double</span> b)</span></span>{</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">double</span> c)</span></span>{</span><br><span class="line"> }</span><br><span class="line"> </span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">show</span><span class="params">(<span class="keyword">double</span> d)</span></span>{<span class="keyword">return</span>  <span class="number">1</span>;}   <span class="comment">//报错，方法已经定义了</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">double</span> b)</span></span>{</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">double</span> c)</span></span>{</span><br><span class="line"></span><br><span class="line">} </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">show</span><span class="params">(<span class="keyword">double</span> d)</span></span>{</span><br><span class="line">    <span class="keyword">return</span>  <span class="number">1</span>;</span><br><span class="line">}   <span class="comment">//报错，方法已经定义了</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p> 在看方法重写（<code>override</code>)<br>方法重写和方法覆盖都是一个道理，发生在子类继承父类或者实现接口的类，要求的是：</p>
+<p> <strong>方法重写（<code>override</code>)</strong><br>方法重写和方法覆盖都是一个道理，发生在子类继承父类或者实现接口的类，要求的是：</p>
 <blockquote>
 <p>1.方法名字相同，<br>2.参数个数不同，<br>3.返回值类型不同 ，</p>
 </blockquote>
@@ -424,7 +621,7 @@
 
 <img src="https://i.loli.net/2019/11/14/5bCilLKw1uFWEGy.png" alt="image.png">
 
-<p> 方法重构：</p>
+<p> <strong>方法重构</strong></p>
 <blockquote>
 <p>定义：在不改变外界外界访问的情况下对代码进行修改，但是不改变原方法的效果，提高其性能，使程序更加易读，可维护。<br>重构是在不改变软件可观察行为的前提下改善其内部结构<br>重构通常不是一次性的，它贯穿软件的整个生命周期，只要觉得不合理都是重构的时机。 </p>
 </blockquote>
@@ -505,13 +702,14 @@
 <li>问：构造方法中可不可以有return语句呢?</li>
 </ol>
 <blockquote>
-<p> 可以。而是我们写成这个样子就OK了：<code>return;</code><br> 其实，在任何的<strong>void类型的方法</strong>的最后你都可以写上：<code>return;</code></p>
+<p> （这个解释有问题？）可以。而是我们写成这个样子就OK了：<code>return;</code><br> 其实，在任何的<strong>void类型的方法</strong>的最后你都可以写上：<code>return;</code></p>
 </blockquote>
 <hr>
 <ol start="16">
 <li>问：非构造方法的一般成员方法必须有return语句？</li>
 </ol>
 <blockquote>
+<p>错。 （待补充……）</p>
 </blockquote>
 <hr>
 <ol start="17">
@@ -524,18 +722,157 @@
 
 <hr>
 <ol start="18">
-<li></li>
+<li>问：Java中构造函数的权限可以是private吗？</li>
 </ol>
+<blockquote>
+<p> 可以，这个类就不能再外部被new了，如果需要这个类的实例化对象，就只能在类内部提供静态方法生产这个类的对象了。 </p>
+</blockquote>
 <hr>
 <ol start="19">
-<li></li>
+<li>问：构造方法能不能被重载，构造方法能不能被重写？</li>
 </ol>
+<blockquote>
+<p>在回答这两个问题之前，首先先回顾：<strong>什么是构造方法？构造方法的特点是什么？</strong></p>
+<blockquote>
+<p>概述：构造方法存在于类中，给对象数据（属性）初始化；</p>
+<p>特点：方法名与类名一样；无返回值无void;</p>
+<p>默认构造方法：我们不创建一个构造方法时，系统默认提供一个无参构造；当我们创建一个构造方法时，系统不再提供无参构造，所以在实际项目中，全部手动给出无参构造</p>
+</blockquote>
+<p>其次<strong><em>\</em>什么是重载？什么是重写？**</strong> </p>
+<blockquote>
+<p>重载：存在于在一个类中，方法名相同，方法参数的类型或个数不同</p>
+<p>重写：存在于子父类中，方法名、方法参数、返回值全部相同</p>
+</blockquote>
+<p>所以：<strong>构造方法可以重载，不能重写</strong></p>
+<p>在一个类中，可以有多个构造方法（方法参数不同） ，即重载，来实现对象属性不同的初始化；</p>
+<p>但是子类中不能定义一个方法无void无返回值的方法，编译错误，即子类无法继承构造方法，但是子类的构造器中可以调用父类的构造方法（默认自动调用无参构造）</p>
+</blockquote>
+<p>注意：回答来源于 <a href="https://blog.csdn.net/cherry_11qianqian/article/details/82785893" target="_blank" rel="noopener">CSDN博客</a></p>
 <hr>
 <ol start="20">
+<li>Java中可以定义一个<strong>空类</strong>（即没有数据成员和成员方法） 。</li>
+</ol>
+<hr>
+<ol start="21">
+<li>问： 下面这个类有几个构造方法？ </li>
+</ol>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class	A{}</span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>1个。（待补充……）</p>
+</blockquote>
+<hr>
+<ol start="22">
+<li><p>问：Java 类可以作为（ C ）</p>
+<p>A．类型定义机制                                 B．数据封装机制</p>
+<p>C．类型定义机制和数据封装机制      D．上述都不对</p>
+</li>
+</ol>
+<hr>
+<ol start="23">
+<li>用于定义类头的修饰符可以是public、abstract、final或者是默认(friendly) </li>
+</ol>
+<hr>
+<ol start="24">
+<li>题目：下列说法错误的有（ CD ）<br>　　A． 在类方法中可用this来调用本类的类方法<pre><code>B． 在类方法中调用本类的类方法时可直接调用</code></pre>　　C． 在类方法中只能调用本类中的类方法<br>　　D． 在类方法中绝对不能调用实例方法 </li>
+</ol>
+<blockquote>
+<p> C：类方法可以调用外部其他类的方法。<br>D：只要实力化对象，也是可以调用实例方法的。</p>
+</blockquote>
+<hr>
+<ol start="25">
+<li>判断： 只有基本类型的参数传递使用值传递。 </li>
+</ol>
+<blockquote>
+<p>错误。</p>
+<p>引用类型参数的传递，依然是值传递。但因为是地址值，所以会指向同一个对象实例。</p>
+</blockquote>
+<hr>
+<ol start="26">
+<li>Java中方法的参数传递是<strong>值传递（pass by value）</strong>，并且为<strong>单向传递</strong>。</li>
+</ol>
+<hr>
+<ol start="27">
+<li>《Java 变量参数传入方法，修改后是否影响外面的值》。参考   <a href="https://blog.csdn.net/fenglllle/article/details/81389286" target="_blank" rel="noopener">博客</a></li>
+</ol>
+<hr>
+<ol start="28">
+<li>《某个变量当作函数的参数传递后，函数内部修改了。到底这个变量是否受影响》。参考 <a href="https://blog.csdn.net/wem603947175/article/details/81206177" target="_blank" rel="noopener">博客</a></li>
+</ol>
+<hr>
+<ol start="29">
+<li><p>问：类设计get方法和set方法的作用是什么？</p>
+<blockquote>
+<p>答1：一般类的成员变量被设置为private（私有的），这样设置安全性比较高，但是设置为私有的后其他的类和对象则无法调用该对象了，所以会有get和set方法，这两个方法一般设置为public，在其他的类中通过对象调用set或get方法即可操作私有的变量，增强程序的安全性，set为给对象赋值的方法，而get则是取得变量值的方法！</p>
+</blockquote>
+<blockquote>
+<p>答2：get set常用在自定义类，类创建了一个实例对象后，用set设置对象的某一个属性，get得到对象某一属性。如果不使用get set，你就得用点，点出来还得是个方法。其实就是给get set换个名而已。而且get set作为内部方法，可以访问私有数据</p>
+</blockquote>
+<blockquote>
+<p>答3：别说的那么专业化了，理解都要半天。<br>就这么理解吧，面向对象中，想对类的成员变量设置访问一些权限，于是，就将该字段设置为private的，这样别的类就不能访问了，然后在该内定义两个方法，一个专门用于获取，一个用于修改，这样，在你不想让别人乱动该字段的时候，就在该方法内写一些限制条件。<br>而为了规范起见（团队开发需要嘛），就根据人家老外的习惯，将方法名设置为set+字段名，get+字段名（名字乱改没问题），既然规范了，那就是别人都叫这名了，于是，有些框架给对象赋值就有方法了，方法名称由get或set开始的又有private变量名的，就找出来调用。hibernate1框架就这样弄得，至于后面的版本是不是这样就不大清楚了。<br>JavaBean就是一个JAVA类，既然是JAVA类就不需要什么组件了，这玩意直接深入到虚拟机了的</p>
+</blockquote>
+<p><img src="https://i.loli.net/2019/11/16/4pmW9kbx6tvFeGU.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2019/11/16/maOenK4ryJWhFGI.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2019/11/16/QKyFju219pVgP6l.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2019/11/16/3Sa6uLv4QGhB2n8.png" alt="image.png"></p>
+<p><img src="https://i.loli.net/2019/11/16/yReDOpbWKHPd8Lg.png" alt="image.png"></p>
+</li>
+</ol>
+<hr>
+<ol start="30">
+<li><p>Java的包装类：</p>
+<p>【包装类的概念】</p>
+<p><img src="https://i.loli.net/2019/11/16/xceTj6DX23hzkwi.png" alt="image.png"></p>
+<p>【Integer类的用法】</p>
+<p><img src="https://i.loli.net/2019/11/16/VN1psGdfXIbwjMH.png" alt="image.png"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/16/hwZ1jA6agmVn374.png" alt="image.png" title="">
+                </div>
+                <div class="image-caption">image.png</div>
+            </figure>
+
+<p>【自动装箱机制和自动拆箱机制】</p>
+<p><img src="https://i.loli.net/2019/11/16/qI9VgpAnHw3jvao.png" alt="image.png"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/16/YKXwTL9SGduN2cI.png" alt="image.png" title="">
+                </div>
+                <div class="image-caption">image.png</div>
+            </figure>
+
+</li>
+</ol>
+<hr>
+<ol start="31">
+<li>匿名对象：</li>
+</ol>
+<p>使用方法：</p>
+<ol>
+<li>当对对象的方法只调用一次，可以使用匿名对象来完成，这样写比较简化。如果对一个对象进行多个成员调用，必须给这个对象起个名字。</li>
+<li>可以将匿名对象作为实际参数进行传递。</li>
 <li></li>
 </ol>
 <hr>
-<h3 id="注脚："><a href="#注脚：" class="headerlink" title="注脚："></a>注脚：</h3><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;"><a href="https://www.jianshu.com/p/08562e95ed49" target="_blank" rel="noopener">实例变量（全局变量）</a>、<a href="https://www.cnblogs.com/huangzs/p/9961703.html" target="_blank" rel="noopener">成员变量、实例变量、属性</a></span><a href="#fnref:1" rev="footnote"> ↩</a></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">2.</span><span style="display: inline-block; vertical-align: top;"><a href="https://www.jianshu.com/p/773a8e5e199c" target="_blank" rel="noopener">java的构造方法</a>、<a href="https://blog.csdn.net/qq_40393000/article/details/82866470" target="_blank" rel="noopener">java的构造方法</a>、<a href="https://blog.csdn.net/weixin_30455365/article/details/95613213" target="_blank" rel="noopener">Java入门：构造方法</a></span><a href="#fnref:2" rev="footnote"> ↩</a></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">3.</span><span style="display: inline-block; vertical-align: top;">暂无</span><a href="#fnref:3" rev="footnote"> ↩</a></li></ol></div></div><script>
+<ol start="32">
+<li></li>
+</ol>
+<hr>
+<ol start="33">
+<li></li>
+</ol>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<h3 id="注脚："><a href="#注脚：" class="headerlink" title="注脚："></a>注脚：</h3><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;"><a href="https://www.jianshu.com/p/08562e95ed49" target="_blank" rel="noopener">实例变量（全局变量）</a>、<a href="https://www.cnblogs.com/huangzs/p/9961703.html" target="_blank" rel="noopener">成员变量、实例变量、属性</a></span><a href="#fnref:1" rev="footnote"> ↩</a></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">2.</span><span style="display: inline-block; vertical-align: top;"><a href="https://www.jianshu.com/p/773a8e5e199c" target="_blank" rel="noopener">java的构造方法</a>、<a href="https://blog.csdn.net/qq_40393000/article/details/82866470" target="_blank" rel="noopener">java的构造方法</a>、<a href="https://blog.csdn.net/weixin_30455365/article/details/95613213" target="_blank" rel="noopener">Java入门：构造方法</a></span><a href="#fnref:2" rev="footnote"> ↩</a></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">3.</span><span style="display: inline-block; vertical-align: top;">来创建一个新的对象。创建对象需要以下三步：</span><a href="#fnref:3" rev="footnote"> ↩</a></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">3.</span><span style="display: inline-block; vertical-align: top;"><a href="https://blog.csdn.net/weixin_42227243/article/details/82805945" target="_blank" rel="noopener">java之new的用处</a></span><a href="#fnref:3" rev="footnote"> ↩</a></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">4.</span><span style="display: inline-block; vertical-align: top;"><a href="https://www.cnblogs.com/wuxinyiwu/p/8588420.html" target="_blank" rel="noopener">JAVA中基本数据类型和引用数据类型区别</a></span><a href="#fnref:4" rev="footnote"> ↩</a></li></ol></div></div><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -560,7 +897,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新：<time datetime="2019-11-23T02:13:51.399Z" itemprop="dateUpdated">2019-11-23 10:13:51</time>
+    最后更新：<time datetime="2019-11-23T11:33:18.242Z" itemprop="dateUpdated">2019-11-23 19:33:18</time>
 </span>
 
 
@@ -607,15 +944,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/15/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%AF%B9%E8%B1%A1%E3%80%81%E7%B1%BB/&title=《Java笔记——对象、类》 — MelodyHub&source=Java笔记——对象、类创建时间：2019.11.11
-说明：持续更新ing
-
-
-对象和类的概念。
-
-
-
-对象：对象是类的一个实例（实实在在存在的个体），..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/15/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%AF%B9%E8%B1%A1%E3%80%81%E7%B1%BB/&title=《Java笔记——对象、类》 — MelodyHub&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -803,15 +1132,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/15/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%AF%B9%E8%B1%A1%E3%80%81%E7%B1%BB/&title=《Java笔记——对象、类》 — MelodyHub&source=Java笔记——对象、类创建时间：2019.11.11
-说明：持续更新ing
-
-
-对象和类的概念。
-
-
-
-对象：对象是类的一个实例（实实在在存在的个体），..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/15/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%AF%B9%E8%B1%A1%E3%80%81%E7%B1%BB/&title=《Java笔记——对象、类》 — MelodyHub&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
