@@ -6,7 +6,7 @@
     
     
     
-    <title>Java笔记——this关键字 | MelodyHub | 你用走 可是我用跑</title>
+    <title>Java中的&lt;&lt;、&gt;&gt;和&gt;&gt;&gt; | MelodyHub | 你用走 可是我用跑</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     
     <meta name="theme-color" content="#77AAFF">
@@ -39,16 +39,18 @@
 
 
     
-    <meta name="description" content="this 关键字三个形式上的用途，但本质上就两个：  调用重载的其他构造方法：放置在构造方法体首行的this()或this(实参列表) 作为当前对象，引用成员（数据、方法等）：区分同名变量等 作为当前对象，方法返回当前对象的引用，形成链式调用">
+    <meta name="description" content="左移 左移运算符 &amp;lt;&amp;lt;  👉使指定值的所有位都左移规定的次数 左移m&amp;lt;&amp;lt;n，代表把数字m在无溢出的前提下乘以2的n次方　   右移 右移运算符 &amp;gt;&amp;gt; 👉 使指定值的所有位都右移规定的次数 右移m&amp;gt;&amp;gt;n 代表把数字m除以2的n次方，原来是正数的还是正数，负数还是负数 注意，如果是单数，也就是二进制末位为1，则结果是将m除以2的n次方的整数商   无">
 <meta name="keywords" content="Java,笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java笔记——this关键字">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;28&#x2F;Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97&#x2F;index.html">
+<meta property="og:title" content="Java中的&lt;&lt;、&gt;&gt;和&gt;&gt;&gt;">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;JaJava%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C&#x2F;index.html">
 <meta property="og:site_name" content="MelodyHub">
-<meta property="og:description" content="this 关键字三个形式上的用途，但本质上就两个：  调用重载的其他构造方法：放置在构造方法体首行的this()或this(实参列表) 作为当前对象，引用成员（数据、方法等）：区分同名变量等 作为当前对象，方法返回当前对象的引用，形成链式调用">
+<meta property="og:description" content="左移 左移运算符 &amp;lt;&amp;lt;  👉使指定值的所有位都左移规定的次数 左移m&amp;lt;&amp;lt;n，代表把数字m在无溢出的前提下乘以2的n次方　   右移 右移运算符 &amp;gt;&amp;gt; 👉 使指定值的所有位都右移规定的次数 右移m&amp;gt;&amp;gt;n 代表把数字m除以2的n次方，原来是正数的还是正数，负数还是负数 注意，如果是单数，也就是二进制末位为1，则结果是将m除以2的n次方的整数商   无">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-29T17:13:21.149Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;30&#x2F;MGCsdqjI5b4Y3iN.png">
+<meta property="og:updated_time" content="2019-11-29T17:14:55.054Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;30&#x2F;MGCsdqjI5b4Y3iN.png">
     
         <link rel="alternate" type="application/atom+xml" title="MelodyHub" href="/blog/atom.xml">
     
@@ -158,7 +160,7 @@
         <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Java笔记——this关键字</div>
+        <div class="flex-col header-title ellipsis">Java中的&lt;&lt;、&gt;&gt;和&gt;&gt;&gt;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -199,19 +201,19 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#this-关键字"><span class="post-toc-number">1.</span> <span class="post-toc-text">this 关键字</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#左移"><span class="post-toc-number">1.</span> <span class="post-toc-text">左移</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#右移"><span class="post-toc-number">2.</span> <span class="post-toc-text">右移</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#无符号右移"><span class="post-toc-number">3.</span> <span class="post-toc-text">无符号右移</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Demo"><span class="post-toc-number">4.</span> <span class="post-toc-text">Demo</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#详细分析"><span class="post-toc-number">5.</span> <span class="post-toc-text">详细分析</span></a></li></ol>
         </nav>
     </aside>
    
-<article id="post-Java笔记——this关键字"
+<article id="post-JaJava中的、-和"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Java笔记——this关键字</h1>
+        <h1 class="post-card-title">Java中的<<、>>和>>></h1>
         <div class="post-meta">
             <i class="icon icon-lg icon-calendar-o"></i>
             发表于
-            <time class="post-time" title="2019-11-28 17:11:18" datetime="2019-11-28T09:11:18.000Z"  itemprop="datePublished">2019-11-28</time>
+            <time class="post-time" title="2019-11-30 00:33:38" datetime="2019-11-29T16:33:38.000Z"  itemprop="datePublished">2019-11-30</time>
 
             <br id="mybreak"/>
             
@@ -230,23 +232,73 @@
         </div>
         <div class="post-count-custom">
             <i class="icon icon-lg icon-comment-o"></i>
-            阅读本文可能花费您&nbsp;<span class="post-count">1</span>&nbsp;分钟
+            阅读本文可能花费您&nbsp;<span class="post-count">2</span>&nbsp;分钟
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="this-关键字"><a href="#this-关键字" class="headerlink" title="this 关键字"></a>this 关键字</h1><p>三个形式上的用途，但本质上就两个：</p>
-<ul>
-<li><font color="red">调用重载的其他构造方法</font>：放置在构造方法体首行的this()或this(实参列表)</li>
-<li>作为当前对象，<font color="red">引用成员</font>（数据、方法等）：区分同名变量等</li>
-<li>作为当前对象，方法返回当前对象的引用，形成<font color="red">链式调用</font></li>
+            <h1 id="左移"><a href="#左移" class="headerlink" title="左移"></a>左移</h1><ul>
+<li><strong>左移运算符</strong> <strong><code>&lt;&lt;</code></strong> </li>
+<li>👉使指定值的所有位都左移规定的次数</li>
+<li>左移m&lt;&lt;n，代表把数字m在无溢出的前提下<strong>乘以2的n次方</strong>　 </li>
 </ul>
+<h1 id="右移"><a href="#右移" class="headerlink" title="右移"></a>右移</h1><ul>
+<li><strong>右移运算符</strong> <strong><code>&gt;&gt;</code></strong></li>
+<li>👉 使指定值的所有位都右移规定的次数</li>
+<li>右移m&gt;&gt;n 代表把数字m除以2的n次方，原来是正数的还是正数，负数还是负数</li>
+<li>注意，如果是单数，也就是二进制末位为1，则结果是<strong>将m除以2的n次方的整数商</strong> </li>
+</ul>
+<h1 id="无符号右移"><a href="#无符号右移" class="headerlink" title="无符号右移"></a>无符号右移</h1><p>  <strong>无符号右移运算符</strong> <strong><code>&gt;&gt;&gt;</code></strong></p>
+<p>👉<strong>同右移，但是结果全变正数</strong></p>
 <a id="more"></a>
 
-<p>案 例 ：</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThisDemo</span> </span>{ </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> a = <span class="number">1</span>; </span><br><span class="line">    <span class="keyword">private</span> String name = <span class="string">"good"</span>; </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> i = <span class="number">0</span>; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ThisDemo</span><span class="params">()</span></span>{ </span><br><span class="line">        System.out.println(<span class="string">"无参构造子"</span> + <span class="keyword">this</span>); </span><br><span class="line">    } </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ThisDemo</span><span class="params">(<span class="keyword">int</span> a, String name)</span></span>{ </span><br><span class="line">        <span class="keyword">this</span>(); <span class="comment">// 【1】调用无参构造子 </span></span><br><span class="line">        <span class="keyword">this</span>.a = a; <span class="comment">// 【2】当前对象，引用成员 </span></span><br><span class="line">        <span class="keyword">this</span>.name = name; </span><br><span class="line">    } </span><br><span class="line">    <span class="function"><span class="keyword">public</span> ThisDemo <span class="title">setA</span><span class="params">(<span class="keyword">int</span> a)</span></span>{ </span><br><span class="line">        <span class="keyword">this</span>.a = a; </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>; <span class="comment">// 【3】返回当前对象 </span></span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ThisDemo <span class="title">setName</span><span class="params">(String name)</span></span>{</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ThisDemo <span class="title">inc</span><span class="params">()</span></span>{</span><br><span class="line">    	i++;</span><br><span class="line">   	 <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        ThisDemo t1 = <span class="keyword">new</span> ThisDemo();</span><br><span class="line">        t1.setA(<span class="number">100</span>).setName(<span class="string">"guo"</span>).inc().inc();</span><br><span class="line">        System.out.println(t1.i);</span><br><span class="line">        ThisDemo t2 = <span class="keyword">new</span> ThisDemo(<span class="number">2</span>, <span class="string">"Tom"</span>);</span><br><span class="line">        t2.inc().setA(<span class="number">8</span>).inc().inc(); <span class="comment">//【4】链式调用</span></span><br><span class="line">        System.out.println(t2.i);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/30/MGCsdqjI5b4Y3iN.png" alt="栗子" title="">
+                </div>
+                <div class="image-caption">栗子</div>
+            </figure>
 
-<p>特别注意，案例中的【3】和【4】。</p>
 <hr>
-<p><font size="1">注：前面的几篇Java笔记中也有提到this，后来上课老师再小结this关键词，结合前面的笔记食用效果更佳。</font></p>
+<p>以下内容转载于 <a href="https://www.cnblogs.com/chuijingjing/p/9405598.html" target="_blank" rel="noopener">Java中的&lt;&lt; 和 &gt;&gt; 和 &gt;&gt;&gt; 详细分析</a> </p>
+<h1 id="详细分析"><a href="#详细分析" class="headerlink" title="详细分析"></a>详细分析</h1><p><strong>&lt;&lt;表示左移，不分正负数，低位补0；</strong>　</p>
+<p>注：以下数据类型默认为byte-8位</p>
+<p>左移时不管正负，低位补0</p>
+<p>正数：<font color="blue"><strong>r = 20 &lt;&lt; 2</strong></font></p>
+<p>　　20的二进制补码：<strong>0001 0100</strong></p>
+<p>　　向左移动两位后：<strong>0101 0000</strong></p>
+<p>　　　　  　　结果：<strong>r = 80</strong></p>
+<p>负数：<font color="blue"><strong>r = -20 &lt;&lt; 2</strong></font></p>
+<p>　　-20 的二进制原码 ：<strong>1001 0100</strong></p>
+<p>　　-20 的二进制反码 ：<strong>1110 1011</strong></p>
+<p>　　-20 的二进制补码 ：<strong>1110 1100</strong></p>
+<p>　　左移两位后的补码：<strong>1011 0000</strong></p>
+<p>　　　　　　　　反码：<strong>1010 1111</strong></p>
+<p>　　　　　　　　原码：<strong>1101 0000</strong></p>
+<p>　　　　　　　　结果：<strong>r = -80</strong></p>
+<p><strong>&gt;&gt;表示右移，如果该数为正，则高位补0，若为负数，则高位补1；</strong></p>
+<p>注：以下数据类型默认为byte-8位</p>
+<p>正数：<font color="blue"><strong>r = 20 &gt;&gt; 2</strong></font></p>
+<p>　　20的二进制补码：<strong>0001 0100</strong></p>
+<p>　　向右移动两位后：<strong>0000 0101</strong></p>
+<p>　　　　　　　结果：<strong>r = 5</strong></p>
+<p>负数：<font color="blue"><strong>r = -20 &gt;&gt; 2</strong></font></p>
+<p>　　-20 的二进制原码 ：<strong>1001 0100</strong></p>
+<p>　　-20 的二进制反码 ：<strong>1110 1011</strong></p>
+<p>　　-20 的二进制补码 ：<strong>1110 1100</strong> </p>
+<p>　　右移两位后的补码：<strong>1111 1011</strong> </p>
+<p>　　　　　　　　反码：<strong>1111 1010</strong></p>
+<p>　　　　　　　　原码：<strong>1000 0101</strong></p>
+<p>　　　　　　　　结果：<strong>r = -5</strong></p>
+<p><strong>&gt;&gt;&gt;表示无符号右移，也叫逻辑右移，即若该数为正，则高位补0，而若该数为负数，则右移后高位同样补0</strong></p>
+<p>正数：　<font color="blue"><strong>r = 20 &gt;&gt;&gt; 2</strong></font></p>
+<p>　　　　的结果与 r = 20 &gt;&gt; 2 相同；</p>
+<p>负数：　<font color="blue"><strong>r = -20 &gt;&gt;&gt; 2</strong></font></p>
+<p>注：以下数据类型默认为int 32位</p>
+<p>　　-20:源码：<strong>10000000 00000000 00000000 00010100</strong></p>
+<p>　　　　反码：<strong>11111111 11111111  11111111  11101011</strong></p>
+<p>　　　　补码：<strong>11111111 11111111  11111111  11101100</strong></p>
+<p>　　　　右移：<strong>00111111 11111111  11111111  11111011</strong></p>
+<p>　　　　结果：<strong>r = 1073741819</strong></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -272,12 +324,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新：<time datetime="2019-11-29T17:13:21.149Z" itemprop="dateUpdated">2019-11-30 01:13:21</time>
+    最后更新：<time datetime="2019-11-29T17:14:55.054Z" itemprop="dateUpdated">2019-11-30 01:14:55</time>
 </span>
 
 
         
-        原文链接：<a href="/blog/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97/" target="_blank" rel="external">http://yoursite.com/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97/</a>
+        原文链接：<a href="/blog/2019/11/30/JaJava%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/" target="_blank" rel="external">http://yoursite.com/2019/11/30/JaJava%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/</a>
         
     </div>
     <footer>
@@ -309,7 +361,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97/&title=《Java笔记——this关键字》 — MelodyHub&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/30/JaJava%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/&title=《Java中的<<、>>和>>>》 — MelodyHub&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -319,25 +371,27 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97/&title=《Java笔记——this关键字》 — MelodyHub&source=this 关键字三个形式上的用途，但本质上就两个：
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/30/JaJava%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/&title=《Java中的<<、>>和>>>》 — MelodyHub&source=左移
+左移运算符 &lt;&lt; 
+👉使指定值的所有位都左移规定的次数
+左移m&lt;&lt;n，代表把数字m在无溢出的前提下乘以2的n次方　 
 
-调用重载的其他构造方法：放置在构造方法体首行的this()或this(实参列表)
-作为当前对象，引用..." data-title=" QQ">
+右..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/30/JaJava%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java笔记——this关键字》 — MelodyHub&url=http://yoursite.com/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java中的<<、>>和>>>》 — MelodyHub&url=http://yoursite.com/2019/11/30/JaJava%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/30/JaJava%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -357,21 +411,13 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/blog/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94static%E5%85%B3%E9%94%AE%E5%AD%97/" id="post-prev" class="post-nav-link">
-        <h4 class="title" >
-          上一篇：Java笔记——static关键字
-        </h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/blog/2019/11/26/%E6%B5%85%E8%B0%88SQLServer%E8%A7%A6%E5%8F%91%E5%99%A8/" id="post-next" class="post-nav-link">
-        <h4 class="title" data-hover="下一篇：对SQL的触发器的浅理解">下一篇：对SQL的触发器的浅理解</h4>
+      <a href="/blog/2019/11/30/Java%E2%80%94%E7%94%A8%E6%9C%80%E6%9C%89%E6%95%88%E7%8E%87%E7%9A%84%E6%96%B9%E6%B3%95%E8%AE%A1%E7%AE%972%E4%B9%98%E4%BB%A58/" id="post-next" class="post-nav-link">
+        <h4 class="title" data-hover="下一篇：Java用最有效率的方法计算2乘以8">下一篇：Java用最有效率的方法计算2乘以8</h4>
       </a>
     </div>
   
@@ -500,7 +546,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97/&title=《Java笔记——this关键字》 — MelodyHub&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/30/JaJava%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/&title=《Java中的<<、>>和>>>》 — MelodyHub&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -510,25 +556,27 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97/&title=《Java笔记——this关键字》 — MelodyHub&source=this 关键字三个形式上的用途，但本质上就两个：
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/30/JaJava%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/&title=《Java中的<<、>>和>>>》 — MelodyHub&source=左移
+左移运算符 &lt;&lt; 
+👉使指定值的所有位都左移规定的次数
+左移m&lt;&lt;n，代表把数字m在无溢出的前提下乘以2的n次方　 
 
-调用重载的其他构造方法：放置在构造方法体首行的this()或this(实参列表)
-作为当前对象，引用..." data-title=" QQ">
+右..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/30/JaJava%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java笔记——this关键字》 — MelodyHub&url=http://yoursite.com/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java中的<<、>>和>>>》 — MelodyHub&url=http://yoursite.com/2019/11/30/JaJava%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/30/JaJava%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -539,7 +587,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p class="wechatshare">扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADOElEQVR42u3awY4aMRAEUP7/pzdSTpHIkKr2oGDz5oQGlvEzh97u8uMRXz+/r6s7z6//vJLPP//t1Z3nNVy9e8OFjY2NvQn75+WVLy7foKvl5ivJN/1ya7CxsbGPY78uWu3WrJTAd38GGxsb+5vZ+dYkmzUrlnnDg42NjY3djoraxmM2rvrPdRsbGxv7g9n5KCfBzEZIswDg7bM0bGxs7I9nt0HvJ79+Y76NjY2N/ZHs2dAn+ac/eXc2qGqL1l+eiI2NjX0QOxnrtI1BHvTm4/58PUX8jI2NjX0Q+zU+L2MrxzGTJ66sARsbG/tUdt5mtI3KLDDIy1570OeyA8PGxsbenJ23Aclj2rI3C3Hb4z5RGcPGxsbelp2QVu6sFL82qCjGT9jY2NjHsZO2YaWotNHC7Il5GcbGxsb+BvZsoD/biJVwop32FwvCxsbG3oSdLKUtOe84djMbRRUxBjY2NvYR7DwMyBfXbt8s6J0dKsLGxsY+g51/NI9185KTR7x5zBBFEdjY2NgHsfNikBzKSbZjNmBqA93om7GxsbGPY88GNDl4drwmb3XqwAAbGxv7IPZKEpqHB7NYd6W9SYoiNjY29u7sZJQ/Q84O98zu560INjY29jew8wKzHifkbc9dBbVIRbCxsbE3YedtQ7417bGe2YCpjS6wsbGxT2WvjO+TLVspPG0JLKJobGxs7IPY9TGXsv3Is4hZgrEU6GJjY2MfxG6HQXdFsHcduGx/EmxsbOyT2Cuj/Jzagle2OyqN2NjY2AexixFMMKyfFaHZocyW/Y+DO9jY2Njbsu9qP9oRVT4Gyjc6+WRdt7GxsbE/nt0Obtp3Z0Xx3uM7lyvExsbGPoI97F3iqHX2zbPCWYQE2NjY2MexW+Ts2E0eQqyMkIpgABsbG/sgdn7lg6eVCPmuo0LFOAkbGxt7W3Z+5SP+BH/XmCkvjUM8NjY29ibs9fIzG+6v8GZHgh6zXwkbGxt7E3bbEswi3nZzVypwlG9jY2Njfxk7L2Btg9GOmVaO8mBjY2Njrw/037HF+WqxsbGxT2Wvj/XrZqAcUSVbn2wZNjY29nns9aC3vdPeb9lFQ4KNjY29N/sXDsfUmFPTcscAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACt0lEQVR42u3awY7iMBAEUP7/p1lpr7OBqu6YYaXnEwIy8ctItqnuxyMez7/j5zs/x9X3X/+1/F6PEwMPDw9vNPVkulfvXN34aqKbOeTfx8PDwzvNez25ZzBeL+LtI0h40ZaDh4eH96u85HVOzR8BHh4e3v/OmyUAm3AhDzvw8PDwPsnbx7L5tW3Y8aGsBQ8PDy/mtQWwb3h9sL6Hh4eHt6iq74/F+ZaQhxfFbPHw8PAO8PKC02zD2DyCdjMofjHg4eHhLXizyCDZGDbLfV5ae/MpHh4e3mFeu1i3C/qs6NW2IPzjFwMeHh7erbx8iW/boXJM0nrVtq7i4eHhnePlx9Y2Tj0R0SYVrmJvwcPDwxvx8hvsm7TaSbdp9LCnDA8PD6/ktZHB7Li82X7ykluUteDh4eGtee1CnBfA8qaEJMhYHdzx8PDwbuXlwWhLzYPd2bXR5oSHh4d3gDc7EG8O3/c+xPyojYeHh3eClxxb23A2iR7aNXwYZODh4eHdymtLWW3LVHt8Tx5ifi88PDy8z/Py0tR+Kvt2q3pjwMPDwyt5yfF30yb1+iA+O2QX88TDw8M7wJvd8l5qu9znzV54eHh4J3jtxjALVfMn3TYZ4OHh4X2et7k4L321JascNqzv4eHh4a15eUNA20wwayCYhReXmwoeHh7erbxnMNpJt+1Z7UE8wePh4eF9kvfmgk2HQrBJtOA3Ww4eHh7eAV4Squbl+VnAmmxIs3AEDw8P7wTvWY67MPeWxy7vgoeHh3eAl48iAogj3dmB+64Hh4eHh7fhnWgFmEW3eVRR/H/w8PDwjvHaYGJWGGtjjtmxGw8PD+97ePlWsSmt5Ut/VKjDw8PD+xpeHi7ki3jeblW0LODh4eEd423CiDwaaOPgOno4EePi4eHh3VQAa0PbfbSxZ+Ph4eGteX8AITQDJ1t2fd0AAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
