@@ -6,13 +6,13 @@
     
     
     
-    <title>网页视频测试 | MelodyHub | 你用走 可是我用跑</title>
+    <title>Java中的&lt;&lt;、&gt;&gt;和&gt;&gt;&gt; | MelodyHub | 你用走 可是我用跑</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     
     <meta name="theme-color" content="#77AAFF">
     
     
-    <meta name="keywords" content="Hexo">
+    <meta name="keywords" content="Java,笔记">
     
     
 
@@ -39,16 +39,18 @@
 
 
     
-    <meta name="description" content="浏览测试效果👇">
-<meta name="keywords" content="Hexo">
+    <meta name="description" content="左移 左移运算符 &amp;lt;&amp;lt;  👉使指定值的所有位都左移规定的次数 左移m&amp;lt;&amp;lt;n，代表把数字m在无溢出的前提下乘以2的n次方　   右移 右移运算符 &amp;gt;&amp;gt; 👉 使指定值的所有位都右移规定的次数 右移m&amp;gt;&amp;gt;n 代表把数字m除以2的n次方，原来是正数的还是正数，负数还是负数 注意，如果是单数，也就是二进制末位为1，则结果是将m除以2的n次方的整数商   无">
+<meta name="keywords" content="Java,笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网页视频测试">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;08&#x2F;%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95&#x2F;index.html">
+<meta property="og:title" content="Java中的&lt;&lt;、&gt;&gt;和&gt;&gt;&gt;">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;Java%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C&#x2F;index.html">
 <meta property="og:site_name" content="MelodyHub">
-<meta property="og:description" content="浏览测试效果👇">
+<meta property="og:description" content="左移 左移运算符 &amp;lt;&amp;lt;  👉使指定值的所有位都左移规定的次数 左移m&amp;lt;&amp;lt;n，代表把数字m在无溢出的前提下乘以2的n次方　   右移 右移运算符 &amp;gt;&amp;gt; 👉 使指定值的所有位都右移规定的次数 右移m&amp;gt;&amp;gt;n 代表把数字m除以2的n次方，原来是正数的还是正数，负数还是负数 注意，如果是单数，也就是二进制末位为1，则结果是将m除以2的n次方的整数商   无">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-25T14:12:49.754Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;30&#x2F;MGCsdqjI5b4Y3iN.png">
+<meta property="og:updated_time" content="2019-11-29T17:14:55.054Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;30&#x2F;MGCsdqjI5b4Y3iN.png">
     
         <link rel="alternate" type="application/atom+xml" title="MelodyHub" href="/blog/atom.xml">
     
@@ -158,7 +160,7 @@
         <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">网页视频测试</div>
+        <div class="flex-col header-title ellipsis">Java中的&lt;&lt;、&gt;&gt;和&gt;&gt;&gt;</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -196,15 +198,22 @@
 
 <div class="container body-wrap">
     
-<article id="post-网页视频测试"
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#左移"><span class="post-toc-number">1.</span> <span class="post-toc-text">左移</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#右移"><span class="post-toc-number">2.</span> <span class="post-toc-text">右移</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#无符号右移"><span class="post-toc-number">3.</span> <span class="post-toc-text">无符号右移</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Demo"><span class="post-toc-number">4.</span> <span class="post-toc-text">Demo</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#详细分析"><span class="post-toc-number">5.</span> <span class="post-toc-text">详细分析</span></a></li></ol>
+        </nav>
+    </aside>
+   
+<article id="post-Java中的、-和"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">网页视频测试</h1>
+        <h1 class="post-card-title">Java中的<<、>>和>>></h1>
         <div class="post-meta">
             <i class="icon icon-lg icon-calendar-o"></i>
             发表于
-            <time class="post-time" title="2019-11-08 00:00:00" datetime="2019-11-07T16:00:00.000Z"  itemprop="datePublished">2019-11-08</time>
+            <time class="post-time" title="2019-11-30 00:33:38" datetime="2019-11-29T16:33:38.000Z"  itemprop="datePublished">2019-11-30</time>
 
             <br id="mybreak"/>
             
@@ -223,35 +232,73 @@
         </div>
         <div class="post-count-custom">
             <i class="icon icon-lg icon-comment-o"></i>
-            阅读本文可能花费您&nbsp;<span class="post-count">1</span>&nbsp;分钟
+            阅读本文可能花费您&nbsp;<span class="post-count">2</span>&nbsp;分钟
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>浏览测试效果👇</p>
+            <h1 id="左移"><a href="#左移" class="headerlink" title="左移"></a>左移</h1><ul>
+<li><strong>左移运算符</strong> <strong><code>&lt;&lt;</code></strong> </li>
+<li>👉使指定值的所有位都左移规定的次数</li>
+<li>左移m&lt;&lt;n，代表把数字m在无溢出的前提下<strong>乘以2的n次方</strong>　 </li>
+</ul>
+<h1 id="右移"><a href="#右移" class="headerlink" title="右移"></a>右移</h1><ul>
+<li><strong>右移运算符</strong> <strong><code>&gt;&gt;</code></strong></li>
+<li>👉 使指定值的所有位都右移规定的次数</li>
+<li>右移m&gt;&gt;n 代表把数字m除以2的n次方，原来是正数的还是正数，负数还是负数</li>
+<li>注意，如果是单数，也就是二进制末位为1，则结果是<strong>将m除以2的n次方的整数商</strong> </li>
+</ul>
+<h1 id="无符号右移"><a href="#无符号右移" class="headerlink" title="无符号右移"></a>无符号右移</h1><p>  <strong>无符号右移运算符</strong> <strong><code>&gt;&gt;&gt;</code></strong></p>
+<p>👉<strong>同右移，但是结果全变正数</strong></p>
 <a id="more"></a>
 
-<p>video大窗口</p>
-<!--全属性-->
+<h1 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/30/MGCsdqjI5b4Y3iN.png" alt="栗子" title="">
+                </div>
+                <div class="image-caption">栗子</div>
+            </figure>
 
-<p><video src="//f.video.weibocdn.com/000cbp8Elx07yOInQ0wU01041209MBbv0E040.mp4?label=mp4_720p&amp;template=1280x720.25.0&amp;trans_finger=1f0da16358befad33323e3a1b7f95fc9&amp;Expires=1574694219&amp;ssig=teAXjHmR3d&amp;KID=unistore,video" type="video/mp4" poster="http://wx3.sinaimg.cn/orj480/8e2d6e12gy1g989bsg7uaj20u00gw4c7.jpg" controls="controls" loop="-1"><!--需要自动播放，加上controls="controls"即可--><br></video></p>
-<p>video小窗口</p>
-<!--优雅降级-->
-<video width="320" height="240" controls="">
-    <!--兼容IE9+、Chrome和Safari-->
-    <source src="//f.video.weibocdn.com/000cbp8Elx07yOInQ0wU01041209MBbv0E040.mp4?label=mp4_720p&amp;template=1280x720.25.0&amp;trans_finger=1f0da16358befad33323e3a1b7f95fc9&amp;Expires=1574694219&amp;ssig=teAXjHmR3d&amp;KID=unistore,video" type="video/mp4">
-    <!--兼容Firefox、Opera和Chrome-->
-    <source src="movie.ogg" type="video/ogg">
-    <!--兼容Firefox、Opera和Chrome-->
-    <source src="movie.webm" type="video/webm">
-    <object data="movie.mp4" width="320" height="240">
-        <embed src="movie.swf" width="320" height="240">
-    </object> 
-</video>
-
-<p>embed窗口<br><embed src="//f.video.weibocdn.com/000cbp8Elx07yOInQ0wU01041209MBbv0E040.mp4?label=mp4_720p&amp;template=1280x720.25.0&amp;trans_finger=1f0da16358befad33323e3a1b7f95fc9&amp;Expires=1574694219&amp;ssig=teAXjHmR3d&amp;KID=unistore,video" type="video/mp4"> <br>iframe窗口</p>
-<iframe frameborder="0" src="//f.video.weibocdn.com/000cbp8Elx07yOInQ0wU01041209MBbv0E040.mp4?label=mp4_720p&amp;template=1280x720.25.0&amp;trans_finger=1f0da16358befad33323e3a1b7f95fc9&amp;Expires=1574694219&amp;ssig=teAXjHmR3d&amp;KID=unistore,video" allowfullscreen=""></iframe>
-<iframe src="//player.bilibili.com/player.html?aid=76560081&amp;cid=130958803&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe><br>
-测试完毕
-
+<hr>
+<p>以下内容转载于 <a href="https://www.cnblogs.com/chuijingjing/p/9405598.html" target="_blank" rel="noopener">Java中的&lt;&lt; 和 &gt;&gt; 和 &gt;&gt;&gt; 详细分析</a> </p>
+<h1 id="详细分析"><a href="#详细分析" class="headerlink" title="详细分析"></a>详细分析</h1><p><strong>&lt;&lt;表示左移，不分正负数，低位补0；</strong>　</p>
+<p>注：以下数据类型默认为byte-8位</p>
+<p>左移时不管正负，低位补0</p>
+<p>正数：<font color="blue"><strong>r = 20 &lt;&lt; 2</strong></font></p>
+<p>　　20的二进制补码：<strong>0001 0100</strong></p>
+<p>　　向左移动两位后：<strong>0101 0000</strong></p>
+<p>　　　　  　　结果：<strong>r = 80</strong></p>
+<p>负数：<font color="blue"><strong>r = -20 &lt;&lt; 2</strong></font></p>
+<p>　　-20 的二进制原码 ：<strong>1001 0100</strong></p>
+<p>　　-20 的二进制反码 ：<strong>1110 1011</strong></p>
+<p>　　-20 的二进制补码 ：<strong>1110 1100</strong></p>
+<p>　　左移两位后的补码：<strong>1011 0000</strong></p>
+<p>　　　　　　　　反码：<strong>1010 1111</strong></p>
+<p>　　　　　　　　原码：<strong>1101 0000</strong></p>
+<p>　　　　　　　　结果：<strong>r = -80</strong></p>
+<p><strong>&gt;&gt;表示右移，如果该数为正，则高位补0，若为负数，则高位补1；</strong></p>
+<p>注：以下数据类型默认为byte-8位</p>
+<p>正数：<font color="blue"><strong>r = 20 &gt;&gt; 2</strong></font></p>
+<p>　　20的二进制补码：<strong>0001 0100</strong></p>
+<p>　　向右移动两位后：<strong>0000 0101</strong></p>
+<p>　　　　　　　结果：<strong>r = 5</strong></p>
+<p>负数：<font color="blue"><strong>r = -20 &gt;&gt; 2</strong></font></p>
+<p>　　-20 的二进制原码 ：<strong>1001 0100</strong></p>
+<p>　　-20 的二进制反码 ：<strong>1110 1011</strong></p>
+<p>　　-20 的二进制补码 ：<strong>1110 1100</strong> </p>
+<p>　　右移两位后的补码：<strong>1111 1011</strong> </p>
+<p>　　　　　　　　反码：<strong>1111 1010</strong></p>
+<p>　　　　　　　　原码：<strong>1000 0101</strong></p>
+<p>　　　　　　　　结果：<strong>r = -5</strong></p>
+<p><strong>&gt;&gt;&gt;表示无符号右移，也叫逻辑右移，即若该数为正，则高位补0，而若该数为负数，则右移后高位同样补0</strong></p>
+<p>正数：　<font color="blue"><strong>r = 20 &gt;&gt;&gt; 2</strong></font></p>
+<p>　　　　的结果与 r = 20 &gt;&gt; 2 相同；</p>
+<p>负数：　<font color="blue"><strong>r = -20 &gt;&gt;&gt; 2</strong></font></p>
+<p>注：以下数据类型默认为int 32位</p>
+<p>　　-20:源码：<strong>10000000 00000000 00000000 00010100</strong></p>
+<p>　　　　反码：<strong>11111111 11111111  11111111  11101011</strong></p>
+<p>　　　　补码：<strong>11111111 11111111  11111111  11101100</strong></p>
+<p>　　　　右移：<strong>00111111 11111111  11111111  11111011</strong></p>
+<p>　　　　结果：<strong>r = 1073741819</strong></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -277,12 +324,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新：<time datetime="2019-11-25T14:12:49.754Z" itemprop="dateUpdated">2019-11-25 22:12:49</time>
+    最后更新：<time datetime="2019-11-29T17:14:55.054Z" itemprop="dateUpdated">2019-11-30 01:14:55</time>
 </span>
 
 
         
-        原文链接：<a href="/blog/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/" target="_blank" rel="external">http://yoursite.com/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/</a>
+        原文链接：<a href="/blog/2019/11/30/Java%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/" target="_blank" rel="external">http://yoursite.com/2019/11/30/Java%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/</a>
         
     </div>
     <footer>
@@ -304,7 +351,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Hexo/" rel="tag">Hexo</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
 
 
             
@@ -314,7 +361,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/&title=《网页视频测试》 — MelodyHub&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/30/Java%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/&title=《Java中的<<、>>和>>>》 — MelodyHub&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -324,22 +371,27 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/&title=《网页视频测试》 — MelodyHub&source=浏览测试效果👇" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/30/Java%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/&title=《Java中的<<、>>和>>>》 — MelodyHub&source=左移
+左移运算符 &lt;&lt; 
+👉使指定值的所有位都左移规定的次数
+左移m&lt;&lt;n，代表把数字m在无溢出的前提下乘以2的n次方　 
+
+右..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/30/Java%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《网页视频测试》 — MelodyHub&url=http://yoursite.com/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java中的<<、>>和>>>》 — MelodyHub&url=http://yoursite.com/2019/11/30/Java%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/30/Java%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -359,21 +411,13 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/blog/2019/11/08/%E5%8D%9A%E5%AE%A2v1.4/" id="post-prev" class="post-nav-link">
-        <h4 class="title" >
-          上一篇：博客v1.4上线
-        </h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/blog/2019/11/07/Hexo+GitHub/" id="post-next" class="post-nav-link">
-        <h4 class="title" data-hover="下一篇：使用Hexo+GitHub建站">下一篇：使用Hexo+GitHub建站</h4>
+      <a href="/blog/2019/11/30/Java%E2%80%94%E7%94%A8%E6%9C%80%E6%9C%89%E6%95%88%E7%8E%87%E7%9A%84%E6%96%B9%E6%B3%95%E8%AE%A1%E7%AE%972%E4%B9%98%E4%BB%A58/" id="post-next" class="post-nav-link">
+        <h4 class="title" data-hover="下一篇：Java用最有效率的方法计算2乘以8">下一篇：Java用最有效率的方法计算2乘以8</h4>
       </a>
     </div>
   
@@ -502,7 +546,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/&title=《网页视频测试》 — MelodyHub&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/30/Java%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/&title=《Java中的<<、>>和>>>》 — MelodyHub&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -512,22 +556,27 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/&title=《网页视频测试》 — MelodyHub&source=浏览测试效果👇" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/30/Java%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/&title=《Java中的<<、>>和>>>》 — MelodyHub&source=左移
+左移运算符 &lt;&lt; 
+👉使指定值的所有位都左移规定的次数
+左移m&lt;&lt;n，代表把数字m在无溢出的前提下乘以2的n次方　 
+
+右..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/30/Java%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《网页视频测试》 — MelodyHub&url=http://yoursite.com/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java中的<<、>>和>>>》 — MelodyHub&url=http://yoursite.com/2019/11/30/Java%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/30/Java%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -538,7 +587,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p class="wechatshare">扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADJklEQVR42u3aS27bQBAFQN//0so2gGz5vWkqEDvFlUFJw6nhot2fr6/4ejxdz/f/vpN/mjzr+ZvJOhdc2NjY2DdhP15eyVYSwOvtvj6sds3k4LCxsbH3sX96QB6W2scnwSm5k78AbGxsbOzXgeTsyPIAmR8lNjY2NnYbJCZpSbLaB8VtbGxs7A9m54FhAstbAklV/x/V0rCxsbE/np13RT//77f0t7GxsbE/mP0orzao5OucNRsOFdjY2NiL2HkASJKKfJ02/cgbCfn+sbGxsXezk6XzQZy2uN+O+LTNaWxsbOx97LMglIPb45sHwjqhwsbGxr4tux12aRkt7N1rYmNjY29lJ//uT5KHPFxdzPvpFWJjY2MvYreby4tHeRtgcvR52eib+9jY2Ngr2Mkm8kXzOtZZsyFJnCI8NjY29iL22eBjGwUmDdqr0pJvvo+NjY29gt0uVIw2DgYo86bF2a+wsbGxN7HfV/pvQ1TeGEj2UA9cYmNjY9+WnQewfDTzLKWZpyvFCtjY2Njr2PkDJqlC3lrOQ2neiv6mqISNjY29gl1P9wRbPCsh5e2Btj1cDO5gY2Nj35Cd//s+P5o2UWmLStEbbjvP2NjY2DdhnzVu29J8m2wkgTAHFxkYNjY29q3YZ0Gl3cqEdPZp3jDAxsbG3sROmgR5qGhD2qRgdHYHGxsbewd71CgtWwtte7h9Y8UrwcbGxl7EvioZyIPTfP22MfzLytjY2Ng3Z7eN1WvHKOcpUN6EwMbGxt7N/iqvNoGZpy5Xlb2wsbGx97HzJfISfH5kZ+3kNnBGRSVsbGzsm7Mnj2krWG1YOjvE6ECxsbGx17EnASxPSCbN2rO2BDY2Nvb/w27L95MyUFv0n1/Y2NjYW9mP8kpSl/y3Z43bfJTnl/eMjY2NvYI9iXv1oExwv008kqNsS1rY2NjYd2S/L2idhcarhnWKWho2Njb2Cnay9FmwmTDylCMPw9jY2NjYbZM1P8SzglE7QoSNjY2NnZeKRiM1bUBqDw4bGxt7HXte7sk/zQ8xWT/fMzY2NvZW9lmoaI9p0gzI2xJ5oxobGxt7BfsP8xRVUOgnlOkAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACq0lEQVR42u3aSW7DQAwEQP//0wmQUwBvzWVsHUonIYikKR1Eujm3W3z8/B3358lfkvPXz/1/3E4ceHh4eK2lPzt6pPs7b60qXzMeHh7eaV5SDJLlJotI7vn6FSdrxsPDw7sCb9L4vga8viopVHh4eHjX5M1b5B4VDw8P75q83o///D551Pu1rAUPDw8v5k0+6986/9B8Dw8PD684Va9+cKtjs150W1gtHh4e3gFevgmgF7xWNxDki87jCTw8PLxd3uitFItBdfPBJIZ4UPfw8PDwDvAmjPy8R21uX8DDw8M7xqtujaoO+CelIn/Wg7/j4eHhHeDlcWo1lt3aXpDHJeWsBQ8PD6/Fmw/vy21uUEJyJB4eHt51eEkokC99PnJL1vDmFwMeHh7eEq/XHEfDp+Kie1flRQUPDw9vl5eHEZMBVaEVjqPh5RgXDw8PbzAAqzaveSHZ+mJHLxQPDw/vMG83ok1eWaHfL64BDw8P7zQvf/zCI4N79uKPB+vHw8PDO8CbhAv5I6vt9aRBHzXZeHh4eGNeHpvOG+68eIwKGB4eHt4SbxLF9u6Qf9x793ww38PDw8Nb4vXGVPly80957wW9KTZ4eHh4h3nzjQV5m7tbJJ5S8fDw8I7xeoFsLwKuDtLyq6KtA3h4eHhLvN7DckA+SMsb96Rs4OHh4Z3g5UOv/NNcjYB7W7UKLxEPDw9vlZdfcHrRhUY5/x88PDy8j/CivQbF8Vg1nO0NwJ5uHcDDw8Nb5eXHJIyoNtzluGF+4OHh4RV5k5B0MkKrlqJmYcDDw8M7xsuLQW9b1W5KkLfpeHh4eN/l5QFugu/FGfmrx8PDw7sOL29zyx/xePtCoRTh4eHhHePlgcI8lp0M2JKgBA8PD+80rzoAyz/xSTOdB8STjVl4eHh4S7xfcLJK31ZPkrIAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 

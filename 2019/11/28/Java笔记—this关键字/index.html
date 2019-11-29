@@ -6,13 +6,13 @@
     
     
     
-    <title>网页视频测试 | MelodyHub | 你用走 可是我用跑</title>
+    <title>Java笔记—this关键字 | MelodyHub | 你用走 可是我用跑</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     
     <meta name="theme-color" content="#77AAFF">
     
     
-    <meta name="keywords" content="Hexo">
+    <meta name="keywords" content="Java,笔记">
     
     
 
@@ -39,15 +39,15 @@
 
 
     
-    <meta name="description" content="浏览测试效果👇">
-<meta name="keywords" content="Hexo">
+    <meta name="description" content="this 关键字三个形式上的用途，但本质上就两个：  调用重载的其他构造方法：放置在构造方法体首行的this()或this(实参列表) 作为当前对象，引用成员（数据、方法等）：区分同名变量等 作为当前对象，方法返回当前对象的引用，形成链式调用">
+<meta name="keywords" content="Java,笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网页视频测试">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;08&#x2F;%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95&#x2F;index.html">
+<meta property="og:title" content="Java笔记—this关键字">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;28&#x2F;Java%E7%AC%94%E8%AE%B0%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97&#x2F;index.html">
 <meta property="og:site_name" content="MelodyHub">
-<meta property="og:description" content="浏览测试效果👇">
+<meta property="og:description" content="this 关键字三个形式上的用途，但本质上就两个：  调用重载的其他构造方法：放置在构造方法体首行的this()或this(实参列表) 作为当前对象，引用成员（数据、方法等）：区分同名变量等 作为当前对象，方法返回当前对象的引用，形成链式调用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-25T14:12:49.754Z">
+<meta property="og:updated_time" content="2019-11-29T17:36:57.692Z">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="MelodyHub" href="/blog/atom.xml">
@@ -158,7 +158,7 @@
         <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">网页视频测试</div>
+        <div class="flex-col header-title ellipsis">Java笔记—this关键字</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -196,15 +196,22 @@
 
 <div class="container body-wrap">
     
-<article id="post-网页视频测试"
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#this-关键字"><span class="post-toc-number">1.</span> <span class="post-toc-text">this 关键字</span></a></li></ol>
+        </nav>
+    </aside>
+   
+<article id="post-Java笔记—this关键字"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">网页视频测试</h1>
+        <h1 class="post-card-title">Java笔记—this关键字</h1>
         <div class="post-meta">
             <i class="icon icon-lg icon-calendar-o"></i>
             发表于
-            <time class="post-time" title="2019-11-08 00:00:00" datetime="2019-11-07T16:00:00.000Z"  itemprop="datePublished">2019-11-08</time>
+            <time class="post-time" title="2019-11-28 17:11:18" datetime="2019-11-28T09:11:18.000Z"  itemprop="datePublished">2019-11-28</time>
 
             <br id="mybreak"/>
             
@@ -226,32 +233,20 @@
             阅读本文可能花费您&nbsp;<span class="post-count">1</span>&nbsp;分钟
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>浏览测试效果👇</p>
+            <h1 id="this-关键字"><a href="#this-关键字" class="headerlink" title="this 关键字"></a>this 关键字</h1><p>三个形式上的用途，但本质上就两个：</p>
+<ul>
+<li><font color="red">调用重载的其他构造方法</font>：放置在构造方法体首行的this()或this(实参列表)</li>
+<li>作为当前对象，<font color="red">引用成员</font>（数据、方法等）：区分同名变量等</li>
+<li>作为当前对象，方法返回当前对象的引用，形成<font color="red">链式调用</font></li>
+</ul>
 <a id="more"></a>
 
-<p>video大窗口</p>
-<!--全属性-->
+<p>案 例 ：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThisDemo</span> </span>{ </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> a = <span class="number">1</span>; </span><br><span class="line">    <span class="keyword">private</span> String name = <span class="string">"good"</span>; </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> i = <span class="number">0</span>; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ThisDemo</span><span class="params">()</span></span>{ </span><br><span class="line">        System.out.println(<span class="string">"无参构造子"</span> + <span class="keyword">this</span>); </span><br><span class="line">    } </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ThisDemo</span><span class="params">(<span class="keyword">int</span> a, String name)</span></span>{ </span><br><span class="line">        <span class="keyword">this</span>(); <span class="comment">// 【1】调用无参构造子 </span></span><br><span class="line">        <span class="keyword">this</span>.a = a; <span class="comment">// 【2】当前对象，引用成员 </span></span><br><span class="line">        <span class="keyword">this</span>.name = name; </span><br><span class="line">    } </span><br><span class="line">    <span class="function"><span class="keyword">public</span> ThisDemo <span class="title">setA</span><span class="params">(<span class="keyword">int</span> a)</span></span>{ </span><br><span class="line">        <span class="keyword">this</span>.a = a; </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>; <span class="comment">// 【3】返回当前对象 </span></span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ThisDemo <span class="title">setName</span><span class="params">(String name)</span></span>{</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ThisDemo <span class="title">inc</span><span class="params">()</span></span>{</span><br><span class="line">    	i++;</span><br><span class="line">   	 <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        ThisDemo t1 = <span class="keyword">new</span> ThisDemo();</span><br><span class="line">        t1.setA(<span class="number">100</span>).setName(<span class="string">"guo"</span>).inc().inc();</span><br><span class="line">        System.out.println(t1.i);</span><br><span class="line">        ThisDemo t2 = <span class="keyword">new</span> ThisDemo(<span class="number">2</span>, <span class="string">"Tom"</span>);</span><br><span class="line">        t2.inc().setA(<span class="number">8</span>).inc().inc(); <span class="comment">//【4】链式调用</span></span><br><span class="line">        System.out.println(t2.i);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<p><video src="//f.video.weibocdn.com/000cbp8Elx07yOInQ0wU01041209MBbv0E040.mp4?label=mp4_720p&amp;template=1280x720.25.0&amp;trans_finger=1f0da16358befad33323e3a1b7f95fc9&amp;Expires=1574694219&amp;ssig=teAXjHmR3d&amp;KID=unistore,video" type="video/mp4" poster="http://wx3.sinaimg.cn/orj480/8e2d6e12gy1g989bsg7uaj20u00gw4c7.jpg" controls="controls" loop="-1"><!--需要自动播放，加上controls="controls"即可--><br></video></p>
-<p>video小窗口</p>
-<!--优雅降级-->
-<video width="320" height="240" controls="">
-    <!--兼容IE9+、Chrome和Safari-->
-    <source src="//f.video.weibocdn.com/000cbp8Elx07yOInQ0wU01041209MBbv0E040.mp4?label=mp4_720p&amp;template=1280x720.25.0&amp;trans_finger=1f0da16358befad33323e3a1b7f95fc9&amp;Expires=1574694219&amp;ssig=teAXjHmR3d&amp;KID=unistore,video" type="video/mp4">
-    <!--兼容Firefox、Opera和Chrome-->
-    <source src="movie.ogg" type="video/ogg">
-    <!--兼容Firefox、Opera和Chrome-->
-    <source src="movie.webm" type="video/webm">
-    <object data="movie.mp4" width="320" height="240">
-        <embed src="movie.swf" width="320" height="240">
-    </object> 
-</video>
-
-<p>embed窗口<br><embed src="//f.video.weibocdn.com/000cbp8Elx07yOInQ0wU01041209MBbv0E040.mp4?label=mp4_720p&amp;template=1280x720.25.0&amp;trans_finger=1f0da16358befad33323e3a1b7f95fc9&amp;Expires=1574694219&amp;ssig=teAXjHmR3d&amp;KID=unistore,video" type="video/mp4"> <br>iframe窗口</p>
-<iframe frameborder="0" src="//f.video.weibocdn.com/000cbp8Elx07yOInQ0wU01041209MBbv0E040.mp4?label=mp4_720p&amp;template=1280x720.25.0&amp;trans_finger=1f0da16358befad33323e3a1b7f95fc9&amp;Expires=1574694219&amp;ssig=teAXjHmR3d&amp;KID=unistore,video" allowfullscreen=""></iframe>
-<iframe src="//player.bilibili.com/player.html?aid=76560081&amp;cid=130958803&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe><br>
-测试完毕
-
+<p>特别注意，案例中的【3】和【4】。</p>
+<hr>
+<p><font size="1">注：前面的几篇Java笔记中也有提到this，后来上课老师再小结this关键词，结合前面的笔记食用效果更佳。</font></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -277,12 +272,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新：<time datetime="2019-11-25T14:12:49.754Z" itemprop="dateUpdated">2019-11-25 22:12:49</time>
+    最后更新：<time datetime="2019-11-29T17:36:57.692Z" itemprop="dateUpdated">2019-11-30 01:36:57</time>
 </span>
 
 
         
-        原文链接：<a href="/blog/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/" target="_blank" rel="external">http://yoursite.com/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/</a>
+        原文链接：<a href="/blog/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97/" target="_blank" rel="external">http://yoursite.com/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97/</a>
         
     </div>
     <footer>
@@ -304,7 +299,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Hexo/" rel="tag">Hexo</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
 
 
             
@@ -314,7 +309,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/&title=《网页视频测试》 — MelodyHub&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97/&title=《Java笔记—this关键字》 — MelodyHub&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -324,22 +319,25 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/&title=《网页视频测试》 — MelodyHub&source=浏览测试效果👇" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97/&title=《Java笔记—this关键字》 — MelodyHub&source=this 关键字三个形式上的用途，但本质上就两个：
+
+调用重载的其他构造方法：放置在构造方法体首行的this()或this(实参列表)
+作为当前对象，引用..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《网页视频测试》 — MelodyHub&url=http://yoursite.com/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java笔记—this关键字》 — MelodyHub&url=http://yoursite.com/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -362,9 +360,9 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/blog/2019/11/08/%E5%8D%9A%E5%AE%A2v1.4/" id="post-prev" class="post-nav-link">
+      <a href="/blog/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94static%E5%85%B3%E9%94%AE%E5%AD%97/" id="post-prev" class="post-nav-link">
         <h4 class="title" >
-          上一篇：博客v1.4上线
+          上一篇：Java笔记—static关键字
         </h4>
       </a>
     </div>
@@ -372,8 +370,8 @@
 
   
     <div class="waves-block waves-effect next">
-      <a href="/blog/2019/11/07/Hexo+GitHub/" id="post-next" class="post-nav-link">
-        <h4 class="title" data-hover="下一篇：使用Hexo+GitHub建站">下一篇：使用Hexo+GitHub建站</h4>
+      <a href="/blog/2019/11/26/%E6%B5%85%E8%B0%88SQLServer%E8%A7%A6%E5%8F%91%E5%99%A8/" id="post-next" class="post-nav-link">
+        <h4 class="title" data-hover="下一篇：对SQL的触发器的浅理解">下一篇：对SQL的触发器的浅理解</h4>
       </a>
     </div>
   
@@ -502,7 +500,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/&title=《网页视频测试》 — MelodyHub&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97/&title=《Java笔记—this关键字》 — MelodyHub&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -512,22 +510,25 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/&title=《网页视频测试》 — MelodyHub&source=浏览测试效果👇" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97/&title=《Java笔记—this关键字》 — MelodyHub&source=this 关键字三个形式上的用途，但本质上就两个：
+
+调用重载的其他构造方法：放置在构造方法体首行的this()或this(实参列表)
+作为当前对象，引用..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《网页视频测试》 — MelodyHub&url=http://yoursite.com/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java笔记—this关键字》 — MelodyHub&url=http://yoursite.com/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/28/Java%E7%AC%94%E8%AE%B0%E2%80%94this%E5%85%B3%E9%94%AE%E5%AD%97/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -538,7 +539,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p class="wechatshare">扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADJklEQVR42u3aS27bQBAFQN//0so2gGz5vWkqEDvFlUFJw6nhot2fr6/4ejxdz/f/vpN/mjzr+ZvJOhdc2NjY2DdhP15eyVYSwOvtvj6sds3k4LCxsbH3sX96QB6W2scnwSm5k78AbGxsbOzXgeTsyPIAmR8lNjY2NnYbJCZpSbLaB8VtbGxs7A9m54FhAstbAklV/x/V0rCxsbE/np13RT//77f0t7GxsbE/mP0orzao5OucNRsOFdjY2NiL2HkASJKKfJ02/cgbCfn+sbGxsXezk6XzQZy2uN+O+LTNaWxsbOx97LMglIPb45sHwjqhwsbGxr4tux12aRkt7N1rYmNjY29lJ//uT5KHPFxdzPvpFWJjY2MvYreby4tHeRtgcvR52eib+9jY2Ngr2Mkm8kXzOtZZsyFJnCI8NjY29iL22eBjGwUmDdqr0pJvvo+NjY29gt0uVIw2DgYo86bF2a+wsbGxN7HfV/pvQ1TeGEj2UA9cYmNjY9+WnQewfDTzLKWZpyvFCtjY2Njr2PkDJqlC3lrOQ2neiv6mqISNjY29gl1P9wRbPCsh5e2Btj1cDO5gY2Nj35Cd//s+P5o2UWmLStEbbjvP2NjY2DdhnzVu29J8m2wkgTAHFxkYNjY29q3YZ0Gl3cqEdPZp3jDAxsbG3sROmgR5qGhD2qRgdHYHGxsbewd71CgtWwtte7h9Y8UrwcbGxl7EvioZyIPTfP22MfzLytjY2Ng3Z7eN1WvHKOcpUN6EwMbGxt7N/iqvNoGZpy5Xlb2wsbGx97HzJfISfH5kZ+3kNnBGRSVsbGzsm7Mnj2krWG1YOjvE6ECxsbGx17EnASxPSCbN2rO2BDY2Nvb/w27L95MyUFv0n1/Y2NjYW9mP8kpSl/y3Z43bfJTnl/eMjY2NvYI9iXv1oExwv008kqNsS1rY2NjYd2S/L2idhcarhnWKWho2Njb2Cnay9FmwmTDylCMPw9jY2NjYbZM1P8SzglE7QoSNjY2NnZeKRiM1bUBqDw4bGxt7HXte7sk/zQ8xWT/fMzY2NvZW9lmoaI9p0gzI2xJ5oxobGxt7BfsP8xRVUOgnlOkAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADKElEQVR42u3awW7bQAwEUP//T7tATwXS2jOkUlibp5OR2NK+9WFMch+P+Hr+vv71+s/r9ade3+fr6+SJX99/2YWNjY19E/bz5TWj5tsxW0O7KX/5LDY2NvZx7Dy0kizYx1ty/3yd2NjY2Nh5wOTLysNy9n5sbGxs7PzxSXS9Lj/yGJsFLTY2NvZPYLfh1EZXPjCYbfE39tKwsbGxP569H/R+zuv/Ot/GxsbG/gD28xuufVDNxsbFCrGxsbEPYietnKRB07aH9ocv28Odb2IMGxsb+7bsTSS0R3Zm29eOeKMRBTY2NvZx7DY2ZuPVpFmfhGj7ZfzlL9jY2NgHsZMFzcar+558EnLtdj/yG2FjY2PfhJ0/bN9OSiKwZSerxcbGxj6b3Z5v2RQGs6XPmk35kBgbGxv77uykwNg3ldom/iyKiqEvNjY29kHsGf6q9+fj4f0d6hTFxsbGvgm7jau2YdTWPZuCp/g7NjY29kHsfNH5aHaWF3X7fl/GYGNjYx/Ebh/cMvbDgH3bq85MbGxs7Juw21bOZrNmsHzYnG8oNjY29tns2XJn7f7H4qpbSLN9wsbGxr4JO4mTZOltiycpIZKxRP1cbGxs7OPYszIjLxjaocLsv9jY2Ng/kz0b67a/5/dFSxt4xXwbGxsb+wh2G1d5cbJv98/KmOKJ2NjY2Aex27IhP3YzO6Y5u+dwCIGNjY19BHv2E78IiXWkbb4AbGxs7FPZbcum/bk/C5j2/qvzPtjY2NgHsdv20IzXFiebtlcUYNjY2Ng3Z+8Lkllz/6pjN+2I9814ABsbG/s49iyQ2lHxZrvzo5xFgGFjY2PfnL1ZYn6kMg+kdjAwPLKDjY2NfQR7FhhXHaPM739VEwobGxv7DPazvPbtpLaN1TabovIGGxsb+yB2fiVhk99nUyfl7acLjvhgY2Nj34TdFgD5FuyPXbZHPJNmFjY2Nvap7Hbouyla8mbWKnWT1hI2NjY2dhkw+zvk938jxcbGxv6R7KuKhNlWboqWN4d1sLGxsY9gXxUSs/BrN3QVXdjY2NjHsa9q/cyOVG5Cq93K1XwbGxsb+xPZvwCuV5a6pGP7aQAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
