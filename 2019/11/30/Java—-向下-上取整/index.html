@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Language" content="zh-cn">
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Java—-向下/上取整 | MelodyHub | 你用走 可是我用跑</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    
+    <meta name="theme-color" content="#77AAFF">
+    
+    
+    <meta name="keywords" content="Java,笔记">
+    
+    
+
+    
+
+    <!-- Baidu Push -->
+<script>
+	(function(){
+		var bp = document.createElement('script');
+		var curProtocol = window.location.protocol.split(':')[0];
+		if (curProtocol === 'https') {
+			bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+		}
+		else {
+			bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+		}
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(bp, s);
+	})();
+
+	var _hmt = _hmt || [];
+</script>
+
+
+
+    
+    <meta name="description" content="Java中对数的舍入也分有  向上舍入（向上取整） 向下舍入（向下取整）  Java的Math类中包含数舍入的方法：  ceil() floor()">
+<meta name="keywords" content="Java,笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java—-向下&#x2F;上取整">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;Java%E2%80%94-%E5%90%91%E4%B8%8B-%E4%B8%8A%E5%8F%96%E6%95%B4&#x2F;index.html">
+<meta property="og:site_name" content="MelodyHub">
+<meta property="og:description" content="Java中对数的舍入也分有  向上舍入（向上取整） 向下舍入（向下取整）  Java的Math类中包含数舍入的方法：  ceil() floor()">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;30&#x2F;ziDycIKQFZP9a8w.png">
+<meta property="og:updated_time" content="2019-11-30T05:54:52.604Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;30&#x2F;ziDycIKQFZP9a8w.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="MelodyHub" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+    <link id="style" rel="stylesheet" href="/blog/css/style.css?v=3.0">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+            
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+    <aside id="menu"  class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;"  target="_self" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" >
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg" alt="avatar">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname" id="name">Melody Jerry</h5>
+          
+            <div id="yiyanmotto" class="motto">&nbsp;</div>
+          
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+              <li class="waves-block waves-effect">
+                  <a href="/blog/"  >
+                    <i class="icon icon-lg icon-home"></i>
+                    <span>主 页</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+              <li class="waves-block waves-effect">
+                  <a href="/blog/archives"  >
+                    <i class="icon icon-lg icon-archives"></i>
+                    <span>归 档</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+              <li class="waves-block waves-effect">
+                  <a href="/blog/categories"  >
+                    <i class="icon icon-lg icon-th-list"></i>
+                    <span>分 类</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+              <li class="waves-block waves-effect">
+                  <a href="/blog/tags"  >
+                    <i class="icon icon-lg icon-tags"></i>
+                    <span>标 签</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+              <li class="waves-block waves-effect">
+                  <a href="/blog/about"  >
+                    <i class="icon icon-lg icon-smile-o"></i>
+                    <span>关 于</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+      <!--邮箱、GitHub、微博-->
+      <div class="nav2">
+          
+              <a class="nav2item" data-title="Email" href="/blog/mailto:melodyjerry@163.com" target="_black"title="Email" >
+                <i class="icon icon-lg icon-envelope-o envelope-o"></i>
+              </a>
+          
+              <a class="nav2item" data-title="Github" href="https://github.com/melodyjerry" target="_blank"title="Github" >
+                <i class="icon icon-lg icon-github github"></i>
+              </a>
+          
+              <a class="nav2item" data-title="微博" href="https://weibo.com/" target="_blank"title="微博" >
+                <i class="icon icon-lg icon-weibo weibo"></i>
+              </a>
+          
+				<!--音乐播放器-->
+				
+					<!-- 具体文章内的音乐 -->
+					<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" 
+						width=210 height=220 
+						src="//music.163.com/outchain/player?type=2&id=35470766&auto=0&height=66">
+					</iframe>
+				
+			
+            </div>
+      </ul>
+        
+    </div>
+  </div>
+ 
+</aside>
+
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Java—-向下/上取整</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" target="_self" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        <a href="../../atom.xml" target="_blank" class="header-icon waves-effect waves-circle waves-light" id="Rss">
+            <i class="icon icon-lg icon-rss"></i>
+        </a>
+    </div>
+</header>
+<header class="content-header post-header">
+
+
+    <div class="container fade-scale">
+        <div id="myheader">
+            <h1 class="title">
+                
+            </h1>
+            <h3 class="subtitle">
+                
+					<h3 id="pagetitle" class="archivestitle">MelodyHub</h3>
+                
+            </h3>
+        </div>
+    </div>
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ceil-和floor"><span class="post-toc-number">1.</span> <span class="post-toc-text">ceil()和floor()</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#看个栗子👇"><span class="post-toc-number">2.</span> <span class="post-toc-text">看个栗子👇</span></a></li></ol>
+        </nav>
+    </aside>
+   
+<article id="post-Java—-向下-上取整"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Java—-向下/上取整</h1>
+        <div class="post-meta">
+            <i class="icon icon-lg icon-calendar-o"></i>
+            发表于
+            <time class="post-time" title="2019-11-30 13:44:08" datetime="2019-11-30T05:44:08.000Z"  itemprop="datePublished">2019-11-30</time>
+
+            <br id="mybreak"/>
+            
+<script>
+	mybreak.style="display:none";
+</script>
+
+
+            <i>·</i>
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>次浏览
+</span>
+
+
+        </div>
+        <div class="post-count-custom">
+            <i class="icon icon-lg icon-comment-o"></i>
+            阅读本文可能花费您&nbsp;<span class="post-count">1</span>&nbsp;分钟
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>Java中对数的舍入也分有</p>
+<ul>
+<li>向上舍入（向上取整）</li>
+<li>向下舍入（向下取整）</li>
+</ul>
+<p>Java的<strong>Math类</strong>中包含数舍入的方法：</p>
+<ul>
+<li><strong>ceil()</strong></li>
+<li><strong>floor()</strong></li>
+</ul>
+<a id="more"></a>
+
+<h1 id="ceil-和floor"><a href="#ceil-和floor" class="headerlink" title="ceil()和floor()"></a>ceil()和floor()</h1><table>
+<thead>
+<tr>
+<th>ceil()</th>
+<th>floor()</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>向上取整</td>
+<td>向下取整</td>
+</tr>
+<tr>
+<td>返回大于等于( &gt;= )给定参数的的最小整数，类型为双精度浮点型。</td>
+<td>返回小于等于（&lt;=）给定参数的最大整数 。</td>
+</tr>
+</tbody></table>
+<h1 id="看个栗子👇"><a href="#看个栗子👇" class="headerlink" title="看个栗子👇"></a>看个栗子👇</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/30/ziDycIKQFZP9a8w.png" alt="UTOOLS1575093209806.png" title="">
+                </div>
+                <div class="image-caption">UTOOLS1575093209806.png</div>
+            </figure>
+
+<hr>
+<p>关于Math类的说明，参考 <a href="https://www.runoob.com/java/java-number.html" target="_blank" rel="noopener">Number &amp; Math 类方法</a></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新：<time datetime="2019-11-30T05:54:52.604Z" itemprop="dateUpdated">2019-11-30 13:54:52</time>
+</span>
+
+
+        
+        原文链接：<a href="/blog/2019/11/30/Java%E2%80%94-%E5%90%91%E4%B8%8B-%E4%B8%8A%E5%8F%96%E6%95%B4/" target="_blank" rel="external">http://yoursite.com/2019/11/30/Java%E2%80%94-%E5%90%91%E4%B8%8B-%E4%B8%8A%E5%8F%96%E6%95%B4/</a>
+        
+    </div>
+    <footer>
+        <div onclick="location.href='http://yoursite.com'">
+            <img src="/blog/img/avatar.jpg" alt="Melody Jerry">
+            <a>Melody Jerry</a>
+        </div>
+    </footer>
+</blockquote>
+
+        
+    <div class="page-reward">
+        <nav class="myreward">
+            <a id="rewardBtn" href="javascript:;" target="_blank" rel="noopener"><span>打&nbsp;赏</span><span>装成好像很多人打赏的样子</span></a>
+        </nav>
+    </div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/30/Java%E2%80%94-%E5%90%91%E4%B8%8B-%E4%B8%8A%E5%8F%96%E6%95%B4/&title=《Java—-向下/上取整》 — MelodyHub&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/30/Java%E2%80%94-%E5%90%91%E4%B8%8B-%E4%B8%8A%E5%8F%96%E6%95%B4/&title=《Java—-向下/上取整》 — MelodyHub&source=Java中对数的舍入也分有
+
+向上舍入（向上取整）
+向下舍入（向下取整）
+
+Java的Math类中包含数舍入的方法：
+
+ceil()
+floor()
+" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/30/Java%E2%80%94-%E5%90%91%E4%B8%8B-%E4%B8%8A%E5%8F%96%E6%95%B4/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java—-向下/上取整》 — MelodyHub&url=http://yoursite.com/2019/11/30/Java%E2%80%94-%E5%90%91%E4%B8%8B-%E4%B8%8A%E5%8F%96%E6%95%B4/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/30/Java%E2%80%94-%E5%90%91%E4%B8%8B-%E4%B8%8A%E5%8F%96%E6%95%B4/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" target="_blank" rel="noopener" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2019/11/30/Java%E2%80%94%E6%89%93%E5%8D%B0%E5%AD%97%E6%AF%8D%E8%A1%A8/" id="post-next" class="post-nav-link">
+        <h4 class="title" data-hover="下一篇：Java—打印字母表">下一篇：Java—打印字母表</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+    
+
+    
+
+    
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'true' == 'true',
+            appId: "UNKL0FXJFAFOKRM1mGyL3Y2s-gzGzoHsz",
+            appKey: "HjUUcTY42RErTnIt7O58GhvH",
+            avatar: "wavatar",
+            placeholder: "( ͡° ͜ʖ ͡°)✧ 来啊，来啊!&#39;",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+</article>
+
+</div>
+
+        <footer class="footer">
+    <div class="footer-content">
+
+        <span class="power">
+            <i class="icon icon-lg icon-copyright"></i>
+            2019
+            <i class="icon icon-lg icon-heart"></i>
+            <a href="http://yoursite.com">melodyhub.ltd</a>
+            <br/>
+            Power by
+            <a href="https://hexo.io/" target="_blank" rel="external nofollow">Hexo v4.0.0</a>&nbsp;·&nbsp;
+            Theme
+            <a class="tomotoeslink" href="https://github.com/tomotoes/hexo-theme-tomotoes/" target="_blank" rel="external nofollow">tomotoes v1.4</a>
+        </span>
+
+        <br/>
+
+        <span id="RunTime" style="color:#a7a7a2;"></span>
+        <br/>
+		
+		<!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"> -->
+		<!-- 该script，详见http://ibruce.info/2015/04/04/busuanzi/ -->
+        <span>
+            
+	<i class="icon icon-lg icon-user">
+<span id="busuanzi_container_site_uv" style='display:none'>
+       访问用户：<span id="busuanzi_value_site_uv"></span>
+    </span>人</i>
+    ·
+    <i class="icon icon-lg icon-eye">
+    <span id="busuanzi_container_site_pv" style='display:none'>
+      访问次数：<span id="busuanzi_value_site_pv"></span>
+    </span>次
+    </i>
+
+
+        </span>
+        <!-- </script> -->
+        <br/>
+
+        <span class="license"><a  target="_blank" rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">博客内容遵循 知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        
+        
+    </div>
+</footer>
+
+    </main>
+    
+        
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        <span>感谢您的鼓励支持！</span>
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" data-img="/blog/img/dog.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/blog/img/wechat.png" data-alipay="/blog/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechatPay">&nbsp;&nbsp;微信&nbsp;&nbsp;</span>
+                <span class="reward-toggle-item alipayPay">支付宝</span>
+            </div>
+        </label>
+        
+        <i class="icon icon-caret-up"></i>
+    </div>
+</div>
+
+
+    
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" target="_self" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/30/Java%E2%80%94-%E5%90%91%E4%B8%8B-%E4%B8%8A%E5%8F%96%E6%95%B4/&title=《Java—-向下/上取整》 — MelodyHub&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/30/Java%E2%80%94-%E5%90%91%E4%B8%8B-%E4%B8%8A%E5%8F%96%E6%95%B4/&title=《Java—-向下/上取整》 — MelodyHub&source=Java中对数的舍入也分有
+
+向上舍入（向上取整）
+向下舍入（向下取整）
+
+Java的Math类中包含数舍入的方法：
+
+ceil()
+floor()
+" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/30/Java%E2%80%94-%E5%90%91%E4%B8%8B-%E4%B8%8A%E5%8F%96%E6%95%B4/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java—-向下/上取整》 — MelodyHub&url=http://yoursite.com/2019/11/30/Java%E2%80%94-%E5%90%91%E4%B8%8B-%E4%B8%8A%E5%8F%96%E6%95%B4/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/30/Java%E2%80%94-%E5%90%91%E4%B8%8B-%E4%B8%8A%E5%8F%96%E6%95%B4/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p class="wechatshare">扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADHklEQVR42u3aUW7bQAwFwN7/0ukBUquP5AqwqNFXkNhazQYwzcf98ye+fj5cv19z/d7ruyXX77U+rXvgwsbGxn4IO18mWfi+d1Wf8/qfhI2Njb2P/ekTvvfz9bYmv59UnGsLNjY2Nvb8u31+n7ylwcbGxsaes6/vmZSupC1JNgIbGxv7nexTcXzCyNuVXlB1OEvDxsbG/np2tSB988+3zLexsbGxv5g9OS7TaxiSwOjsEZ9/3BMbGxt7EXsS2Vfx+RggaWyqbQY2Njb2e9iTgzXVV+aRUF4mC2EWNjY29iJ2bzR7dvleu9I74oONjY29iV2NkCZtQy9+mo9vy1kaNjY29qPYSQGowvJClYyTk39JL9LCxsbG3s2+b/Q7KXL55mJjY2O/h927Ub5N87iqWiCT8omNjY29iX32IXpRVDL6LQxu8xAKGxsbewU7aSd6Q9l5q1MoRcVxMjY2NvYm9vx25QVuOMRzIHjCxsbGXsTOh6b5yDZvY/JHPFvYsLGxsZ/LrhaJSVSUl6uzzUbhzCk2Njb2Y9nVgtQbJ1RHC3nXkA8nsLGxsfexq+Pb5Pfz9CYfHkxKJjY2NvYb2NWR7aTZmA8M8iYKGxsbeys7eWkePOWtSB5X9UYI/2lFsLGxsR/OTkKZSZCUhFOTrWyWN2xsbOxF7LsDnUm7Mi+fhbKHjY2N/Vh271hM/td8+ybtSrkMY2NjYy9i94L7XhvQK4S9Qz/RhmJjY2OvYFcjnup23BEq5SXz4/NjY2NjL2LnhxfzR6xGRWdHBfm2YmNjY29iV4cBVeTkwE1+53IQho2Njb2OPYnj5wduJuFU72gRNjY29lZ2cvwlbwmqTUt19Du6sLGxsVewf4pXbxw7iZCqmx4NBrCxsbEXsXuf+b3jMnmxrK7VK7rY2NjYm9i9sGbyPT+P+ycFLAqVsLGxsRex52FTNbKvDiR64VRz0IuNjY39GnZvyDoph70m53ABw8bGxn44+9S7kiHEvIBhY2Njv4d96uBjb6xbXas6wBiNB7CxsbG/nl2OYwaj3DxgSp4k39DmwR1sbGzsb2f/BS4Q2YV92S5zAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <!-- waves按钮特效 -->
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<!-- 主题配置脚本 -->
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
+</script>
+
+<!-- jquery -->
+<script src="/blog/js/jquery.min.js?v=3.0"></script>
+
+<!-- 搜索 -->
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item waves-block waves-effect" onclick="location.href='{path}'">
+    <div class="title ellipsis" title="{title}">{title}</div>
+</li>
+</template>
+
+
+<!-- main博客脚本 -->
+<script src="/blog/js/main.min.js?v=3.0" ></script>
+
+<!-- 动画&配置 -->
+<script src="/blog/js/script.min.js?v=3.0" ></script>
+
+<!-- 脚本管理 -->
+<script>
+
+if(window.innerWidth > 800){
+	/* 3D标题 */
+	$(".content-header").on("mousemove", threedee);
+
+	/* 底部追随鼠标 */
+	$(".footer").hover(2);
+
+	/* gotop键的涟漪 */
+	$("#gotop").hover(1);
+
+	/* 赞赏的粒子雨 */
+	$("#reward").hover(3);
+
+	/* 微信公众号的底部渲染 */
+	$("#wechat").hover(4);
+
+    /* 标题跳动 */
+    $(".archivestitle").bumpyText();
+
+	/* 图片点击放大 */
+	const postimg = jQuery(".post-content img:not(.github-emoji)");
+	postimg.on("click",function(){
+
+		mask.classList.add("in");
+		main.classList.add("Mask");
+		menu.classList.add("Mask");
+		var myimg = this.cloneNode(true);
+		myimg.classList.add("imgShow");
+
+		setTimeout(function(){
+			jQuery(myimg).animate({
+				opacity:"1"
+			},1000);
+		},0);
+
+		document.body.appendChild(myimg);
+
+		myimg.onclick=function(){
+			document.body.removeChild(myimg);
+			mask.classList.remove("in");
+			main.classList.remove("Mask");
+			menu.classList.remove("Mask");
+		};
+
+	});
+
+}
+
+/* 名字跳动 */
+$("#name").bumpyText();
+
+
+/* 网站运行时间 */
+setInterval(function () {
+	setTime("2019/11/6");
+}, 1000);
+
+/* 文章块的淡出 */
+postshow();
+
+/* 座右铭 */
+
+   getHitokoto();
+
+
+
+/* 粘贴提示 */
+G($(".post-content"), location.href, "Melody Jerry");
+
+
+/* 控制台 */
+if (window.console && window.console.log) {
+	setTimeout(function () {
+		console.log("\n %c MelodyHub %c  © Melody Jerry  http://melodyhub.ltd \n\n", "color:#FFFFFB;background:#1abc9c;padding:5px 0;border-radius:.5rem 0 0 .5rem;", "color:#FFFFFB;background:#080808;padding:5px 0;border-radius:0 .5rem .5rem 0;");
+	}, 0);
+}
+
+</script>
+
+
+
+
+<!-- 公式渲染 -->
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+<!-- 不蒜子 -->
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+</body>
+</html>
