@@ -39,16 +39,17 @@
 
 
     
-    <meta name="description" content="递归阶层算法、非递归阶层算法 以及求阶层的和">
+    <meta name="description" content="递归阶层算法、非递归阶层算法 扩展①：求阶层的和 扩展②：寻找最高阶、打印阶层的计算过程 扩展③：一重循环、纵向打印字母表">
 <meta name="keywords" content="Java,笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java—(递归+非递归)阶层">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;Java%E2%80%94%EF%BC%88%E9%80%92%E5%BD%92-%E9%9D%9E%E9%80%92%E5%BD%92%EF%BC%89%E9%98%B6%E5%B1%82&#x2F;index.html">
 <meta property="og:site_name" content="MelodyHub">
-<meta property="og:description" content="递归阶层算法、非递归阶层算法 以及求阶层的和">
+<meta property="og:description" content="递归阶层算法、非递归阶层算法 扩展①：求阶层的和 扩展②：寻找最高阶、打印阶层的计算过程 扩展③：一重循环、纵向打印字母表">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;30&#x2F;cfhbFSIjaK8mpTy.png">
-<meta property="og:updated_time" content="2019-11-30T09:46:46.694Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;30&#x2F;vYJhpT4VCb96txE.png">
+<meta property="og:updated_time" content="2019-11-30T13:27:32.664Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;30&#x2F;cfhbFSIjaK8mpTy.png">
     
@@ -201,7 +202,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#非递归阶层算法"><span class="post-toc-number">1.</span> <span class="post-toc-text">非递归阶层算法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#递归阶层算法"><span class="post-toc-number">2.</span> <span class="post-toc-text">递归阶层算法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#扩展①：求阶层的和"><span class="post-toc-number">3.</span> <span class="post-toc-text">扩展①：求阶层的和</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#扩展②："><span class="post-toc-number">4.</span> <span class="post-toc-text">扩展②：</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#非递归阶层算法"><span class="post-toc-number">1.</span> <span class="post-toc-text">非递归阶层算法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#递归阶层算法"><span class="post-toc-number">2.</span> <span class="post-toc-text">递归阶层算法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#扩展①：求阶层的和"><span class="post-toc-number">3.</span> <span class="post-toc-text">扩展①：求阶层的和</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#扩展②：寻找最高阶、打印阶层的计算过程"><span class="post-toc-number">4.</span> <span class="post-toc-text">扩展②：寻找最高阶、打印阶层的计算过程</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#扩展③：一重循环、纵向打印字母表"><span class="post-toc-number">5.</span> <span class="post-toc-text">扩展③：一重循环、纵向打印字母表</span></a></li></ol>
         </nav>
     </aside>
    
@@ -232,11 +233,13 @@
         </div>
         <div class="post-count-custom">
             <i class="icon icon-lg icon-comment-o"></i>
-            阅读本文可能花费您&nbsp;<span class="post-count">2</span>&nbsp;分钟
+            阅读本文可能花费您&nbsp;<span class="post-count">4</span>&nbsp;分钟
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>递归阶层算法、非递归阶层算法</p>
-<p>以及求阶层的和</p>
+<p>扩展①：求阶层的和</p>
+<p>扩展②：寻找最高阶、打印阶层的计算过程</p>
+<p>扩展③：一重循环、纵向打印字母表</p>
 <a id="more"></a>
 
 <h1 id="非递归阶层算法"><a href="#非递归阶层算法" class="headerlink" title="非递归阶层算法"></a>非递归阶层算法</h1><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UnRecurrenceFactorial</span> </span>{</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        System.out.println(<span class="string">"input:"</span>);</span><br><span class="line">        <span class="keyword">int</span> n = sc.nextInt();</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(n != <span class="number">1</span>){</span><br><span class="line">            a = a*n;</span><br><span class="line">            n--;</span><br><span class="line">        }</span><br><span class="line">        System.out.println(a);</span><br><span class="line">        sc.close();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
@@ -248,7 +251,7 @@
 <h1 id="扩展①：求阶层的和"><a href="#扩展①：求阶层的和" class="headerlink" title="扩展①：求阶层的和"></a>扩展①：求阶层的和</h1><p>🔺计算 1!+2!+3!+···+k! 的值：</p>
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="keyword">long</span> sum = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i = <span class="number">1</span>; i &lt;= k; i++){	<span class="comment">//修改k的值即可</span></span><br><span class="line">		<span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(j = <span class="number">1</span>; j &lt;= i; j++){</span><br><span class="line">			t *= j;</span><br><span class="line">		}</span><br><span class="line">		sum += t;</span><br><span class="line">	}</span><br><span class="line">	System.out.println(sum);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<h1 id="扩展②："><a href="#扩展②：" class="headerlink" title="扩展②："></a>扩展②：</h1><p>🔺题目：</p>
+<h1 id="扩展②：寻找最高阶、打印阶层的计算过程"><a href="#扩展②：寻找最高阶、打印阶层的计算过程" class="headerlink" title="扩展②：寻找最高阶、打印阶层的计算过程"></a>扩展②：寻找最高阶、打印阶层的计算过程</h1><p>🔺题目：</p>
 <p>指定一个整型数MAX，试编写一个程序求满足<strong>1!+2!+3!…+n!&lt;=MAX</strong> <strong>的最大整数n</strong>。并把满足条件的求和式子和找到的最大整数n打印输出。</p>
 <blockquote>
 <p>示例1：MAX=111时，输出</p>
@@ -265,6 +268,25 @@
 
 <p>🔺截图：</p>
 <img src="https://i.loli.net/2019/11/30/cfhbFSIjaK8mpTy.png" style="zoom:80%;">
+
+<h1 id="扩展③：一重循环、纵向打印字母表"><a href="#扩展③：一重循环、纵向打印字母表" class="headerlink" title="扩展③：一重循环、纵向打印字母表"></a>扩展③：一重循环、纵向打印字母表</h1><p>🔺题目：</p>
+<p>上面常规思考题中的第6题是自左往右从上往下的水平顺序输出大写堆和小写堆字母表。假如想要按照自上而下从左往右的垂直顺序输出大写堆，该如何实现程序？</p>
+<p>即假如每列输出N=5个，则程序的输出情况如下：</p>
+<blockquote>
+<p>= = = Upper = = =</p>
+<p>A  F  K  P  U  Z </p>
+<p>B  G  L  Q  V </p>
+<p>C  H  M  R  W</p>
+<p>D  I  N  S  X </p>
+<p>E  J  O  T  Y </p>
+</blockquote>
+<p>试用<strong>一重循环</strong>编写程序，指定一个整型数N(1&lt;=N&lt;=26)，按示例规格输出列优先排序的大写字母表。 </p>
+<p>🔺代码：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Aphabet</span> </span>{</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		System.out.println(<span class="string">"======Upper========"</span>);</span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> n,level;</span><br><span class="line">		System.out.println(<span class="string">"the value of n:"</span>);</span><br><span class="line">		n = input.nextInt();</span><br><span class="line">		level = (<span class="keyword">int</span>)Math.ceil(<span class="number">26</span>/n);<span class="comment">//向上取整</span></span><br><span class="line">		<span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">char</span> ch = <span class="number">65</span>;</span><br><span class="line">		p(<span class="number">1</span>, n, ch);</span><br><span class="line">	}</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">p</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> n,<span class="keyword">char</span> ch)</span> </span>{</span><br><span class="line">		<span class="keyword">if</span>(x &gt; n)</span><br><span class="line">			<span class="keyword">return</span>;		</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = x;i &lt;= <span class="number">26</span>;i += n){</span><br><span class="line">			ch = (<span class="keyword">char</span>)(i + <span class="number">64</span>);</span><br><span class="line">			System.out.print(ch + <span class="string">" "</span>);</span><br><span class="line">		}</span><br><span class="line">		System.out.println();</span><br><span class="line">		++x;</span><br><span class="line">		p(x, n, ch);</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><del>下午做了半个多小时都没做出来，晚上玩了会游戏突然想到用递归，下午怎么就没想到呢？然后游戏就挂机被举报了，但一气呵成搞定了这题。说明思想不够灵魂hhh</del></p>
+<p>🔺截图：</p>
+<img src="https://i.loli.net/2019/11/30/vYJhpT4VCb96txE.png" style="zoom:80%;">
 
 <hr>
 <p>我的文章、代码简单，这里有更详细文章，见大佬👉<a href="https://blog.csdn.net/GoodLi199309/article/details/80079973" target="_blank" rel="noopener">Java实现n阶阶乘的计算</a></p>
@@ -293,7 +315,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新：<time datetime="2019-11-30T09:46:46.694Z" itemprop="dateUpdated">2019-11-30 17:46:46</time>
+    最后更新：<time datetime="2019-11-30T13:27:32.664Z" itemprop="dateUpdated">2019-11-30 21:27:32</time>
 </span>
 
 
@@ -341,7 +363,9 @@
       </li>
       <li>
         <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/30/Java%E2%80%94%EF%BC%88%E9%80%92%E5%BD%92-%E9%9D%9E%E9%80%92%E5%BD%92%EF%BC%89%E9%98%B6%E5%B1%82/&title=《Java—(递归+非递归)阶层》 — MelodyHub&source=递归阶层算法、非递归阶层算法
-以及求阶层的和" data-title=" QQ">
+扩展①：求阶层的和
+扩展②：寻找最高阶、打印阶层的计算过程
+扩展③：一重循环、纵向打印字母表" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -522,7 +546,9 @@
       </li>
       <li>
         <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/30/Java%E2%80%94%EF%BC%88%E9%80%92%E5%BD%92-%E9%9D%9E%E9%80%92%E5%BD%92%EF%BC%89%E9%98%B6%E5%B1%82/&title=《Java—(递归+非递归)阶层》 — MelodyHub&source=递归阶层算法、非递归阶层算法
-以及求阶层的和" data-title=" QQ">
+扩展①：求阶层的和
+扩展②：寻找最高阶、打印阶层的计算过程
+扩展③：一重循环、纵向打印字母表" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
