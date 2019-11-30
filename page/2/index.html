@@ -194,6 +194,70 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-Java笔记—数组"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a href="/blog/2019/11/20/Java%E7%AC%94%E8%AE%B0%E2%80%94%E6%95%B0%E7%BB%84/">Java笔记—数组</a>
+    </h3>
+  
+
+
+
+
+     <div class="post-meta">
+        <time class="post-time" title="2019-11-20 12:54:46" datetime="2019-11-20T04:54:46.000Z"  itemprop="datePublished">2019-11-20</time>
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        <h3 id="Java笔记——数组"><a href="#Java笔记——数组" class="headerlink" title="Java笔记——数组"></a>Java笔记——数组</h3><p>创建时间：2019.11.20</p>
+<p>说明：持续更新ing</p>
+<p>——————————————————————————— 我 是 分 割 线 ————————————————————————————</p>
+<p><font size="5" color="blue">数组</font></p>
+<hr>
+<ol>
+<li><font size="5" color="blue">数组</font>是一组<strong>相同类型的变量（元素）的集合</strong>。可以用来存放一组相同类型的数据。数组的学习涉及数组的定义、赋值和使用。再扩展一点就是二维数组的应用。<strong>数组既是一种重要的数据类型，也是一种重要的数据结构。</strong></li>
+</ol>
+<hr>
+<ol start="2">
+<li><p><font size="5" color="red">数组（array）</font>————一组相同类型的变量(元素)集合</p>
+<ul>
+<li><p><strong>相同</strong>的<strong>任意类型</strong> <em>(包括基本类型、类类型等)</em></p>
+</li>
+<li><p>这组变量被<strong>连续地</strong>存放在Java<strong>堆区</strong>的内存空间</p>
+</li>
+<li><p>数组是一种<strong>引用类型</strong>，数组名是一个地址的别名</p>
+</li>
+<li><p>数组需要创建（new），否则不会被分配<strong>堆</strong>空间</p>
+</li>
+<li><p>数组名对应的地址单元中存放上述连续堆区空间的首地址 </p>
+<p>🔺 对程序员而言, 数组总体有三样东西：<font size="3" color="oreign">数组名+数组长度+数组元素</font></p></li></ul></li></ol>
+    
+        <div>
+            <a href="/blog/2019/11/20/Java%E7%AC%94%E8%AE%B0%E2%80%94%E6%95%B0%E7%BB%84/" class="post-more waves-button">
+                阅读全文 »
+            </a>
+        </div>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-Visio教程"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -675,82 +739,12 @@
 
         </li>
     
-        <li class="post-list-item fade">
-            <article id="post-文章截断"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a href="/blog/2019/11/06/%E6%96%87%E7%AB%A0%E6%88%AA%E6%96%AD/">博客文章太长？截断！</a>
-    </h3>
-  
-
-
-
-
-     <div class="post-meta">
-        <time class="post-time" title="2019-11-06 16:49:56" datetime="2019-11-06T08:49:56.000Z"  itemprop="datePublished">2019-11-06</time>
-
-    </div>
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        <p>写的md文章太长，担心放到首页上浏览效果不好，怎么办？</p>
-<p>那就直接截断文章。</p>
-<p><strong>截断按钮文字不是通过配置文件_config.yml实现的，而是在文章内容里实现</strong>。</p>
-<p>只要在需要被截断的文章位置加上：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></tbody></table></figure>
-
-<p>就可以了！</p>
-<p>效果就像下面的这个按钮</p>
-<p>可以点点看哦👇</p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
-    
-        <div>
-            <a href="/blog/2019/11/06/%E6%96%87%E7%AB%A0%E6%88%AA%E6%96%AD/" class="post-more waves-button">
-                阅读全文 »
-            </a>
-        </div>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Hexo/" rel="tag">Hexo</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
     </ul>
 
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/blog/">上一页</a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/blog/">上一页</a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/blog/page/3/">3</a><a class="extend next" rel="next" href="/blog/page/3/">下一页</a>
     </div>
 </nav>
 

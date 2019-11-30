@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Language" content="zh-cn">
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Java—5种生成随机数的方法 | MelodyHub | 你用走 可是我用跑</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    
+    <meta name="theme-color" content="#77AAFF">
+    
+    
+    <meta name="keywords" content="Java,笔记">
+    
+    
+
+    
+
+    <!-- Baidu Push -->
+<script>
+	(function(){
+		var bp = document.createElement('script');
+		var curProtocol = window.location.protocol.split(':')[0];
+		if (curProtocol === 'https') {
+			bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+		}
+		else {
+			bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+		}
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(bp, s);
+	})();
+
+	var _hmt = _hmt || [];
+</script>
+
+
+
+    
+    <meta name="description" content="5种生成随机数的简单方法👇">
+<meta name="keywords" content="Java,笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java—5种生成随机数的方法">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;Java%E2%80%945%E7%A7%8D%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95&#x2F;index.html">
+<meta property="og:site_name" content="MelodyHub">
+<meta property="og:description" content="5种生成随机数的简单方法👇">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-30T03:29:15.321Z">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="MelodyHub" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+    <link id="style" rel="stylesheet" href="/blog/css/style.css?v=3.0">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+            
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+    <aside id="menu"  class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;"  target="_self" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" >
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg" alt="avatar">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname" id="name">Melody Jerry</h5>
+          
+            <div id="yiyanmotto" class="motto">&nbsp;</div>
+          
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+              <li class="waves-block waves-effect">
+                  <a href="/blog/"  >
+                    <i class="icon icon-lg icon-home"></i>
+                    <span>主 页</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+              <li class="waves-block waves-effect">
+                  <a href="/blog/archives"  >
+                    <i class="icon icon-lg icon-archives"></i>
+                    <span>归 档</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+              <li class="waves-block waves-effect">
+                  <a href="/blog/categories"  >
+                    <i class="icon icon-lg icon-th-list"></i>
+                    <span>分 类</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+              <li class="waves-block waves-effect">
+                  <a href="/blog/tags"  >
+                    <i class="icon icon-lg icon-tags"></i>
+                    <span>标 签</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+              <li class="waves-block waves-effect">
+                  <a href="/blog/about"  >
+                    <i class="icon icon-lg icon-smile-o"></i>
+                    <span>关 于</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+      <!--邮箱、GitHub、微博-->
+      <div class="nav2">
+          
+              <a class="nav2item" data-title="Email" href="/blog/mailto:melodyjerry@163.com" target="_black"title="Email" >
+                <i class="icon icon-lg icon-envelope-o envelope-o"></i>
+              </a>
+          
+              <a class="nav2item" data-title="Github" href="https://github.com/melodyjerry" target="_blank"title="Github" >
+                <i class="icon icon-lg icon-github github"></i>
+              </a>
+          
+              <a class="nav2item" data-title="微博" href="https://weibo.com/" target="_blank"title="微博" >
+                <i class="icon icon-lg icon-weibo weibo"></i>
+              </a>
+          
+				<!--音乐播放器-->
+				
+					<!-- 具体文章内的音乐 -->
+					<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" 
+						width=210 height=220 
+						src="//music.163.com/outchain/player?type=2&id=35470766&auto=0&height=66">
+					</iframe>
+				
+			
+            </div>
+      </ul>
+        
+    </div>
+  </div>
+ 
+</aside>
+
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Java—5种生成随机数的方法</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" target="_self" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        <a href="../../atom.xml" target="_blank" class="header-icon waves-effect waves-circle waves-light" id="Rss">
+            <i class="icon icon-lg icon-rss"></i>
+        </a>
+    </div>
+</header>
+<header class="content-header post-header">
+
+
+    <div class="container fade-scale">
+        <div id="myheader">
+            <h1 class="title">
+                
+            </h1>
+            <h3 class="subtitle">
+                
+                <h5 id="pagetitle" class="archivestitle">你用走 可是我用跑</h5>
+                
+            </h3>
+        </div>
+    </div>
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法-①"><span class="post-toc-number">1.</span> <span class="post-toc-text">方法 ①</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法②"><span class="post-toc-number">2.</span> <span class="post-toc-text">方法②</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法③"><span class="post-toc-number">3.</span> <span class="post-toc-text">方法③</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法④"><span class="post-toc-number">4.</span> <span class="post-toc-text">方法④</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法⑤"><span class="post-toc-number">5.</span> <span class="post-toc-text">方法⑤</span></a></li></ol>
+        </nav>
+    </aside>
+   
+<article id="post-Java—5种生成随机数的方法"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Java—5种生成随机数的方法</h1>
+        <div class="post-meta">
+            <i class="icon icon-lg icon-calendar-o"></i>
+            发表于
+            <time class="post-time" title="2019-11-30 10:33:25" datetime="2019-11-30T02:33:25.000Z"  itemprop="datePublished">2019-11-30</time>
+
+            <br id="mybreak"/>
+            
+<script>
+	mybreak.style="display:none";
+</script>
+
+
+            <i>·</i>
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>次浏览
+</span>
+
+
+        </div>
+        <div class="post-count-custom">
+            <i class="icon icon-lg icon-comment-o"></i>
+            阅读本文可能花费您&nbsp;<span class="post-count">3</span>&nbsp;分钟
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>5种生成随机数的简单方法👇</p>
+<a id="more"></a>
+
+<h1 id="方法-①"><a href="#方法-①" class="headerlink" title="方法 ①"></a>方法 ①</h1><p>🔺 通过java.Math包的random方法得到1-10的int随机数</p>
+<p>🔺 公式：</p>
+<blockquote>
+<p>最小值—最大值（整数）的随机数</p>
+<p>(类型) 最小值+Math.random()*最大值</p>
+</blockquote>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RandomDemo</span> </span>{</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)</span><br><span class="line">		{</span><br><span class="line">			System.out.println((<span class="keyword">int</span>)(<span class="number">1</span>+Math.random()*<span class="number">10</span>));</span><br><span class="line">			<span class="keyword">int</span> k;</span><br><span class="line">			k=(<span class="keyword">int</span>)(<span class="number">1</span>+Math.random()*<span class="number">10</span>);</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="方法②"><a href="#方法②" class="headerlink" title="方法②"></a>方法②</h1><p>🔺借助java.util.Random类来产生一个随机数发生器，也是最常用的一种，构造函数有两个，Random()和Random(long seed)。第一个就是以当前时间为默认种子，第二个是以指定的种子值进行。产生之后，借助不同的语句产生不同类型的数。</p>
+<p>🔺种子就是产生随机数的第一次使用值,机制是通过一个函数,将这个种子的值转化为随机数空间中的某一个点上,并且产生的随机数均匀的散布在空间中。以后产生的随机数都与前一个随机数有关</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RandomDemo</span> </span>{</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>{    </span><br><span class="line">		Random r = <span class="keyword">new</span> Random();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span> ; i&lt;<span class="number">5</span> ;  i++)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">int</span> ran1 = r.nextInt(<span class="number">100</span>);<span class="comment">//种子：100</span></span><br><span class="line">			System.out.println(ran1);</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="方法③"><a href="#方法③" class="headerlink" title="方法③"></a>方法③</h1><ol>
+<li><p>生成随机数需要使用到Java工具类中的Random类。</p>
+</li>
+<li><p>要求是随机x到y之间的整数，即指定范围，则使用Random类中的nextInt(int n)方法。</p>
+</li>
+<li><p>该方法生成从0（包括）到n（不包括）之间的随机整数，是一个伪随机数，并不是真正的随机数。</p>
+</li>
+<li><p>若x不为0，则需要在随机结果后加上x。参数n的值也需要加上1后减去x。最后结果才符合要求的范围。</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RandomDemo</span> </span>{</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> START = <span class="number">50</span>;	<span class="comment">//定义范围开始数字</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> END = <span class="number">99</span>;	<span class="comment">//定义范围结束数字</span></span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{  </span><br><span class="line">      <span class="comment">//创建Random类对象</span></span><br><span class="line">      Random random = <span class="keyword">new</span> Random();              </span><br><span class="line">      <span class="comment">//产生随机数</span></span><br><span class="line">      <span class="keyword">int</span> number = random.nextInt(END - START + <span class="number">1</span>) + START;</span><br><span class="line">      <span class="comment">//打印随机数</span></span><br><span class="line">      System.out.println(<span class="string">"产生一个"</span>+START+<span class="string">"到"</span>+END+<span class="string">"之间的随机整数："</span>+number);</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="方法④"><a href="#方法④" class="headerlink" title="方法④"></a>方法④</h1><p>🔺 返回的数值是 [ 0.0 , 1.0 ) 的double型数值，由于double类数的精度很高，可以在一定程度下看做随机数，借助（int）来进行类型转换就可以得到整数随机数了</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"></span>{    </span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++) {</span><br><span class="line">    	<span class="keyword">int</span> max=<span class="number">99</span>,min=<span class="number">10</span>;<span class="comment">//生成两位随机正整数</span></span><br><span class="line">		<span class="keyword">int</span> ran2 = (<span class="keyword">int</span>) (Math.random()*(max-min)+min); </span><br><span class="line">    	System.out.println(ran2);</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h1 id="方法⑤"><a href="#方法⑤" class="headerlink" title="方法⑤"></a>方法⑤</h1><p>🔺 返回从1970年1月1日0时0分0秒（这与OS有关）到现在的一个long型的毫秒数，取模之后即可得到所需范围内的随机数</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>{    </span><br><span class="line">        <span class="keyword">int</span> max=<span class="number">100</span>,min=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">long</span> randomNum = System.currentTimeMillis();  </span><br><span class="line">        <span class="keyword">int</span> ran3 = (<span class="keyword">int</span>) (randomNum%(max-min)+min);  </span><br><span class="line">        System.out.println(ran3);</span><br><span class="line">        </span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新：<time datetime="2019-11-30T03:29:15.321Z" itemprop="dateUpdated">2019-11-30 11:29:15</time>
+</span>
+
+
+        
+        原文链接：<a href="/blog/2019/11/30/Java%E2%80%945%E7%A7%8D%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95/" target="_blank" rel="external">http://yoursite.com/2019/11/30/Java%E2%80%945%E7%A7%8D%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95/</a>
+        
+    </div>
+    <footer>
+        <div onclick="location.href='http://yoursite.com'">
+            <img src="/blog/img/avatar.jpg" alt="Melody Jerry">
+            <a>Melody Jerry</a>
+        </div>
+    </footer>
+</blockquote>
+
+        
+    <div class="page-reward">
+        <nav class="myreward">
+            <a id="rewardBtn" href="javascript:;" target="_blank" rel="noopener"><span>打&nbsp;赏</span><span>装成好像很多人打赏的样子</span></a>
+        </nav>
+    </div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/30/Java%E2%80%945%E7%A7%8D%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95/&title=《Java—5种生成随机数的方法》 — MelodyHub&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/30/Java%E2%80%945%E7%A7%8D%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95/&title=《Java—5种生成随机数的方法》 — MelodyHub&source=5种生成随机数的简单方法👇" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/30/Java%E2%80%945%E7%A7%8D%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java—5种生成随机数的方法》 — MelodyHub&url=http://yoursite.com/2019/11/30/Java%E2%80%945%E7%A7%8D%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/30/Java%E2%80%945%E7%A7%8D%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" target="_blank" rel="noopener" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2019/11/30/Java%E4%B8%AD%E7%9A%84%E3%80%81-%E5%92%8C/" id="post-next" class="post-nav-link">
+        <h4 class="title" data-hover="下一篇：Java中的&lt;&lt;、&gt;&gt;和&gt;&gt;&gt;">下一篇：Java中的&lt;&lt;、&gt;&gt;和&gt;&gt;&gt;</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+    
+
+    
+
+    
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'true' == 'true',
+            appId: "UNKL0FXJFAFOKRM1mGyL3Y2s-gzGzoHsz",
+            appKey: "HjUUcTY42RErTnIt7O58GhvH",
+            avatar: "wavatar",
+            placeholder: "( ͡° ͜ʖ ͡°)✧ 来啊，来啊!&#39;",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+</article>
+
+</div>
+
+        <footer class="footer">
+    <div class="footer-content">
+
+        <span class="power">
+            <i class="icon icon-lg icon-copyright"></i>
+            2019
+            <i class="icon icon-lg icon-heart"></i>
+            <a href="http://yoursite.com">melodyhub.ltd</a>
+            <br/>
+            Power by
+            <a href="https://hexo.io/" target="_blank" rel="external nofollow">Hexo v4.0.0</a>&nbsp;·&nbsp;
+            Theme
+            <a class="tomotoeslink" href="https://github.com/tomotoes/hexo-theme-tomotoes/" target="_blank" rel="external nofollow">tomotoes v1.4</a>
+        </span>
+
+        <br/>
+
+        <span id="RunTime" style="color:#a7a7a2;"></span>
+        <br/>
+		
+		<!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"> -->
+		<!-- 该script，详见http://ibruce.info/2015/04/04/busuanzi/ -->
+        <span>
+            
+	<i class="icon icon-lg icon-user">
+<span id="busuanzi_container_site_uv" style='display:none'>
+       访问用户：<span id="busuanzi_value_site_uv"></span>
+    </span>人</i>
+    ·
+    <i class="icon icon-lg icon-eye">
+    <span id="busuanzi_container_site_pv" style='display:none'>
+      访问次数：<span id="busuanzi_value_site_pv"></span>
+    </span>次
+    </i>
+
+
+        </span>
+        <!-- </script> -->
+        <br/>
+
+        <span class="license"><a  target="_blank" rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">博客内容遵循 知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        
+        
+    </div>
+</footer>
+
+    </main>
+    
+        
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        <span>感谢您的鼓励支持！</span>
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" data-img="/blog/img/dog.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/blog/img/wechat.png" data-alipay="/blog/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechatPay">&nbsp;&nbsp;微信&nbsp;&nbsp;</span>
+                <span class="reward-toggle-item alipayPay">支付宝</span>
+            </div>
+        </label>
+        
+        <i class="icon icon-caret-up"></i>
+    </div>
+</div>
+
+
+    
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" target="_self" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/30/Java%E2%80%945%E7%A7%8D%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95/&title=《Java—5种生成随机数的方法》 — MelodyHub&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/30/Java%E2%80%945%E7%A7%8D%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95/&title=《Java—5种生成随机数的方法》 — MelodyHub&source=5种生成随机数的简单方法👇" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/30/Java%E2%80%945%E7%A7%8D%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java—5种生成随机数的方法》 — MelodyHub&url=http://yoursite.com/2019/11/30/Java%E2%80%945%E7%A7%8D%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/30/Java%E2%80%945%E7%A7%8D%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p class="wechatshare">扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEf0lEQVR42u3a207rMBAFUP7/pzmvSEDZeybVqdOVJ5RGjr2CNBf74yO+Pr9cX+8kv34fJx9/c//xkx/PuDBhwoQJ00syzYb+/kzylnyiv42f308+VbJ2TJgwYcJ0D6Z8uBwup/xttGe8fZi4YMKECROmt2F6vOx8om3ykcwkGRkTJkyYMGFKAufjhm/b0m2L531vFhMmTJgwvRtTHkqTJums9J2996pxLuuFY8KECROmF2PabEae/vfFFyZMmDBhejGmz8U1a60+nvrmmTzM1yvFhAkTJkzHMrVBNDkKMzt2c1Ui0m7KFvPEhAkTJkwHMrUBPgnYs+le1fZ9Bi4mTJgwYTqXKcHalLjtVB4v4xmFOiZMmDBhegemPDnId/1me4XJOO3zmxSk/p/ChAkTJkwvxrQJ2O2kkwA/ux8F8k3rGRMmTJgwHcs02/DblM37DdQ2nLdN3j8yJkyYMGHCdBTTrExtE4K2bJ61aJM7wyIfEyZMmDAdy5QsdRZEZwdr9nObHUWKtlQxYcKECdOxTPmhmTbk5zRt03bT5G2PB2HChAkTpjsx5a3SvNna8uVvb5OY2bswYcKECdM9mPJF5s3W2WhtqrFv9SYzxIQJEyZM5zKtSsHFM5uDNe39dqP0j+M7mDBhwoTpEKZnbE/mbeK8Lfu8I0RRAoEJEyZMmI5l2pfBCd9muu0RnPZqPw8mTJgwYTqdKVfcbCsOQ++oOG9XhAkTJkyY7s30vNfPjuMkXeqr7rdbsJgwYcKE6fWZcojHzdP2fMum7Tvb1JzNsP5/wYQJEyZML8a0b/K26O2vSThvW7pXJTqYMGHChOn1mYo6OPbehOpNk/eypu335zFhwoQJ07FMj8va/FBOW3YmJXGSOuSleD7bX1eBCRMmTJgOZ9oseLbsWXN51nRun4kKYEyYMGHCdAhTXjS2CUHbaW6bvO3ma5scYMKECROmezM97yjPVQeGLj6TiwkTJkyYbseUT3ozxauC/ex+O/8fxsSECRMmTLdgakP7bIsx2SJttyQ3RXhUzGPChAkTpmOZ9k3SWQt1k2QUR23iD1MUyZgwYcKE6UCmWQO0LZtnTd5rS9/Zxi0mTJgwYTqdKQmTyeRa1mRJ7fLaX+t1YcKECROmw5mS6bZPtoeBWqZZgzhnxYQJEyZM5zLNthvbknXfcm2fuXhLFRMmTJgw3YKpDZz5hPKSuA3tLeiwnMaECRMmTLdgyhuyyVblrKieXcmnzX/9YZ6YMGHChOlYphlQ22ZtW655CrK/PzvugwkTJkyYTmH6LK88xG6av7ONybalW6QCmDBhwoTpWKZZeblpBCdN1VlQb4vbfQKBCRMmTJhOYbo2CchH27eV8wA/SyyK7AkTJkyYML08U36QZdOcveqZ/SZoPStMmDBhwvQGTPkWZl7otp8nb9HOjq7+mvpgwoQJE6Y3YNo3T3Oa9iPNDsIW88SECRMmTIczzYJoXiS3ITm507aDc+IfEDFhwoQJ07FMs6QhmUTLsTpYEycuyRwu6xBjwoQJE6b/yfQPBnVDlB9PYkoAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <!-- waves按钮特效 -->
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<!-- 主题配置脚本 -->
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
+</script>
+
+<!-- jquery -->
+<script src="/blog/js/jquery.min.js?v=3.0"></script>
+
+<!-- 搜索 -->
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item waves-block waves-effect" onclick="location.href='{path}'">
+    <div class="title ellipsis" title="{title}">{title}</div>
+</li>
+</template>
+
+
+<!-- main博客脚本 -->
+<script src="/blog/js/main.min.js?v=3.0" ></script>
+
+<!-- 动画&配置 -->
+<script src="/blog/js/script.min.js?v=3.0" ></script>
+
+<!-- 脚本管理 -->
+<script>
+
+if(window.innerWidth > 800){
+	/* 3D标题 */
+	$(".content-header").on("mousemove", threedee);
+
+	/* 底部追随鼠标 */
+	$(".footer").hover(2);
+
+	/* gotop键的涟漪 */
+	$("#gotop").hover(1);
+
+	/* 赞赏的粒子雨 */
+	$("#reward").hover(3);
+
+	/* 微信公众号的底部渲染 */
+	$("#wechat").hover(4);
+
+    /* 标题跳动 */
+    $(".archivestitle").bumpyText();
+
+	/* 图片点击放大 */
+	const postimg = jQuery(".post-content img:not(.github-emoji)");
+	postimg.on("click",function(){
+
+		mask.classList.add("in");
+		main.classList.add("Mask");
+		menu.classList.add("Mask");
+		var myimg = this.cloneNode(true);
+		myimg.classList.add("imgShow");
+
+		setTimeout(function(){
+			jQuery(myimg).animate({
+				opacity:"1"
+			},1000);
+		},0);
+
+		document.body.appendChild(myimg);
+
+		myimg.onclick=function(){
+			document.body.removeChild(myimg);
+			mask.classList.remove("in");
+			main.classList.remove("Mask");
+			menu.classList.remove("Mask");
+		};
+
+	});
+
+}
+
+/* 名字跳动 */
+$("#name").bumpyText();
+
+
+/* 网站运行时间 */
+setInterval(function () {
+	setTime("2019/11/6");
+}, 1000);
+
+/* 文章块的淡出 */
+postshow();
+
+/* 座右铭 */
+
+   getHitokoto();
+
+
+
+/* 粘贴提示 */
+G($(".post-content"), location.href, "Melody Jerry");
+
+
+/* 控制台 */
+if (window.console && window.console.log) {
+	setTimeout(function () {
+		console.log("\n %c MelodyHub %c  © Melody Jerry  http://melodyhub.ltd \n\n", "color:#FFFFFB;background:#1abc9c;padding:5px 0;border-radius:.5rem 0 0 .5rem;", "color:#FFFFFB;background:#080808;padding:5px 0;border-radius:0 .5rem .5rem 0;");
+	}, 0);
+}
+
+</script>
+
+
+
+
+<!-- 公式渲染 -->
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+<!-- 不蒜子 -->
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+</body>
+</html>
