@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Language" content="zh-cn">
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Java—打印字母表 | MelodyHub | 你用走 可是我用跑</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    
+    <meta name="theme-color" content="#77AAFF">
+    
+    
+    <meta name="keywords" content="Java,笔记">
+    
+    
+
+    
+
+    <!-- Baidu Push -->
+<script>
+	(function(){
+		var bp = document.createElement('script');
+		var curProtocol = window.location.protocol.split(':')[0];
+		if (curProtocol === 'https') {
+			bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+		}
+		else {
+			bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+		}
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(bp, s);
+	})();
+
+	var _hmt = _hmt || [];
+</script>
+
+
+
+    
+    <meta name="description" content="A到Z的ASCII码值是65到90 a到z的ASCII码值是97到122">
+<meta name="keywords" content="Java,笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java—打印字母表">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;Java%E2%80%94%E6%89%93%E5%8D%B0%E5%AD%97%E6%AF%8D%E8%A1%A8&#x2F;index.html">
+<meta property="og:site_name" content="MelodyHub">
+<meta property="og:description" content="A到Z的ASCII码值是65到90 a到z的ASCII码值是97到122">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-30T03:59:15.112Z">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="MelodyHub" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+    <link id="style" rel="stylesheet" href="/blog/css/style.css?v=3.0">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+            
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+    <aside id="menu"  class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;"  target="_self" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" >
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg" alt="avatar">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname" id="name">Melody Jerry</h5>
+          
+            <div id="yiyanmotto" class="motto">&nbsp;</div>
+          
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+              <li class="waves-block waves-effect">
+                  <a href="/blog/"  >
+                    <i class="icon icon-lg icon-home"></i>
+                    <span>主 页</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+              <li class="waves-block waves-effect">
+                  <a href="/blog/archives"  >
+                    <i class="icon icon-lg icon-archives"></i>
+                    <span>归 档</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+              <li class="waves-block waves-effect">
+                  <a href="/blog/categories"  >
+                    <i class="icon icon-lg icon-th-list"></i>
+                    <span>分 类</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+              <li class="waves-block waves-effect">
+                  <a href="/blog/tags"  >
+                    <i class="icon icon-lg icon-tags"></i>
+                    <span>标 签</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+              <li class="waves-block waves-effect">
+                  <a href="/blog/about"  >
+                    <i class="icon icon-lg icon-smile-o"></i>
+                    <span>关 于</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+      <!--邮箱、GitHub、微博-->
+      <div class="nav2">
+          
+              <a class="nav2item" data-title="Email" href="/blog/mailto:melodyjerry@163.com" target="_black"title="Email" >
+                <i class="icon icon-lg icon-envelope-o envelope-o"></i>
+              </a>
+          
+              <a class="nav2item" data-title="Github" href="https://github.com/melodyjerry" target="_blank"title="Github" >
+                <i class="icon icon-lg icon-github github"></i>
+              </a>
+          
+              <a class="nav2item" data-title="微博" href="https://weibo.com/" target="_blank"title="微博" >
+                <i class="icon icon-lg icon-weibo weibo"></i>
+              </a>
+          
+				<!--音乐播放器-->
+				
+					<!-- 具体文章内的音乐 -->
+					<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" 
+						width=210 height=220 
+						src="//music.163.com/outchain/player?type=2&id=35470766&auto=0&height=66">
+					</iframe>
+				
+			
+            </div>
+      </ul>
+        
+    </div>
+  </div>
+ 
+</aside>
+
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Java—打印字母表</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" target="_self" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        <a href="../../atom.xml" target="_blank" class="header-icon waves-effect waves-circle waves-light" id="Rss">
+            <i class="icon icon-lg icon-rss"></i>
+        </a>
+    </div>
+</header>
+<header class="content-header post-header">
+
+
+    <div class="container fade-scale">
+        <div id="myheader">
+            <h1 class="title">
+                
+            </h1>
+            <h3 class="subtitle">
+                
+                <h5 id="pagetitle" class="archivestitle">你用走 可是我用跑</h5>
+                
+            </h3>
+        </div>
+    </div>
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Demo"><span class="post-toc-number">1.</span> <span class="post-toc-text">Demo</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#扩展：Java-Character-类"><span class="post-toc-number">2.</span> <span class="post-toc-text">扩展：Java Character 类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#isLowerCase-方法"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">isLowerCase() 方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#isUpperCase-方法"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">isUpperCase() 方法</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+   
+<article id="post-Java—打印字母表"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Java—打印字母表</h1>
+        <div class="post-meta">
+            <i class="icon icon-lg icon-calendar-o"></i>
+            发表于
+            <time class="post-time" title="2019-11-30 11:46:31" datetime="2019-11-30T03:46:31.000Z"  itemprop="datePublished">2019-11-30</time>
+
+            <br id="mybreak"/>
+            
+<script>
+	mybreak.style="display:none";
+</script>
+
+
+            <i>·</i>
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>次浏览
+</span>
+
+
+        </div>
+        <div class="post-count-custom">
+            <i class="icon icon-lg icon-comment-o"></i>
+            阅读本文可能花费您&nbsp;<span class="post-count">1</span>&nbsp;分钟
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><strong>A到Z的ASCII码值是65到90</strong></p>
+<p><strong>a到z的ASCII码值是97到122</strong></p>
+<a id="more"></a>
+
+<h1 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h1><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AlphabetDemo</span> </span>{</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">      <span class="comment">/*char和int类型能够相互转换，相信大家都明白 */</span></span><br><span class="line"> </span><br><span class="line">      <span class="comment">//A到Z的ASCII码是65到90，a到z的ASCII码值是97到122</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">char</span> c = <span class="number">0</span>; c &lt; <span class="number">128</span>; c++) {</span><br><span class="line">          <span class="comment">//java里边包装类的一个静态方法，确定c是字母还是小写！！！）</span></span><br><span class="line">          <span class="keyword">if</span> (Character.isLowerCase(c)) {</span><br><span class="line">              System.out.printf(<span class="string">"value: %3d  char: %c\n"</span>, (<span class="keyword">int</span>)c, c);</span><br><span class="line">          <span class="comment">//同上，判断c是大写</span></span><br><span class="line">          } <span class="keyword">else</span> <span class="keyword">if</span> (Character.isUpperCase(c)) {</span><br><span class="line">              System.out.printf(<span class="string">"value: %3d  char: %c\n"</span>, (<span class="keyword">int</span>)c, c);</span><br><span class="line">          }</span><br><span class="line">      }</span><br><span class="line">  }</span><br><span class="line">	</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="扩展：Java-Character-类"><a href="#扩展：Java-Character-类" class="headerlink" title="扩展：Java Character 类"></a>扩展：<a href="https://www.runoob.com/java/java-character.html" target="_blank" rel="noopener">Java Character 类</a></h1><h2 id="isLowerCase-方法"><a href="#isLowerCase-方法" class="headerlink" title="isLowerCase() 方法"></a>isLowerCase() 方法</h2><p>🔺作用：用于判断指定字符是否为小写字母。</p>
+<p>🔺语法</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isLowerCase</span><span class="params">(<span class="keyword">char</span> ch)</span></span></span><br></pre></td></tr></tbody></table></figure>
+
+<p> 🔺参数</p>
+<ul>
+<li><strong>ch</strong> – 要测试的字符。</li>
+</ul>
+<p>🔺返回值</p>
+<p>如果字符为小写，则返回 true；否则返回 false。</p>
+<p>🔺实例</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>{</span><br><span class="line">        System.out.println( Character.isLowerCase(<span class="string">'a'</span>));</span><br><span class="line">        System.out.println( Character.isLowerCase(<span class="string">'A'</span>));</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>🔺以上程序执行结果为：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">true</span><br><span class="line">false</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="isUpperCase-方法"><a href="#isUpperCase-方法" class="headerlink" title="isUpperCase() 方法"></a>isUpperCase() 方法</h2><p> 🔺作用：用于判断指定字符是否为大写字母。</p>
+<p> 🔺语法</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isUpperCase</span><span class="params">(<span class="keyword">char</span> ch)</span></span></span><br></pre></td></tr></tbody></table></figure>
+
+<p> 🔺参数</p>
+<ul>
+<li><p><strong>ch</strong> – 要测试的字符。</p>
+<p>🔺返回值</p>
+</li>
+</ul>
+<p>如果字符为大写，则返回 true；否则返回 false。</p>
+<p> 🔺实例</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>{</span><br><span class="line">        System.out.println( Character.isUpperCase(<span class="string">'c'</span>));</span><br><span class="line">        System.out.println( Character.isUpperCase(<span class="string">'C'</span>));</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p> 🔺以上程序执行结果为：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">false</span><br><span class="line">true</span><br></pre></td></tr></tbody></table></figure><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新：<time datetime="2019-11-30T03:59:15.112Z" itemprop="dateUpdated">2019-11-30 11:59:15</time>
+</span>
+
+
+        
+        原文链接：<a href="/blog/2019/11/30/Java%E2%80%94%E6%89%93%E5%8D%B0%E5%AD%97%E6%AF%8D%E8%A1%A8/" target="_blank" rel="external">http://yoursite.com/2019/11/30/Java%E2%80%94%E6%89%93%E5%8D%B0%E5%AD%97%E6%AF%8D%E8%A1%A8/</a>
+        
+    </div>
+    <footer>
+        <div onclick="location.href='http://yoursite.com'">
+            <img src="/blog/img/avatar.jpg" alt="Melody Jerry">
+            <a>Melody Jerry</a>
+        </div>
+    </footer>
+</blockquote>
+
+        
+    <div class="page-reward">
+        <nav class="myreward">
+            <a id="rewardBtn" href="javascript:;" target="_blank" rel="noopener"><span>打&nbsp;赏</span><span>装成好像很多人打赏的样子</span></a>
+        </nav>
+    </div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%AC%94%E8%AE%B0/" rel="tag">笔记</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/30/Java%E2%80%94%E6%89%93%E5%8D%B0%E5%AD%97%E6%AF%8D%E8%A1%A8/&title=《Java—打印字母表》 — MelodyHub&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/30/Java%E2%80%94%E6%89%93%E5%8D%B0%E5%AD%97%E6%AF%8D%E8%A1%A8/&title=《Java—打印字母表》 — MelodyHub&source=A到Z的ASCII码值是65到90
+a到z的ASCII码值是97到122" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/30/Java%E2%80%94%E6%89%93%E5%8D%B0%E5%AD%97%E6%AF%8D%E8%A1%A8/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java—打印字母表》 — MelodyHub&url=http://yoursite.com/2019/11/30/Java%E2%80%94%E6%89%93%E5%8D%B0%E5%AD%97%E6%AF%8D%E8%A1%A8/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/30/Java%E2%80%94%E6%89%93%E5%8D%B0%E5%AD%97%E6%AF%8D%E8%A1%A8/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" target="_blank" rel="noopener" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2019/11/30/Java%E2%80%945%E7%A7%8D%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95/" id="post-next" class="post-nav-link">
+        <h4 class="title" data-hover="下一篇：Java—5种生成随机数的方法">下一篇：Java—5种生成随机数的方法</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+    
+
+    
+
+    
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'true' == 'true',
+            appId: "UNKL0FXJFAFOKRM1mGyL3Y2s-gzGzoHsz",
+            appKey: "HjUUcTY42RErTnIt7O58GhvH",
+            avatar: "wavatar",
+            placeholder: "( ͡° ͜ʖ ͡°)✧ 来啊，来啊!&#39;",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+</article>
+
+</div>
+
+        <footer class="footer">
+    <div class="footer-content">
+
+        <span class="power">
+            <i class="icon icon-lg icon-copyright"></i>
+            2019
+            <i class="icon icon-lg icon-heart"></i>
+            <a href="http://yoursite.com">melodyhub.ltd</a>
+            <br/>
+            Power by
+            <a href="https://hexo.io/" target="_blank" rel="external nofollow">Hexo v4.0.0</a>&nbsp;·&nbsp;
+            Theme
+            <a class="tomotoeslink" href="https://github.com/tomotoes/hexo-theme-tomotoes/" target="_blank" rel="external nofollow">tomotoes v1.4</a>
+        </span>
+
+        <br/>
+
+        <span id="RunTime" style="color:#a7a7a2;"></span>
+        <br/>
+		
+		<!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"> -->
+		<!-- 该script，详见http://ibruce.info/2015/04/04/busuanzi/ -->
+        <span>
+            
+	<i class="icon icon-lg icon-user">
+<span id="busuanzi_container_site_uv" style='display:none'>
+       访问用户：<span id="busuanzi_value_site_uv"></span>
+    </span>人</i>
+    ·
+    <i class="icon icon-lg icon-eye">
+    <span id="busuanzi_container_site_pv" style='display:none'>
+      访问次数：<span id="busuanzi_value_site_pv"></span>
+    </span>次
+    </i>
+
+
+        </span>
+        <!-- </script> -->
+        <br/>
+
+        <span class="license"><a  target="_blank" rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">博客内容遵循 知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        
+        
+    </div>
+</footer>
+
+    </main>
+    
+        
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        <span>感谢您的鼓励支持！</span>
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" data-img="/blog/img/dog.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/blog/img/wechat.png" data-alipay="/blog/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechatPay">&nbsp;&nbsp;微信&nbsp;&nbsp;</span>
+                <span class="reward-toggle-item alipayPay">支付宝</span>
+            </div>
+        </label>
+        
+        <i class="icon icon-caret-up"></i>
+    </div>
+</div>
+
+
+    
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" target="_self" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/11/30/Java%E2%80%94%E6%89%93%E5%8D%B0%E5%AD%97%E6%AF%8D%E8%A1%A8/&title=《Java—打印字母表》 — MelodyHub&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/30/Java%E2%80%94%E6%89%93%E5%8D%B0%E5%AD%97%E6%AF%8D%E8%A1%A8/&title=《Java—打印字母表》 — MelodyHub&source=A到Z的ASCII码值是65到90
+a到z的ASCII码值是97到122" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/11/30/Java%E2%80%94%E6%89%93%E5%8D%B0%E5%AD%97%E6%AF%8D%E8%A1%A8/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java—打印字母表》 — MelodyHub&url=http://yoursite.com/2019/11/30/Java%E2%80%94%E6%89%93%E5%8D%B0%E5%AD%97%E6%AF%8D%E8%A1%A8/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/11/30/Java%E2%80%94%E6%89%93%E5%8D%B0%E5%AD%97%E6%AF%8D%E8%A1%A8/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p class="wechatshare">扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADLklEQVR42u3aQW7DQAgF0Nz/0qnUbWvnA24VkzerqE3G8/ACAfN4xOv5vY4+/1xHvz3/1fk+R6dKvtlc2NjY2DdhJw8+P/p5aKpHnD83CiI2Njb2Onby+KNH5qkoeVZyhiQEL/bHxsbG/kh2EoLq0fPvnCddbGxsbOzJcc93SABJsZGHDBsbG/sz2UkJ0Wv3JCGrlih5yXRBLw0bGxv77dnzQe/7fP7X+TY2Njb2G7CfxZWnn6vKhmoTKlJgY2NjL2KfFxW9BlA+lK0GMWla5QMDbGxs7B3sXqroXevpjZCrgYv+go2Njb2I3Ushect+PhLIE171FWJjY2NvYicD2mqpcNWIN0+EeZWBjY2NvY89b9/3MOew6uWbyX+xsbGx78tOtp4XHpPxcD4qyJMxNjY29iZ2klQmiWeelnrj3uiFYWNjY69j5+Pbv4DlA+NJwfNLAsPGxsa+OTtvCU3aOleNdcvv82h/bGxs7EXsfOteeVBtReXJcrKwsbGxt7LzNn3Svj8/bjU1VgcM1QSJjY2NfXd2dexaTWl5K2qSCMsDA2xsbOx17Eeweo37vJ00GTDnIcbGxsbeyp60768aJMyv9RRSIDY2NvZSdn4RJw9QHrjqpZxeuLGxsbE3sastm95ItVpgzBtSL14YNjY29iJ2M+O1yo/JyDZvPxXaZNjY2Ngr2L1H9oYKvdIlD1xSqGBjY2NvZVeTUD7uPTpcfg1o0mA63B8bGxt7EbuaZnpJpddyyttPo0E1NjY29iJ2HoLqlZqc3UtF2NjY2J/MzptH+XGT6CZprLdbVCBhY2NjL2JHbZdBG2gSlGozKx9IY2NjY29i9xpA8+FBdczQKz9ejASwsbGxF7Hzhk7vWMmVmqt+G+mwsbGx17HzlbMnl3XytJeHCRsbG3sru3oR56pxbLWB9RcDCWxsbOxN7DxpVa/45MVDnn56CSyqeLCxsbFvzq4OdycXaCajhTwDvwgBNjY29keyk03zFJIHKDlJnuqwsbGxsfPRQq9cmTw3bzNhY2Nj72Pnw93exZ087eWh7LWfsLGxsfexq4PePMlVDzc59HzIgY2NjX1D9hdpKgdK+/cNdAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <!-- waves按钮特效 -->
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<!-- 主题配置脚本 -->
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
+</script>
+
+<!-- jquery -->
+<script src="/blog/js/jquery.min.js?v=3.0"></script>
+
+<!-- 搜索 -->
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item waves-block waves-effect" onclick="location.href='{path}'">
+    <div class="title ellipsis" title="{title}">{title}</div>
+</li>
+</template>
+
+
+<!-- main博客脚本 -->
+<script src="/blog/js/main.min.js?v=3.0" ></script>
+
+<!-- 动画&配置 -->
+<script src="/blog/js/script.min.js?v=3.0" ></script>
+
+<!-- 脚本管理 -->
+<script>
+
+if(window.innerWidth > 800){
+	/* 3D标题 */
+	$(".content-header").on("mousemove", threedee);
+
+	/* 底部追随鼠标 */
+	$(".footer").hover(2);
+
+	/* gotop键的涟漪 */
+	$("#gotop").hover(1);
+
+	/* 赞赏的粒子雨 */
+	$("#reward").hover(3);
+
+	/* 微信公众号的底部渲染 */
+	$("#wechat").hover(4);
+
+    /* 标题跳动 */
+    $(".archivestitle").bumpyText();
+
+	/* 图片点击放大 */
+	const postimg = jQuery(".post-content img:not(.github-emoji)");
+	postimg.on("click",function(){
+
+		mask.classList.add("in");
+		main.classList.add("Mask");
+		menu.classList.add("Mask");
+		var myimg = this.cloneNode(true);
+		myimg.classList.add("imgShow");
+
+		setTimeout(function(){
+			jQuery(myimg).animate({
+				opacity:"1"
+			},1000);
+		},0);
+
+		document.body.appendChild(myimg);
+
+		myimg.onclick=function(){
+			document.body.removeChild(myimg);
+			mask.classList.remove("in");
+			main.classList.remove("Mask");
+			menu.classList.remove("Mask");
+		};
+
+	});
+
+}
+
+/* 名字跳动 */
+$("#name").bumpyText();
+
+
+/* 网站运行时间 */
+setInterval(function () {
+	setTime("2019/11/6");
+}, 1000);
+
+/* 文章块的淡出 */
+postshow();
+
+/* 座右铭 */
+
+   getHitokoto();
+
+
+
+/* 粘贴提示 */
+G($(".post-content"), location.href, "Melody Jerry");
+
+
+/* 控制台 */
+if (window.console && window.console.log) {
+	setTimeout(function () {
+		console.log("\n %c MelodyHub %c  © Melody Jerry  http://melodyhub.ltd \n\n", "color:#FFFFFB;background:#1abc9c;padding:5px 0;border-radius:.5rem 0 0 .5rem;", "color:#FFFFFB;background:#080808;padding:5px 0;border-radius:0 .5rem .5rem 0;");
+	}, 0);
+}
+
+</script>
+
+
+
+
+<!-- 公式渲染 -->
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+<!-- 不蒜子 -->
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+</body>
+</html>
