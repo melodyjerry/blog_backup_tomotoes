@@ -49,7 +49,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;30&#x2F;1ZcyKpWRHgXSl93.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;30&#x2F;azHLnfqYJFprVRQ.png">
-<meta property="og:updated_time" content="2019-11-30T06:22:50.846Z">
+<meta property="og:updated_time" content="2019-11-30T06:30:38.820Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;30&#x2F;1ZcyKpWRHgXSl93.png">
     
@@ -254,7 +254,8 @@
 <p>🔺参考代码：</p>
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Alphabet</span> </span>{</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		Scanner input=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> n,level;</span><br><span class="line">		System.out.println(<span class="string">"the value of n:"</span>);</span><br><span class="line">		n=input.nextInt();</span><br><span class="line">		level=(<span class="keyword">int</span>)Math.ceil(<span class="number">26</span>/n);<span class="comment">//向上取整</span></span><br><span class="line">		</span><br><span class="line">		System.out.println(<span class="string">"======Upper========"</span>);</span><br><span class="line">		<span class="keyword">char</span> CH=<span class="number">65</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=level;i++) {		</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++) {			</span><br><span class="line">				System.out.printf(<span class="string">"%c "</span>,CH);</span><br><span class="line">				++CH;</span><br><span class="line">				<span class="keyword">if</span>(CH&gt;=<span class="number">90</span>)</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">			}</span><br><span class="line">			System.out.println();</span><br><span class="line">		}</span><br><span class="line">		System.out.println();</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"======Lower========"</span>);</span><br><span class="line">		<span class="keyword">char</span> ch=<span class="number">97</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=level;i++) {		</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++) {			</span><br><span class="line">				System.out.printf(<span class="string">"%c "</span>,ch);</span><br><span class="line">				++ch;</span><br><span class="line">				<span class="keyword">if</span>(ch&gt;=<span class="number">123</span>)</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">			}</span><br><span class="line">			System.out.println();</span><br><span class="line">		}</span><br><span class="line">		System.out.println();		</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<p>注意：Math.ceil();//向上取整<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></p>
+<p>注意：Math.ceil();//向上取整</p>
+<p>参考：我的另一篇博客：<a href="https://melodyhub.ltd/blog/2019/11/30/Java%E2%80%94-%E5%90%91%E4%B8%8B-%E4%B8%8A%E5%8F%96%E6%95%B4/" target="_blank" rel="noopener">Java—向下/上取整</a></p>
 <p>🔺执行截图：</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
@@ -295,9 +296,7 @@
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>{</span><br><span class="line">        System.out.println( Character.isUpperCase(<span class="string">'b'</span>));</span><br><span class="line">        System.out.println( Character.isUpperCase(<span class="string">'B'</span>));</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <p> 🔺以上程序执行结果为：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">false</span><br><span class="line">true</span><br></pre></td></tr></tbody></table></figure>
-
-<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style:none; padding-left: 0;"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px;">1.</span><span style="display: inline-block; vertical-align: top;">我的另一篇博客：<a href=""></a></span><a href="#fnref:1" rev="footnote"> ↩</a></li></ol></div></div><script>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">false</span><br><span class="line">true</span><br></pre></td></tr></tbody></table></figure><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -322,7 +321,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新：<time datetime="2019-11-30T06:22:50.846Z" itemprop="dateUpdated">2019-11-30 14:22:50</time>
+    最后更新：<time datetime="2019-11-30T06:30:38.820Z" itemprop="dateUpdated">2019-11-30 14:30:38</time>
 </span>
 
 
@@ -410,7 +409,7 @@ a到z的ASCII码值是97到122" data-title=" QQ">
     <div class="waves-block waves-effect prev">
       <a href="/blog/2019/11/30/Java%E2%80%94-%E5%90%91%E4%B8%8B-%E4%B8%8A%E5%8F%96%E6%95%B4/" id="post-prev" class="post-nav-link">
         <h4 class="title" >
-          上一篇：Java—-向下/上取整
+          上一篇：Java—向下/上取整
         </h4>
       </a>
     </div>
