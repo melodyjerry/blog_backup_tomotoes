@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-12-01T08:00:50.345Z</updated>
+  <updated>2019-12-01T12:37:19.430Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java——API中文手册</title>
+    <link href="http://yoursite.com/2019/12/01/Java-API%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/"/>
+    <id>http://yoursite.com/2019/12/01/Java-API中文手册/</id>
+    <published>2019-12-01T12:00:15.000Z</published>
+    <updated>2019-12-01T12:37:19.430Z</updated>
+    
+    <content type="html"><![CDATA[    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">    <div class="container-fluid">        <div class="navbar-header">        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#example-navbar-        collapse">【Java 8中文版开发文档，Java 8中文版 API手册中文版】( http://www.matools.com/api/java8 )         </button></div>    </div>    </nav><embed style="margin-top: 30px; height: 670px; width: 100%;" src="http://www.matools.com/file/manual/jdk_api_1.8_google/index.html" id="apiContent"><!--3-->  <noframes>    &lt;noscript&gt; &lt;div&gt;JavaScript is disabled on your browser.&lt;/div&gt; &lt;/noscript&gt; &lt;h2&gt;Frame Alert&lt;/h2&gt; &lt;p&gt;This document is designed to be viewed using the frames feature. If you see this message, you are using a non-frame-capable web client. Link to &lt;a href="overview-summary.html"&gt;Non-frame version&lt;/a&gt;.&lt;/p&gt;   </noframes><a id="more"></a>*****<p>为了避免版权问题，再次声明：移植该文档，仅供学习交流，别无其它目的。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    <summary type="html">
+    
+      
+    &lt;nav class=&quot;navbar navbar-default navbar-fixed-top&quot; role=&quot;navigation&quot;&gt;
+    &lt;div class=&quot;container-fluid&quot;&gt;
+        &lt;div class=&quot;navbar-header&quot;&gt;
+        &lt;button class=&quot;navbar-toggle collapsed&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#example-navbar-        collapse&quot;&gt;【Java 8中文版开发文档，Java 8中文版 API手册中文版】( http://www.matools.com/api/java8 ) 
+        &lt;/button&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/nav&gt;
+
+
+
+
+
+
+&lt;embed style=&quot;margin-top: 30px; height: 670px; width: 100%;&quot; src=&quot;http://www.matools.com/file/manual/jdk_api_1.8_google/index.html&quot; id=&quot;apiContent&quot;&gt;
+
+
+
+
+&lt;!--3--&gt;
+  
+
+
+
+
+
+&lt;noframes&gt;
+    &amp;lt;noscript&amp;gt; &amp;lt;div&amp;gt;JavaScript is disabled on your browser.&amp;lt;/div&amp;gt; &amp;lt;/noscript&amp;gt; &amp;lt;h2&amp;gt;Frame Alert&amp;lt;/h2&amp;gt; &amp;lt;p&amp;gt;This document is designed to be viewed using the frames feature. If you see this message, you are using a non-frame-capable web client. Link to &amp;lt;a href=&quot;overview-summary.html&quot;&amp;gt;Non-frame version&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt; 
+  &lt;/noframes&gt;
+
+    
+    </summary>
+    
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>2019的最后一个月</title>
@@ -608,63 +658,6 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;code&gt;类&lt;/code&gt;：类是对现实生活中事物的描述。类是一个模板，它描述一类对象的行为和状态。&lt;strong&gt;同种类型对象共性的抽象&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
-    
-      <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java笔记—面向对象</title>
-    <link href="http://yoursite.com/2019/11/13/Java%E7%AC%94%E8%AE%B0%E2%80%94%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
-    <id>http://yoursite.com/2019/11/13/Java笔记—面向对象/</id>
-    <published>2019-11-13T04:54:46.000Z</published>
-    <updated>2019-11-29T17:35:40.535Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Java笔记——面向对象"><a href="#Java笔记——面向对象" class="headerlink" title="Java笔记——面向对象"></a>Java笔记——面向对象</h3><p>创建时间：2019.11.11</p><p>说明：持续更新ing</p><hr><ol><li><p><strong>Java作为一种面向对象语言</strong>。支持以下基本概念：<br> <strong><code>多态</code></strong> | <strong><code>继承</code></strong> | <strong><code>封装</code></strong> | <strong><code>抽象</code></strong><br>  <strong><code>类</code></strong>  | <strong><code>对象</code></strong> | <strong><code>实例</code></strong> | <strong><code>方法</code></strong> | <strong><code>重载</code></strong></p></li><li><p>“面向对象”和“面向过程”的区别：</p></li></ol><ul><li><code>面向过程</code>：如 C/C++</li></ul><blockquote><p>例子：冰箱装大象。1、打开冰箱门；2、放进大象；3、关上冰箱门。<br>强调过程，“打开”、“存储”、“关闭”三个动作。<br><strong>注重过程，注重的是过程涉及的行为（即功能）。</strong></p></blockquote><ul><li><code>面向对象</code>：如 Java</li></ul><blockquote><p><strong>将功能封装进对象，强调具备了功能的对象。</strong></p></blockquote><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/11/11/7WFrJqdjnfpTa4c.png" alt="image.png" title="">                </div>                <div class="image-caption">image.png</div>            </figure><ul><li><blockquote><p><strong><em><code>面向对象</code>是基于<code>面向过程</code>的。</em></strong></p></blockquote></li></ul><a id="more"></a> <ol start="3"><li>使用不同思想，对“冰箱装大象”的理解——&gt;</li></ol><p>问：“人开冰箱”事件，其中人、冰箱都是实物（对象），开是动作。若使用面向对象思维，“开”的这个动作是属于“人”还是属于“冰箱”？</p><blockquote><p>答：属于“冰箱”，“人”只是调用了“冰箱”的“开”的方法（或功能），用力作用了门一下并将门打开了。</p></blockquote><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">人开门：名词提炼法。</span><br><span class="line">/*</span><br><span class="line">人{</span><br><span class="line">    开门（门）{</span><br><span class="line">        门.开（）;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line">门{</span><br><span class="line">    开（）{</span><br><span class="line">        操作门轴;</span><br><span class="line">        ……等等;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line">*/</span><br></pre></td></tr></tbody></table></figure><ol start="4"><li>面向对象的三个特征：<strong>封装</strong>、<strong>继承</strong>、<strong>多态</strong>。<br> 以后开发：<code>其实就是找对象使用，没有对象就创建一个对象</code>。<br> <strong><em>找对象，建立对象，使用对象，维护对象的关系。</em></strong></li><li></li></ol><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Java笔记——面向对象&quot;&gt;&lt;a href=&quot;#Java笔记——面向对象&quot; class=&quot;headerlink&quot; title=&quot;Java笔记——面向对象&quot;&gt;&lt;/a&gt;Java笔记——面向对象&lt;/h3&gt;&lt;p&gt;创建时间：2019.11.11&lt;/p&gt;
-&lt;p&gt;说明：持续更新ing&lt;/p&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Java作为一种面向对象语言&lt;/strong&gt;。支持以下基本概念：&lt;br&gt; &lt;strong&gt;&lt;code&gt;多态&lt;/code&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;code&gt;继承&lt;/code&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;code&gt;封装&lt;/code&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;code&gt;抽象&lt;/code&gt;&lt;/strong&gt;&lt;br&gt;  &lt;strong&gt;&lt;code&gt;类&lt;/code&gt;&lt;/strong&gt;  | &lt;strong&gt;&lt;code&gt;对象&lt;/code&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;code&gt;实例&lt;/code&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;code&gt;方法&lt;/code&gt;&lt;/strong&gt; | &lt;strong&gt;&lt;code&gt;重载&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;“面向对象”和“面向过程”的区别：&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;面向过程&lt;/code&gt;：如 C/C++&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;例子：冰箱装大象。1、打开冰箱门；2、放进大象；3、关上冰箱门。&lt;br&gt;强调过程，“打开”、“存储”、“关闭”三个动作。&lt;br&gt;&lt;strong&gt;注重过程，注重的是过程涉及的行为（即功能）。&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;面向对象&lt;/code&gt;：如 Java&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;将功能封装进对象，强调具备了功能的对象。&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;image-bubble&quot;&gt;
-                &lt;div class=&quot;img-lightbox&quot;&gt;
-                    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
-                    &lt;img src=&quot;https://i.loli.net/2019/11/11/7WFrJqdjnfpTa4c.png&quot; alt=&quot;image.png&quot; title=&quot;&quot;&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;image-caption&quot;&gt;image.png&lt;/div&gt;
-            &lt;/figure&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;&lt;code&gt;面向对象&lt;/code&gt;是基于&lt;code&gt;面向过程&lt;/code&gt;的。&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
