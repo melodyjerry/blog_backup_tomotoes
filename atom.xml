@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-12-01T12:37:19.430Z</updated>
+  <updated>2019-12-01T12:41:01.246Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2019/12/01/Java-API%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/"/>
     <id>http://yoursite.com/2019/12/01/Java-API中文手册/</id>
     <published>2019-12-01T12:00:15.000Z</published>
-    <updated>2019-12-01T12:37:19.430Z</updated>
+    <updated>2019-12-01T12:41:01.246Z</updated>
     
-    <content type="html"><![CDATA[    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">    <div class="container-fluid">        <div class="navbar-header">        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#example-navbar-        collapse">【Java 8中文版开发文档，Java 8中文版 API手册中文版】( http://www.matools.com/api/java8 )         </button></div>    </div>    </nav><embed style="margin-top: 30px; height: 670px; width: 100%;" src="http://www.matools.com/file/manual/jdk_api_1.8_google/index.html" id="apiContent"><!--3-->  <noframes>    &lt;noscript&gt; &lt;div&gt;JavaScript is disabled on your browser.&lt;/div&gt; &lt;/noscript&gt; &lt;h2&gt;Frame Alert&lt;/h2&gt; &lt;p&gt;This document is designed to be viewed using the frames feature. If you see this message, you are using a non-frame-capable web client. Link to &lt;a href="overview-summary.html"&gt;Non-frame version&lt;/a&gt;.&lt;/p&gt;   </noframes><a id="more"></a>*****<p>为了避免版权问题，再次声明：移植该文档，仅供学习交流，别无其它目的。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    <content type="html"><![CDATA[    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">    <div class="container-fluid">        <div class="navbar-header">        <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#example-navbar-        collapse">【Java 8中文版开发文档，Java 8中文版 API手册中文版】( http://www.matools.com/api/java8 )         </button></div>    </div>    </nav><embed style="margin-top: 30px; height: 670px; width: 100%;" src="http://www.matools.com/file/manual/jdk_api_1.8_google/index.html" id="apiContent"><!--3-->  <noframes>    &lt;noscript&gt; &lt;div&gt;JavaScript is disabled on your browser.&lt;/div&gt; &lt;/noscript&gt; &lt;h2&gt;Frame Alert&lt;/h2&gt; &lt;p&gt;This document is designed to be viewed using the frames feature. If you see this message, you are using a non-frame-capable web client. Link to &lt;a href="overview-summary.html"&gt;Non-frame version&lt;/a&gt;.&lt;/p&gt;   </noframes><a id="more"></a><hr><p>为了避免版权问题，再次声明：移植该文档，仅供学习交流，别无其它目的。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
     
     <summary type="html">
     
