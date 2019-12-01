@@ -49,7 +49,8 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;30&#x2F;1ZcyKpWRHgXSl93.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;30&#x2F;azHLnfqYJFprVRQ.png">
-<meta property="og:updated_time" content="2019-11-30T07:15:33.412Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;30&#x2F;vYJhpT4VCb96txE.png">
+<meta property="og:updated_time" content="2019-12-01T01:06:45.884Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;30&#x2F;1ZcyKpWRHgXSl93.png">
     
@@ -202,7 +203,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Demo"><span class="post-toc-number">1.</span> <span class="post-toc-text">Demo</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#扩展"><span class="post-toc-number">2.</span> <span class="post-toc-text">扩展</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#补充：Java-Character-类"><span class="post-toc-number">3.</span> <span class="post-toc-text">补充：Java Character 类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#isLowerCase-方法"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">isLowerCase() 方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#isUpperCase-方法"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">isUpperCase() 方法</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Demo"><span class="post-toc-number">1.</span> <span class="post-toc-text">Demo</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#扩展-①"><span class="post-toc-number">2.</span> <span class="post-toc-text">扩展 ①</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#扩展-②"><span class="post-toc-number">3.</span> <span class="post-toc-text">扩展 ②</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#补充：Java-Character-类"><span class="post-toc-number">4.</span> <span class="post-toc-text">补充：Java Character 类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#isLowerCase-方法"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">isLowerCase() 方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#isUpperCase-方法"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">isUpperCase() 方法</span></a></li></ol></li></ol>
         </nav>
     </aside>
    
@@ -233,16 +234,17 @@
         </div>
         <div class="post-count-custom">
             <i class="icon icon-lg icon-comment-o"></i>
-            阅读本文可能花费您&nbsp;<span class="post-count">2</span>&nbsp;分钟
+            阅读本文可能花费您&nbsp;<span class="post-count">4</span>&nbsp;分钟
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p><strong>A到Z的ASCII码值是65到90</strong></p>
-<p><strong>a到z的ASCII码值是97到122</strong></p>
+            <p><strong><font color="green">A到Z</font>的ASCII码值是<font color="blue">65到90</font></strong></p>
+<p><strong><font color="green">a到z</font>的ASCII码值是<font color="blue">97到122</font></strong></p>
 <a id="more"></a>
 
 <h1 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h1><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AlphabetDemo</span> </span>{</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">      <span class="comment">/*char和int类型能够相互转换，相信大家都明白 */</span></span><br><span class="line"> </span><br><span class="line">      <span class="comment">//A到Z的ASCII码是65到90，a到z的ASCII码值是97到122</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">char</span> c = <span class="number">0</span>; c &lt; <span class="number">128</span>; c++) {</span><br><span class="line">          <span class="comment">//java里包装类的一个静态方法，确定c是字母还是小写！！！）</span></span><br><span class="line">          <span class="keyword">if</span> (Character.isLowerCase(c)) {</span><br><span class="line">              System.out.printf(<span class="string">"value: %3d  char: %c\n"</span>, (<span class="keyword">int</span>)c, c);</span><br><span class="line">          <span class="comment">//同上，判断c是大写</span></span><br><span class="line">          } <span class="keyword">else</span> <span class="keyword">if</span> (Character.isUpperCase(c)) {</span><br><span class="line">              System.out.printf(<span class="string">"value: %3d  char: %c\n"</span>, (<span class="keyword">int</span>)c, c);</span><br><span class="line">          }</span><br><span class="line">      }</span><br><span class="line">  }</span><br><span class="line">	</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><p>🔺题目：</p>
+<p>注：关于<code>isLowerCase</code>和<code>isUpperCase</code>在文末有进一步的说明。</p>
+<h1 id="扩展-①"><a href="#扩展-①" class="headerlink" title="扩展 ①"></a>扩展 ①</h1><p>🔺题目：</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -265,11 +267,38 @@
                 <div class="image-caption"></div>
             </figure>
 
+<h1 id="扩展-②"><a href="#扩展-②" class="headerlink" title="扩展 ②"></a>扩展 ②</h1><p>上面常规思考题中的第6题是自左往右从上往下的水平顺序输出大写堆和小写堆字母表。假如想要按照自上而下从左往右的垂直顺序输出大写堆，该如何实现程序？</p>
+<p>即假如每列输出N=5个，则程序的输出情况如下：</p>
+<blockquote>
+<p>= = = Upper = = =</p>
+<p>A  F  K  P  U  Z </p>
+<p>B  G  L  Q  V </p>
+<p>C  H  M  R  W</p>
+<p>D  I  N  S  X </p>
+<p>E  J  O  T  Y </p>
+</blockquote>
+<p>试用<strong>一重循环</strong>编写程序，指定一个整型数N(1&lt;=N&lt;=26)，按示例规格输出列优先排序的大写字母表。 </p>
+<p>🔺代码：</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Aphabet</span> </span>{</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		System.out.println(<span class="string">"======Upper========"</span>);</span><br><span class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> n,level;</span><br><span class="line">		System.out.println(<span class="string">"the value of n:"</span>);</span><br><span class="line">		n = input.nextInt();</span><br><span class="line">		level = (<span class="keyword">int</span>)Math.ceil(<span class="number">26</span>/n);<span class="comment">//向上取整</span></span><br><span class="line">		<span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">char</span> ch = <span class="number">65</span>;</span><br><span class="line">		p(<span class="number">1</span>, n, ch);</span><br><span class="line">	}</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">p</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> n,<span class="keyword">char</span> ch)</span> </span>{</span><br><span class="line">		<span class="keyword">if</span>(x &gt; n)</span><br><span class="line">			<span class="keyword">return</span>;		</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = x;i &lt;= <span class="number">26</span>;i += n){</span><br><span class="line">			ch = (<span class="keyword">char</span>)(i + <span class="number">64</span>);</span><br><span class="line">			System.out.print(ch + <span class="string">" "</span>);</span><br><span class="line">		}</span><br><span class="line">		System.out.println();</span><br><span class="line">		++x;</span><br><span class="line">		p(x, n, ch);</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><del><font size="1">下午做了半个多小时都没做出来，晚上玩了会游戏突然想到用递归，下午怎么就没想到呢？然后游戏就挂机被举报了，但一气呵成搞定了这题。说明思想不够灵活hhh</font></del></p>
+<p>🔺截图：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/11/30/vYJhpT4VCb96txE.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+
 <h1 id="补充：Java-Character-类"><a href="#补充：Java-Character-类" class="headerlink" title="补充：Java Character 类"></a>补充：<a href="https://www.runoob.com/java/java-character.html" target="_blank" rel="noopener">Java Character 类</a></h1><h2 id="isLowerCase-方法"><a href="#isLowerCase-方法" class="headerlink" title="isLowerCase() 方法"></a>isLowerCase() 方法</h2><p>🔺作用：用于判断指定字符是否为小写字母。</p>
 <p>🔺语法</p>
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isLowerCase</span><span class="params">(<span class="keyword">char</span> ch)</span></span></span><br></pre></td></tr></tbody></table></figure>
 
-<p> 🔺参数</p>
+<p>🔺参数</p>
 <ul>
 <li><strong>ch</strong> – 要测试的字符。</li>
 </ul>
@@ -287,10 +316,9 @@
 
 <p> 🔺参数</p>
 <ul>
-<li><p><strong>ch</strong> – 要测试的字符。</p>
-<p>🔺返回值</p>
-</li>
+<li><strong>ch</strong> – 要测试的字符。</li>
 </ul>
+<p> 🔺返回值</p>
 <p>如果字符为大写，则返回 true；否则返回 false。</p>
 <p> 🔺实例</p>
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>{</span><br><span class="line">        System.out.println( Character.isUpperCase(<span class="string">'b'</span>));</span><br><span class="line">        System.out.println( Character.isUpperCase(<span class="string">'B'</span>));</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
@@ -321,7 +349,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新：<time datetime="2019-11-30T07:15:33.412Z" itemprop="dateUpdated">2019-11-30 15:15:33</time>
+    最后更新：<time datetime="2019-12-01T01:06:45.884Z" itemprop="dateUpdated">2019-12-01 09:06:45</time>
 </span>
 
 

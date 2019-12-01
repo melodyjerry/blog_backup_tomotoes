@@ -39,15 +39,15 @@
 
 
     
-    <meta name="description" content="5种生成随机数的简单方法👇">
+    <meta name="description" content="5种生成随机数的简单方法 和一篇大佬的文章👇">
 <meta name="keywords" content="Java,笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java—5种生成随机数的方法">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;Java%E2%80%945%E7%A7%8D%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95&#x2F;index.html">
 <meta property="og:site_name" content="MelodyHub">
-<meta property="og:description" content="5种生成随机数的简单方法👇">
+<meta property="og:description" content="5种生成随机数的简单方法 和一篇大佬的文章👇">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-30T03:29:15.321Z">
+<meta property="og:updated_time" content="2019-12-01T01:33:51.734Z">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="MelodyHub" href="/blog/atom.xml">
@@ -199,7 +199,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法-①"><span class="post-toc-number">1.</span> <span class="post-toc-text">方法 ①</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法②"><span class="post-toc-number">2.</span> <span class="post-toc-text">方法②</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法③"><span class="post-toc-number">3.</span> <span class="post-toc-text">方法③</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法④"><span class="post-toc-number">4.</span> <span class="post-toc-text">方法④</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法⑤"><span class="post-toc-number">5.</span> <span class="post-toc-text">方法⑤</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法-①"><span class="post-toc-number">1.</span> <span class="post-toc-text">方法 ①</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法②"><span class="post-toc-number">2.</span> <span class="post-toc-text">方法②</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法③"><span class="post-toc-number">3.</span> <span class="post-toc-text">方法③</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法④"><span class="post-toc-number">4.</span> <span class="post-toc-text">方法④</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#方法⑤"><span class="post-toc-number">5.</span> <span class="post-toc-text">方法⑤</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#大佬的文章"><span class="post-toc-number">6.</span> <span class="post-toc-text">大佬的文章</span></a></li></ol>
         </nav>
     </aside>
    
@@ -233,7 +233,8 @@
             阅读本文可能花费您&nbsp;<span class="post-count">3</span>&nbsp;分钟
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>5种生成随机数的简单方法👇</p>
+            <p>5种生成随机数的简单方法</p>
+<p>和一篇大佬的文章👇</p>
 <a id="more"></a>
 
 <h1 id="方法-①"><a href="#方法-①" class="headerlink" title="方法 ①"></a>方法 ①</h1><p>🔺 通过java.Math包的random方法得到1-10的int随机数</p>
@@ -250,8 +251,7 @@
 <p>🔺种子就是产生随机数的第一次使用值,机制是通过一个函数,将这个种子的值转化为随机数空间中的某一个点上,并且产生的随机数均匀的散布在空间中。以后产生的随机数都与前一个随机数有关</p>
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RandomDemo</span> </span>{</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>{    </span><br><span class="line">		Random r = <span class="keyword">new</span> Random();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span> ; i&lt;<span class="number">5</span> ;  i++)</span><br><span class="line">		{</span><br><span class="line">			<span class="keyword">int</span> ran1 = r.nextInt(<span class="number">100</span>);<span class="comment">//种子：100</span></span><br><span class="line">			System.out.println(ran1);</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-
-
+<p>注：类似的方法可参考 <a href="https://blog.csdn.net/xiaoye142034/article/details/78142136/" target="_blank" rel="noopener">利用Random类来产生5个20~50之间的随机整数</a></p>
 <h1 id="方法③"><a href="#方法③" class="headerlink" title="方法③"></a>方法③</h1><ol>
 <li><p>生成随机数需要使用到Java工具类中的Random类。</p>
 </li>
@@ -264,8 +264,7 @@
 </ol>
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RandomDemo</span> </span>{</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> START = <span class="number">50</span>;	<span class="comment">//定义范围开始数字</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> END = <span class="number">99</span>;	<span class="comment">//定义范围结束数字</span></span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{  </span><br><span class="line">      <span class="comment">//创建Random类对象</span></span><br><span class="line">      Random random = <span class="keyword">new</span> Random();              </span><br><span class="line">      <span class="comment">//产生随机数</span></span><br><span class="line">      <span class="keyword">int</span> number = random.nextInt(END - START + <span class="number">1</span>) + START;</span><br><span class="line">      <span class="comment">//打印随机数</span></span><br><span class="line">      System.out.println(<span class="string">"产生一个"</span>+START+<span class="string">"到"</span>+END+<span class="string">"之间的随机整数："</span>+number);</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-
-
+<p>注：更多方法可参考<a href="https://blog.csdn.net/u012377333/article/details/71336987" target="_blank" rel="noopener">【Java工具类】—-产生随机数</a></p>
 <h1 id="方法④"><a href="#方法④" class="headerlink" title="方法④"></a>方法④</h1><p>🔺 返回的数值是 [ 0.0 , 1.0 ) 的double型数值，由于double类数的精度很高，可以在一定程度下看做随机数，借助（int）来进行类型转换就可以得到整数随机数了</p>
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function"></span>{    </span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++) {</span><br><span class="line">    	<span class="keyword">int</span> max=<span class="number">99</span>,min=<span class="number">10</span>;<span class="comment">//生成两位随机正整数</span></span><br><span class="line">		<span class="keyword">int</span> ran2 = (<span class="keyword">int</span>) (Math.random()*(max-min)+min); </span><br><span class="line">    	System.out.println(ran2);</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
@@ -273,6 +272,11 @@
 
 <h1 id="方法⑤"><a href="#方法⑤" class="headerlink" title="方法⑤"></a>方法⑤</h1><p>🔺 返回从1970年1月1日0时0分0秒（这与OS有关）到现在的一个long型的毫秒数，取模之后即可得到所需范围内的随机数</p>
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>{    </span><br><span class="line">        <span class="keyword">int</span> max=<span class="number">100</span>,min=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">long</span> randomNum = System.currentTimeMillis();  </span><br><span class="line">        <span class="keyword">int</span> ran3 = (<span class="keyword">int</span>) (randomNum%(max-min)+min);  </span><br><span class="line">        System.out.println(ran3);</span><br><span class="line">        </span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<h1 id="大佬的文章"><a href="#大佬的文章" class="headerlink" title="大佬的文章"></a>大佬的文章</h1><p>这个大佬【<a href="https://blog.csdn.net/Pranuts_" target="_blank" rel="noopener">peabits</a>】的文章贼详细，可以好好琢磨琢磨 👇</p>
+<iframe src="https://blog.csdn.net/pranuts_/article/details/88628304" width="90%" height="70%" scrolling="yes" frameborder="1">
+</iframe>
 
 <script>
         document.querySelectorAll('.github-emoji')
@@ -299,7 +303,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新：<time datetime="2019-11-30T03:29:15.321Z" itemprop="dateUpdated">2019-11-30 11:29:15</time>
+    最后更新：<time datetime="2019-12-01T01:33:51.734Z" itemprop="dateUpdated">2019-12-01 09:33:51</time>
 </span>
 
 
@@ -346,7 +350,8 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/30/Java%E2%80%945%E7%A7%8D%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95/&title=《Java—5种生成随机数的方法》 — MelodyHub&source=5种生成随机数的简单方法👇" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/30/Java%E2%80%945%E7%A7%8D%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95/&title=《Java—5种生成随机数的方法》 — MelodyHub&source=5种生成随机数的简单方法
+和一篇大佬的文章👇" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -534,7 +539,8 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/30/Java%E2%80%945%E7%A7%8D%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95/&title=《Java—5种生成随机数的方法》 — MelodyHub&source=5种生成随机数的简单方法👇" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/30/Java%E2%80%945%E7%A7%8D%E7%94%9F%E6%88%90%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%9A%84%E6%96%B9%E6%B3%95/&title=《Java—5种生成随机数的方法》 — MelodyHub&source=5种生成随机数的简单方法
+和一篇大佬的文章👇" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
