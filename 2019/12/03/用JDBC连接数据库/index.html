@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Language" content="zh-cn">
+    <meta charset="utf-8">
+    
+    
+    
+    <title>用JDBC连接数据库 | MelodyHub | 你用走 可是我用跑</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    
+    <meta name="theme-color" content="#77AAFF">
+    
+    
+    <meta name="keywords" content="Java,SQL Server">
+    
+    
+
+    
+
+    <!-- Baidu Push -->
+<script>
+	(function(){
+		var bp = document.createElement('script');
+		var curProtocol = window.location.protocol.split(':')[0];
+		if (curProtocol === 'https') {
+			bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+		}
+		else {
+			bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+		}
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(bp, s);
+	})();
+
+	var _hmt = _hmt || [];
+</script>
+
+
+
+    
+    <meta name="description" content="简单理解JDBC（Java DataBase Connectivity）是 Java 和 数据库 之前的一座桥。 实则，JDBC 是用于==Java编程语言和数据库之间的标准Java API==。 三者之间的关系就如下图 👇">
+<meta name="keywords" content="Java,SQL Server">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用JDBC连接数据库">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;03&#x2F;%E7%94%A8JDBC%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93&#x2F;index.html">
+<meta property="og:site_name" content="MelodyHub">
+<meta property="og:description" content="简单理解JDBC（Java DataBase Connectivity）是 Java 和 数据库 之前的一座桥。 实则，JDBC 是用于==Java编程语言和数据库之间的标准Java API==。 三者之间的关系就如下图 👇">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;05&#x2F;Q9RLCmYzV4tjhva.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;05&#x2F;y46ExbaLkN9U2gT.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;05&#x2F;eiDkgtvWmGzSHR7.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;05&#x2F;aJuFKoe93VRj4kB.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;05&#x2F;K4MBQ6r27eA9IXV.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;05&#x2F;moZO3sQwt967aUh.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;05&#x2F;R2IjqeMUlZQm7rF.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;05&#x2F;QPsStiCGj5KvkHy.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;05&#x2F;nADI8TBaGQbjM92.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;05&#x2F;62wn9cQXFhtPuGx.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;05&#x2F;JgRYuPtNi124K7n.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;05&#x2F;5RJtqwNW2eZp6fY.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;05&#x2F;kMgWysGUYvXmDHr.png">
+<meta property="og:updated_time" content="2019-12-05T07:47:12.506Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;05&#x2F;Q9RLCmYzV4tjhva.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="MelodyHub" href="/blog/atom.xml">
+    
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+    <link id="style" rel="stylesheet" href="/blog/css/style.css?v=3.0">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+            
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+    <aside id="menu"  class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;"  target="_self" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" >
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg" alt="avatar">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname" id="name">Melody Jerry</h5>
+          
+            <div id="yiyanmotto" class="motto">&nbsp;</div>
+          
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+              <li class="waves-block waves-effect">
+                  <a href="/blog/"  >
+                    <i class="icon icon-lg icon-home"></i>
+                    <span>主 页</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+              <li class="waves-block waves-effect">
+                  <a href="/blog/archives"  >
+                    <i class="icon icon-lg icon-archives"></i>
+                    <span>归 档</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+              <li class="waves-block waves-effect">
+                  <a href="/blog/categories"  >
+                    <i class="icon icon-lg icon-th-list"></i>
+                    <span>分 类</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+              <li class="waves-block waves-effect">
+                  <a href="/blog/tags"  >
+                    <i class="icon icon-lg icon-tags"></i>
+                    <span>标 签</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+              <li class="waves-block waves-effect">
+                  <a href="/blog/about"  >
+                    <i class="icon icon-lg icon-smile-o"></i>
+                    <span>关 于</span><i class="icon icon-lg icon-caret-left"></i>
+                  </a>
+              </li>
+            
+      <!--邮箱、GitHub、微博-->
+      <div class="nav2">
+          
+              <a class="nav2item" data-title="Email" href="/blog/mailto:melodyjerry@163.com" target="_black"title="Email" >
+                <i class="icon icon-lg icon-envelope-o envelope-o"></i>
+              </a>
+          
+              <a class="nav2item" data-title="Github" href="https://github.com/melodyjerry" target="_blank"title="Github" >
+                <i class="icon icon-lg icon-github github"></i>
+              </a>
+          
+              <a class="nav2item" data-title="微博" href="https://weibo.com/" target="_blank"title="微博" >
+                <i class="icon icon-lg icon-weibo weibo"></i>
+              </a>
+          
+				<!--音乐播放器-->
+				
+					<!-- 具体文章内的音乐 -->
+					<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" 
+						width=210 height=220 
+						src="//music.163.com/outchain/player?type=2&id=35470766&auto=0&height=66">
+					</iframe>
+				
+			
+            </div>
+      </ul>
+        
+    </div>
+  </div>
+ 
+</aside>
+
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">用JDBC连接数据库</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" target="_self" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        <a href="../../atom.xml" target="_blank" class="header-icon waves-effect waves-circle waves-light" id="Rss">
+            <i class="icon icon-lg icon-rss"></i>
+        </a>
+    </div>
+</header>
+<header class="content-header post-header">
+
+
+    <div class="container fade-scale">
+        <div id="myheader">
+            <h1 class="title">
+                
+            </h1>
+            <h3 class="subtitle">
+                
+					<h3 id="pagetitle" class="archivestitle">MelodyHub</h3>
+                
+            </h3>
+        </div>
+    </div>
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#简单理解"><span class="post-toc-number">1.</span> <span class="post-toc-text">简单理解</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JDBC介绍"><span class="post-toc-number">2.</span> <span class="post-toc-text">JDBC介绍</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#教程"><span class="post-toc-number">3.</span> <span class="post-toc-text">教程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本文环境"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">本文环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SQL-Server-2017"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">SQL Server 2017</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SQL-Server-配置管理器"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">SQL Server 配置管理器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JDBC驱动"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">JDBC驱动</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Eclipse"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">Eclipse</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#实践"><span class="post-toc-number">4.</span> <span class="post-toc-text">实践</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#心得体会"><span class="post-toc-number">5.</span> <span class="post-toc-text">心得体会</span></a></li></ol>
+        </nav>
+    </aside>
+   
+<article id="post-用JDBC连接数据库"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">用JDBC连接数据库</h1>
+        <div class="post-meta">
+            <i class="icon icon-lg icon-calendar-o"></i>
+            发表于
+            <time class="post-time" title="2019-12-03 12:12:50" datetime="2019-12-03T04:12:50.000Z"  itemprop="datePublished">2019-12-03</time>
+
+            <br id="mybreak"/>
+            
+<script>
+	mybreak.style="display:none";
+</script>
+
+
+            <i>·</i>
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>次浏览
+</span>
+
+
+        </div>
+        <div class="post-count-custom">
+            <i class="icon icon-lg icon-comment-o"></i>
+            阅读本文可能花费您&nbsp;<span class="post-count">4</span>&nbsp;分钟
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="简单理解"><a href="#简单理解" class="headerlink" title="简单理解"></a>简单理解</h1><p><strong>JDBC</strong>（<strong>J</strong>ava <strong>D</strong>ata<strong>B</strong>ase <strong>C</strong>onnectivity）是 <strong>Java</strong> 和 <strong>数据库</strong> 之前的一座桥。</p>
+<p>实则，<strong>JDBC</strong> 是用于==Java编程语言和数据库之间的标准Java API==。</p>
+<p>三者之间的关系就如下图 👇</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/05/Q9RLCmYzV4tjhva.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h1 id="JDBC介绍"><a href="#JDBC介绍" class="headerlink" title="JDBC介绍"></a>JDBC介绍</h1><p>官方文档：<a href="https://www.oracle.com/technetwork/java/javase/jdbc/index.htmlJava" target="_blank" rel="noopener">https://www.oracle.com/technetwork/java/javase/jdbc/index.htmlJava</a></p>
+<p>原文👇</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/05/y46ExbaLkN9U2gT.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+<p>译文（可能有偏差）👇</p>
+<blockquote>
+<p>数据库连接 （JDBC）</p>
+<p>Java 数据库连接 （JDBC） API 是 Java 编程语言与各种数据库 SQL 数据库和其他表格数据源（如电子表格或平面文件）之间的独立于数据库的连接的行业标准。<strong>JDBC API 为基于 SQL 的数据库访问提供了调用级 API。</strong></p>
+<p>JDBC 技术允许您使用 Java 编程语言来利用需要访问企业数据的应用程序的”一次写入，随处运行”功能。借助支持 JDBC 技术的驱动程序，即使在异构环境中，您也可以连接所有企业数据。</p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><h2 id="本文环境"><a href="#本文环境" class="headerlink" title="本文环境"></a>本文环境</h2><table>
+<thead>
+<tr>
+<th>OS</th>
+<th>IDE</th>
+<th>数据库</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Windows 10 专业版</td>
+<td>Eclipse(v4.11.0)—jdk8</td>
+<td>SQL server 2017</td>
+</tr>
+</tbody></table>
+<h2 id="SQL-Server-2017"><a href="#SQL-Server-2017" class="headerlink" title="SQL Server 2017"></a>SQL Server 2017</h2><ol>
+<li>设置【SQL 身份验证登录】</li>
+<li>设置【登录名 sa】 的状态为【授予】和【启用】</li>
+<li>关闭程序</li>
+</ol>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/05/eiDkgtvWmGzSHR7.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h2 id="SQL-Server-配置管理器"><a href="#SQL-Server-配置管理器" class="headerlink" title="SQL Server 配置管理器"></a>SQL Server 配置管理器</h2><p>==因为SQL Server 2012装好后，默认协议是没有开启的，所以要打开SQL Server配置管理器中开启。==</p>
+<ol>
+<li>打开【SQL server2017配置管理器】</li>
+</ol>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/05/aJuFKoe93VRj4kB.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<ol start="2">
+<li>启用【Named Pipes】</li>
+<li>修改 【TCP/IP 属性】： 将【IP1 、IP10】中的【IP地址】改成【 127.0.0.1】，并将所有的【IPx】的【已启用】设置为【是】，将 【IPAII】中的【TCP端口】设成 【1433】，其余不变。</li>
+</ol>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/05/K4MBQ6r27eA9IXV.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<ol start="3">
+<li>重启【SQL Server服务】</li>
+</ol>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/05/moZO3sQwt967aUh.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<ol start="4">
+<li><p>【win+r】打开【运行】，键入【cmd】，打开命令行，键入以下命令👇</p>
+ <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet 127.0.0.1 1433</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>提示【talent不是内部命令】，则【打开控制面版】-&gt;【程序】-&gt;【启用或关闭Windows功能】-&gt;【勾选talent】-&gt;【确定】。</p>
+</li>
+</ol>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/05/R2IjqeMUlZQm7rF.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<ol start="6">
+<li>重新【步骤4】，进入【telnet】。</li>
+</ol>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/05/QPsStiCGj5KvkHy.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+
+
+<h2 id="JDBC驱动"><a href="#JDBC驱动" class="headerlink" title="JDBC驱动"></a>JDBC驱动</h2><ol>
+<li>下载驱动包：<a href="http://www.microsoft.com/zh-cn/download/details.aspx?id=11774" target="_blank" rel="noopener">http://www.microsoft.com/zh-cn/download/details.aspx?id=11774</a></li>
+<li>选择、下载【 sqljdbc_6.0.8112.200_chs.tar.gz】</li>
+<li>解压上述压缩包，得到目录文件夹</li>
+<li>复制【”sqljdbc_6.0\chs\jre8”】中的包【sqljdbc42.jar】，粘贴到IDE【Eclipse目录】下的【jdk1.8\jre\lib\ext】中。</li>
+</ol>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/05/nADI8TBaGQbjM92.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<ol start="5">
+<li>右键【我的电脑】-&gt;【高级系统设置】-&gt;【系统属性】-&gt;【高级】-&gt;【环境变量】，编辑【系统变量】中的【CLASSPATH】的【变量值】，加入【<strong>;</strong>路径】（该路径为步骤4中包的完整路径，注意路径前一定要加 <em><code>;</code></em>）-&gt;【确定】。</li>
+</ol>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/05/62wn9cQXFhtPuGx.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h2 id="Eclipse"><a href="#Eclipse" class="headerlink" title="Eclipse"></a>Eclipse</h2><ol>
+<li>【右键】工程项目-&gt;【Build Path】-&gt;【Configure Build Path】</li>
+</ol>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/05/JgRYuPtNi124K7n.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<ol start="2">
+<li>选择【Libraries】页-&gt;【Add External JARs…】-&gt;【添加】前面粘贴jar包的路径-&gt;【Apply and Close】</li>
+</ol>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/05/5RJtqwNW2eZp6fY.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h1 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h1><p>新建一个class，复制粘贴一下代码👇</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.sql.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">		<span class="comment">//SQL数据库引擎</span></span><br><span class="line">		String driverName=<span class="string">"com.microsoft.sqlserver.jdbc.SQLServerDriver"</span>;</span><br><span class="line">		<span class="comment">//数据源  ！！！！注意若出现加载或者连接数据库失败一般是这里出现问题</span></span><br><span class="line">		String dbURL=<span class="string">"jdbc:sqlserver://127.0.0.1:1433;DatabaseName=数据库名"</span>;<span class="comment">//【1】修改数据库名</span></span><br><span class="line">	    String Name=<span class="string">"登录名"</span>;<span class="comment">//【2】修改登陆名</span></span><br><span class="line">	    String Pwd=<span class="string">"密码"</span>;<span class="comment">//【3】修改密码</span></span><br><span class="line">	    <span class="keyword">try</span></span><br><span class="line">	    {</span><br><span class="line">	    	Class.forName(driverName);</span><br><span class="line">	    	Connection conn=DriverManager.getConnection(dbURL,Name,Pwd);</span><br><span class="line">	    	System.out.println(<span class="string">"连接数据库成功"</span>);</span><br><span class="line">	    }<span class="keyword">catch</span>(Exception e){</span><br><span class="line">	    	e.printStackTrace();</span><br><span class="line">	    	System.out.println(<span class="string">"连接失败"</span>);</span><br><span class="line">	    }</span><br><span class="line">	}</span><br><span class="line">	</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>运行截图👇</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://i.loli.net/2019/12/05/kMgWysGUYvXmDHr.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h1 id="心得体会"><a href="#心得体会" class="headerlink" title="心得体会"></a>心得体会</h1><p>前前后后，总计花了差不多三天的时间来研究怎么用JDBC连接数据库。</p>
+<p>期间，遇到好多问题。问过指导老师，老师说可能是SQL Server版本的问题。</p>
+<p>实验要求是2014，而我的是2017。但我觉得这不是问题。</p>
+<p>反反复复地，其他都配置好了，但是总是连接不上数据库。</p>
+<p>后来关注点放在了Eclipse的Path上，注意到我用的是jdk12，于是我想换成jdk8。</p>
+<p>一换、一 run ……咦，可以了哈哈哈哈。</p>
+<p>期间参考了很多人的博客，但是那些都没有<strong><font size="6" color="red">强调 </font><font size="5" color="blue">IDE中的环境要设置为【jdk8】</font>。</strong></p>
+<p><em>写博客不易，如果本文对你有帮助，可以考虑给我 <font size="5" color="green">打赏</font> 哦</em>  *<em>( ͡° ͜ʖ ͡°)✧ *</em> </p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新：<time datetime="2019-12-05T07:47:12.506Z" itemprop="dateUpdated">2019-12-05 15:47:12</time>
+</span>
+
+
+        
+        原文链接：<a href="/blog/2019/12/03/%E7%94%A8JDBC%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" target="_blank" rel="external">http://yoursite.com/2019/12/03/%E7%94%A8JDBC%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/</a>
+        
+    </div>
+    <footer>
+        <div onclick="location.href='http://yoursite.com'">
+            <img src="/blog/img/avatar.jpg" alt="Melody Jerry">
+            <a>Melody Jerry</a>
+        </div>
+    </footer>
+</blockquote>
+
+        
+    <div class="page-reward">
+        <nav class="myreward">
+            <a id="rewardBtn" href="javascript:;" target="_blank" rel="noopener"><span>打&nbsp;赏</span><span>装成好像很多人打赏的样子</span></a>
+        </nav>
+    </div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/SQL-Server/" rel="tag">SQL Server</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/12/03/%E7%94%A8JDBC%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/&title=《用JDBC连接数据库》 — MelodyHub&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/12/03/%E7%94%A8JDBC%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/&title=《用JDBC连接数据库》 — MelodyHub&source=简单理解JDBC（Java DataBase Connectivity）是 Java 和 数据库 之前的一座桥。
+实则，JDBC 是用于==Java编程语..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/03/%E7%94%A8JDBC%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《用JDBC连接数据库》 — MelodyHub&url=http://yoursite.com/2019/12/03/%E7%94%A8JDBC%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/12/03/%E7%94%A8JDBC%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" target="_blank" rel="noopener" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2019/12/01/Java-API%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C/" id="post-next" class="post-nav-link">
+        <h4 class="title" data-hover="下一篇：Java——API中文手册">下一篇：Java——API中文手册</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+    
+
+    
+
+    
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'true' == 'true',
+            verify: 'true' == 'true',
+            appId: "UNKL0FXJFAFOKRM1mGyL3Y2s-gzGzoHsz",
+            appKey: "HjUUcTY42RErTnIt7O58GhvH",
+            avatar: "wavatar",
+            placeholder: "( ͡° ͜ʖ ͡°)✧ 来啊，来啊!&#39;",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+</article>
+
+</div>
+
+        <footer class="footer">
+    <div class="footer-content">
+
+        <span class="power">
+            <i class="icon icon-lg icon-copyright"></i>
+            2019
+            <i class="icon icon-lg icon-heart"></i>
+            <a href="http://yoursite.com">melodyhub.ltd</a>
+            <br/>
+            Power by
+            <a href="https://hexo.io/" target="_blank" rel="external nofollow">Hexo v4.0.0</a>&nbsp;·&nbsp;
+            Theme
+            <a class="tomotoeslink" href="https://github.com/tomotoes/hexo-theme-tomotoes/" target="_blank" rel="external nofollow">tomotoes v1.4</a>
+        </span>
+
+        <br/>
+
+        <span id="RunTime" style="color:#a7a7a2;"></span>
+        <br/>
+		
+		<!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"> -->
+		<!-- 该script，详见http://ibruce.info/2015/04/04/busuanzi/ -->
+        <span>
+            
+	<i class="icon icon-lg icon-user">
+<span id="busuanzi_container_site_uv" style='display:none'>
+       访问用户：<span id="busuanzi_value_site_uv"></span>
+    </span>人</i>
+    ·
+    <i class="icon icon-lg icon-eye">
+    <span id="busuanzi_container_site_pv" style='display:none'>
+      访问次数：<span id="busuanzi_value_site_pv"></span>
+    </span>次
+    </i>
+
+
+        </span>
+        <!-- </script> -->
+        <br/>
+
+        <span class="license"><a  target="_blank" rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">博客内容遵循 知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        
+        
+    </div>
+</footer>
+
+    </main>
+    
+        
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        <span>感谢您的鼓励支持！</span>
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" data-img="/blog/img/dog.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/blog/img/wechat.png" data-alipay="/blog/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechatPay">&nbsp;&nbsp;微信&nbsp;&nbsp;</span>
+                <span class="reward-toggle-item alipayPay">支付宝</span>
+            </div>
+        </label>
+        
+        <i class="icon icon-caret-up"></i>
+    </div>
+</div>
+
+
+    
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" target="_self" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/12/03/%E7%94%A8JDBC%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/&title=《用JDBC连接数据库》 — MelodyHub&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/12/03/%E7%94%A8JDBC%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/&title=《用JDBC连接数据库》 — MelodyHub&source=简单理解JDBC（Java DataBase Connectivity）是 Java 和 数据库 之前的一座桥。
+实则，JDBC 是用于==Java编程语..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/03/%E7%94%A8JDBC%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《用JDBC连接数据库》 — MelodyHub&url=http://yoursite.com/2019/12/03/%E7%94%A8JDBC%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/12/03/%E7%94%A8JDBC%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p class="wechatshare">扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADN0lEQVR42u3awW6rQAwF0Pz/T6fSWz2pBa7tiQSTw6oiBDiThevreb3i4/3vqF75/u/4fc35cXTl0X1enziwsbGxH8LOH3++EOdn8lc8em5vmQ6fi42Njb0du1eKkvJWpSZLMLkGGxsb+5vZ52XvvIQkzUlyh6TIYWNjY2MnBazXWiSfzpcMGxsb+zvZ1cIzed0o9Gm1MR/J0rCxsbFvz+6Nb+/59wfn29jY2Ni3ZL+LRy9yOn9ubyzxHhzY2NjYO7HzzTfz80m0lCzx+fIlLRM2Njb2fuwkEuqF+8myJlste0sffRcbGxt7a3YPXG0hqkPi3jADGxsbe1d2tZBUN1xO8L3RcrSpCBsbG3s7di/E6W216W0MqgZSFw0SNjY29tbs+dC32khUi1a11F3Mt7GxsbEfzq4G60nrMm9s8oCp11lgY2Nj78ouF4BxuVoVb+XNyR8FDBsbG/vh7CovL2O9spRc34uTLga92NjY2I9lJxtueoFR7/p5carGYdjY2NhPZ+dxTG/rTELKS11vsQ7rNjY2NvYW7GoBq7YK1bvNR8jlgTE2Njb2w9n5TfPi0Rs2JJt48oXDxsbG/h72ZENML5BKXiVPwvK7LdsHhI2NjX0zdq8ATAYD+ei3N3KO3gQbGxt7U/aqf/erQ4I8ZsqX78KFjY2NvR17EtMnmLVNy6QteeW3wMbGxn4Iu9pIrBrKztuVBT8bNjY29kbsamxUDeWTsW4+Kqj+ABfjDWxsbOyN2GuHBPMgqdreTBYOGxsb+7nsXhiUx0nJSLi6QM3h7u9BLzY2NvbW7F4pyqOfyQLN3xkbGxt7J/Ykvu8FT9VAqhdsRVdiY2Njb8GuFqpJTJ9v2Ume2IuZsLGxsXdlJ0WrWmCqW3byd8jvFs20sbGxsbdgV2OaVYUk/3QyJDiMk7CxsbG3YE8KSfV8bxEnQVVvmIGNjY39RHY+Ll3VTkwWt1fAyg0JNjY29gPZk+Fu8t38Pmu3Ch2ewcbGxv5Kdi/66QHyhc6XAxsbGxs7KTm9ce9kGFBtTrCxsbF3ZffGq/m4N9+C02t7qu+MjY2NvRN7VcSfPKA6sk2u/OCQAxsbG/vu7B93PjATb0otagAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <!-- waves按钮特效 -->
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<!-- 主题配置脚本 -->
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: true };
+</script>
+
+<!-- jquery -->
+<script src="/blog/js/jquery.min.js?v=3.0"></script>
+
+<!-- 搜索 -->
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item waves-block waves-effect" onclick="location.href='{path}'">
+    <div class="title ellipsis" title="{title}">{title}</div>
+</li>
+</template>
+
+
+<!-- main博客脚本 -->
+<script src="/blog/js/main.min.js?v=3.0" ></script>
+
+<!-- 动画&配置 -->
+<script src="/blog/js/script.min.js?v=3.0" ></script>
+
+<!-- 脚本管理 -->
+<script>
+
+if(window.innerWidth > 800){
+	/* 3D标题 */
+	$(".content-header").on("mousemove", threedee);
+
+	/* 底部追随鼠标 */
+	$(".footer").hover(2);
+
+	/* gotop键的涟漪 */
+	$("#gotop").hover(1);
+
+	/* 赞赏的粒子雨 */
+	$("#reward").hover(3);
+
+	/* 微信公众号的底部渲染 */
+	$("#wechat").hover(4);
+
+    /* 标题跳动 */
+    $(".archivestitle").bumpyText();
+
+	/* 图片点击放大 */
+	const postimg = jQuery(".post-content img:not(.github-emoji)");
+	postimg.on("click",function(){
+
+		mask.classList.add("in");
+		main.classList.add("Mask");
+		menu.classList.add("Mask");
+		var myimg = this.cloneNode(true);
+		myimg.classList.add("imgShow");
+
+		setTimeout(function(){
+			jQuery(myimg).animate({
+				opacity:"1"
+			},1000);
+		},0);
+
+		document.body.appendChild(myimg);
+
+		myimg.onclick=function(){
+			document.body.removeChild(myimg);
+			mask.classList.remove("in");
+			main.classList.remove("Mask");
+			menu.classList.remove("Mask");
+		};
+
+	});
+
+}
+
+/* 名字跳动 */
+$("#name").bumpyText();
+
+
+/* 网站运行时间 */
+setInterval(function () {
+	setTime("2019/11/6");
+}, 1000);
+
+/* 文章块的淡出 */
+postshow();
+
+/* 座右铭 */
+
+   getHitokoto();
+
+
+
+/* 粘贴提示 */
+G($(".post-content"), location.href, "Melody Jerry");
+
+
+/* 控制台 */
+if (window.console && window.console.log) {
+	setTimeout(function () {
+		console.log("\n %c MelodyHub %c  © Melody Jerry  http://melodyhub.ltd \n\n", "color:#FFFFFB;background:#1abc9c;padding:5px 0;border-radius:.5rem 0 0 .5rem;", "color:#FFFFFB;background:#080808;padding:5px 0;border-radius:0 .5rem .5rem 0;");
+	}, 0);
+}
+
+</script>
+
+
+
+
+<!-- 公式渲染 -->
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+<!-- 不蒜子 -->
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+</body>
+</html>
