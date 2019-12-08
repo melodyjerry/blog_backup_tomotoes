@@ -6,7 +6,7 @@
     
     
     
-    <title>Java—替换字符串右侧出现的第一个子串 | MelodyHub | 你用走 可是我用跑</title>
+    <title>Java—转置数组 | MelodyHub | 你用走 可是我用跑</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     
     <meta name="theme-color" content="#77AAFF">
@@ -39,18 +39,18 @@
 
 
     
-    <meta name="description" content="🔺需求 👇 编程实现一个方法，能把一个字符串src的右侧出现的第一个olds子串替换为news，并把替换后的结果返回。">
+    <meta name="description" content="🔺需求 👇 编写一个程序，其功能是能随机生成一个数组、同时完成对该数组的转置并打印输出转置后的数组。">
 <meta name="keywords" content="Java,笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java—替换字符串右侧出现的第一个子串">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;08&#x2F;Java%E2%80%94%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%B3%E4%BE%A7%E5%87%BA%E7%8E%B0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AD%90%E4%B8%B2&#x2F;index.html">
+<meta property="og:title" content="Java—转置数组">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;07&#x2F;Java%E2%80%94%E8%BD%AC%E7%BD%AE%E6%95%B0%E7%BB%84&#x2F;index.html">
 <meta property="og:site_name" content="MelodyHub">
-<meta property="og:description" content="🔺需求 👇 编程实现一个方法，能把一个字符串src的右侧出现的第一个olds子串替换为news，并把替换后的结果返回。">
+<meta property="og:description" content="🔺需求 👇 编写一个程序，其功能是能随机生成一个数组、同时完成对该数组的转置并打印输出转置后的数组。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;08&#x2F;KYLGsJ42glm7FEO.png">
-<meta property="og:updated_time" content="2019-12-08T09:18:36.934Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;08&#x2F;AwSDly38f4UPkMY.png">
+<meta property="og:updated_time" content="2019-12-08T14:07:33.864Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;08&#x2F;KYLGsJ42glm7FEO.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;08&#x2F;AwSDly38f4UPkMY.png">
     
         <link rel="alternate" type="application/atom+xml" title="MelodyHub" href="/blog/atom.xml">
     
@@ -160,7 +160,7 @@
         <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Java—替换字符串右侧出现的第一个子串</div>
+        <div class="flex-col header-title ellipsis">Java—转置数组</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" target="_blank" rel="noopener" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -198,15 +198,15 @@
 
 <div class="container body-wrap">
     
-<article id="post-Java—替换字符串右侧出现的第一个子串"
+<article id="post-Java—转置数组"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Java—替换字符串右侧出现的第一个子串</h1>
+        <h1 class="post-card-title">Java—转置数组</h1>
         <div class="post-meta">
             <i class="icon icon-lg icon-calendar-o"></i>
             发表于
-            <time class="post-time" title="2019-12-08 12:46:08" datetime="2019-12-08T04:46:08.000Z"  itemprop="datePublished">2019-12-08</time>
+            <time class="post-time" title="2019-12-07 21:43:33" datetime="2019-12-07T13:43:33.000Z"  itemprop="datePublished">2019-12-07</time>
 
             <br id="mybreak"/>
             
@@ -229,20 +229,22 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>🔺需求 👇</p>
-<p>编程实现一个方法，能把一个字符串src的右侧出现的第一个olds子串替换为news，并把替换后的结果返回。</p>
+<p>编写一个程序，其功能是能随机生成一个数组、同时完成对该数组的转置并打印输出转置后的数组。</p>
 <a id="more"></a>
 
 <p>🔺代码 👇</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringReplaceLast</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">replaceLast</span><span class="params">(String src, String olds, String news)</span></span>{</span><br><span class="line">        <span class="comment">/* 实现一个尾部替换方法 */</span></span><br><span class="line">        System.out.println(src);</span><br><span class="line">        StringBuffer sbsrc = <span class="keyword">new</span> StringBuffer(src);</span><br><span class="line">        <span class="keyword">int</span> lenolds = olds.length();</span><br><span class="line">        <span class="keyword">int</span> tail = src.lastIndexOf(olds);</span><br><span class="line">        sbsrc = sbsrc.replace(tail,tail+lenolds, news);</span><br><span class="line">        src = sbsrc.toString();</span><br><span class="line">        <span class="keyword">return</span> src;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        System.out.println(replaceLast(<span class="string">"goodJava,I love it, very good,Truly."</span>, <span class="string">"good"</span>, <span class="string">"yes"</span> ));</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.lang.System.out;</span><br><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Reverse2dArray</span> </span>{   </span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span>[][] a; <span class="comment">// 存放两位随机整数的int二维数组a      </span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**    </span></span><br><span class="line"><span class="comment">    * 构造方法，初始化数组a，r和c分别是行数和列数row column    </span></span><br><span class="line"><span class="comment">    */</span>   </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Reverse2dArray</span><span class="params">(<span class="keyword">int</span> r, <span class="keyword">int</span> c)</span></span>{       </span><br><span class="line">        a = <span class="keyword">new</span> <span class="keyword">int</span>[r][c];   </span><br><span class="line">        buildRandArray();   </span><br><span class="line">    }     </span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**    </span></span><br><span class="line"><span class="comment">    * 构造随机数组   </span></span><br><span class="line"><span class="comment">    */</span>   </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildRandArray</span><span class="params">()</span></span>{   </span><br><span class="line">        Random random = <span class="keyword">new</span> Random();     </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.length; i++)      </span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; a[i].length; j++)         </span><br><span class="line">                a[i][j] = random.nextInt(<span class="number">100</span>); </span><br><span class="line">    }     </span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**    </span></span><br><span class="line"><span class="comment">    * 转置本类成员的二维数组a，并返回一个新的二维数组   </span></span><br><span class="line"><span class="comment">    * <span class="doctag">@return</span>   </span></span><br><span class="line"><span class="comment">    */</span>   </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] reverse2dArray(){        </span><br><span class="line">        <span class="keyword">int</span> [][] b = <span class="keyword">new</span> <span class="keyword">int</span> [a[<span class="number">0</span>].length] [a.length] ;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a.length; i++) {      </span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; a[<span class="number">0</span>].length; j++) {   </span><br><span class="line">                b[j][i] = a[i][j] ;     </span><br><span class="line">            }    </span><br><span class="line">        }     </span><br><span class="line">        <span class="keyword">return</span> b ; </span><br><span class="line">    }           </span><br><span class="line">    </span><br><span class="line">    <span class="comment">/* 显示二维数组 */</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showArray</span><span class="params">(<span class="keyword">int</span>[][] c)</span></span>{    </span><br><span class="line">        out.printf(<span class="string">"=========%2d×%-2d=========%n"</span>, c.length, c[<span class="number">0</span>].length);       </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span>[] cr : c){        </span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> cc : cr){      </span><br><span class="line">                out.printf(<span class="string">"%5d "</span>, cc); </span><br><span class="line">            }         </span><br><span class="line">            out.println();    </span><br><span class="line">        }        </span><br><span class="line">        out.println(<span class="string">"======================="</span>);   </span><br><span class="line">    }     </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{ </span><br><span class="line">        <span class="keyword">int</span> row = <span class="number">3</span>, col = <span class="number">4</span>;    </span><br><span class="line">        Reverse2dArray me = <span class="keyword">new</span> Reverse2dArray(row, col);  </span><br><span class="line">        </span><br><span class="line">        me.showArray(a); <span class="comment">// 显示原数组   </span></span><br><span class="line">        <span class="keyword">int</span>[][] r = me.reverse2dArray();     </span><br><span class="line">        me.showArray(r); <span class="comment">// 显示转置的数组      </span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <p>🔺截图 👇</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://i.loli.net/2019/12/08/KYLGsJ42glm7FEO.png" alt="" title="">
+                    <img src="https://i.loli.net/2019/12/08/AwSDly38f4UPkMY.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
-            </figure><script>
+            </figure>
+
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -267,12 +269,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新：<time datetime="2019-12-08T09:18:36.934Z" itemprop="dateUpdated">2019-12-08 17:18:36</time>
+    最后更新：<time datetime="2019-12-08T14:07:33.864Z" itemprop="dateUpdated">2019-12-08 22:07:33</time>
 </span>
 
 
         
-        原文链接：<a href="/blog/2019/12/08/Java%E2%80%94%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%B3%E4%BE%A7%E5%87%BA%E7%8E%B0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AD%90%E4%B8%B2/" target="_blank" rel="external">http://yoursite.com/2019/12/08/Java%E2%80%94%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%B3%E4%BE%A7%E5%87%BA%E7%8E%B0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AD%90%E4%B8%B2/</a>
+        原文链接：<a href="/blog/2019/12/07/Java%E2%80%94%E8%BD%AC%E7%BD%AE%E6%95%B0%E7%BB%84/" target="_blank" rel="external">http://yoursite.com/2019/12/07/Java%E2%80%94%E8%BD%AC%E7%BD%AE%E6%95%B0%E7%BB%84/</a>
         
     </div>
     <footer>
@@ -304,7 +306,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/12/08/Java%E2%80%94%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%B3%E4%BE%A7%E5%87%BA%E7%8E%B0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AD%90%E4%B8%B2/&title=《Java—替换字符串右侧出现的第一个子串》 — MelodyHub&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/12/07/Java%E2%80%94%E8%BD%AC%E7%BD%AE%E6%95%B0%E7%BB%84/&title=《Java—转置数组》 — MelodyHub&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -314,23 +316,23 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/12/08/Java%E2%80%94%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%B3%E4%BE%A7%E5%87%BA%E7%8E%B0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AD%90%E4%B8%B2/&title=《Java—替换字符串右侧出现的第一个子串》 — MelodyHub&source=🔺需求 👇
-编程实现一个方法，能把一个字符串src的右侧出现的第一个olds子串替换为news，并把替换后的结果返回。" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/12/07/Java%E2%80%94%E8%BD%AC%E7%BD%AE%E6%95%B0%E7%BB%84/&title=《Java—转置数组》 — MelodyHub&source=🔺需求 👇
+编写一个程序，其功能是能随机生成一个数组、同时完成对该数组的转置并打印输出转置后的数组。" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/08/Java%E2%80%94%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%B3%E4%BE%A7%E5%87%BA%E7%8E%B0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AD%90%E4%B8%B2/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/07/Java%E2%80%94%E8%BD%AC%E7%BD%AE%E6%95%B0%E7%BB%84/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java—替换字符串右侧出现的第一个子串》 — MelodyHub&url=http://yoursite.com/2019/12/08/Java%E2%80%94%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%B3%E4%BE%A7%E5%87%BA%E7%8E%B0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AD%90%E4%B8%B2/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java—转置数组》 — MelodyHub&url=http://yoursite.com/2019/12/07/Java%E2%80%94%E8%BD%AC%E7%BD%AE%E6%95%B0%E7%BB%84/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/12/08/Java%E2%80%94%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%B3%E4%BE%A7%E5%87%BA%E7%8E%B0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AD%90%E4%B8%B2/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/12/07/Java%E2%80%94%E8%BD%AC%E7%BD%AE%E6%95%B0%E7%BB%84/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -350,13 +352,21 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/blog/2019/12/08/Java%E2%80%94%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%B3%E4%BE%A7%E5%87%BA%E7%8E%B0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AD%90%E4%B8%B2/" id="post-prev" class="post-nav-link">
+        <h4 class="title" >
+          上一篇：Java—替换字符串右侧出现的第一个子串
+        </h4>
+      </a>
+    </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/blog/2019/12/07/Java%E2%80%94%E8%BD%AC%E7%BD%AE%E6%95%B0%E7%BB%84/" id="post-next" class="post-nav-link">
-        <h4 class="title" data-hover="下一篇：Java—转置数组">下一篇：Java—转置数组</h4>
+      <a href="/blog/2019/12/07/%E3%80%90%E7%BA%AA%E5%BF%B5%E3%80%91%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%B8%8A%E7%BA%BF%E4%B8%80%E4%B8%AA%E6%9C%88/" id="post-next" class="post-nav-link">
+        <h4 class="title" data-hover="下一篇：【纪念】我的博客上线一个月">下一篇：【纪念】我的博客上线一个月</h4>
       </a>
     </div>
   
@@ -485,7 +495,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/12/08/Java%E2%80%94%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%B3%E4%BE%A7%E5%87%BA%E7%8E%B0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AD%90%E4%B8%B2/&title=《Java—替换字符串右侧出现的第一个子串》 — MelodyHub&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/12/07/Java%E2%80%94%E8%BD%AC%E7%BD%AE%E6%95%B0%E7%BB%84/&title=《Java—转置数组》 — MelodyHub&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -495,23 +505,23 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/12/08/Java%E2%80%94%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%B3%E4%BE%A7%E5%87%BA%E7%8E%B0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AD%90%E4%B8%B2/&title=《Java—替换字符串右侧出现的第一个子串》 — MelodyHub&source=🔺需求 👇
-编程实现一个方法，能把一个字符串src的右侧出现的第一个olds子串替换为news，并把替换后的结果返回。" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/12/07/Java%E2%80%94%E8%BD%AC%E7%BD%AE%E6%95%B0%E7%BB%84/&title=《Java—转置数组》 — MelodyHub&source=🔺需求 👇
+编写一个程序，其功能是能随机生成一个数组、同时完成对该数组的转置并打印输出转置后的数组。" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/08/Java%E2%80%94%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%B3%E4%BE%A7%E5%87%BA%E7%8E%B0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AD%90%E4%B8%B2/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/07/Java%E2%80%94%E8%BD%AC%E7%BD%AE%E6%95%B0%E7%BB%84/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java—替换字符串右侧出现的第一个子串》 — MelodyHub&url=http://yoursite.com/2019/12/08/Java%E2%80%94%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%B3%E4%BE%A7%E5%87%BA%E7%8E%B0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AD%90%E4%B8%B2/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java—转置数组》 — MelodyHub&url=http://yoursite.com/2019/12/07/Java%E2%80%94%E8%BD%AC%E7%BD%AE%E6%95%B0%E7%BB%84/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/12/08/Java%E2%80%94%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%B3%E4%BE%A7%E5%87%BA%E7%8E%B0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AD%90%E4%B8%B2/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/12/07/Java%E2%80%94%E8%BD%AC%E7%BD%AE%E6%95%B0%E7%BB%84/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -522,7 +532,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p class="wechatshare">扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAAE+CAAAAAAxUyPsAAAFOElEQVR42u3aQW4jSRADQP//07vXGQwkkcy2B9gNnQxDVldFG1A2WV9f8euft69f35N/2qvf/Plzfq18De8//+EXPnz48OHDd6B5v433C3pF064n/4SE9dX7kzXgw4cPHz58G9/7IeD9exLubfPbbdjGoHEwwocPHz58+H6EL/+rZHHRiPDQLc+jCnz48OHDh+/v8rVx/DZetDn5ZRcPlAH48OHDhw/fxJeE9fnv21Gj3dJTQ0m+rwe6Dnz48OHDh+88IvxXf374hQ8fPnz48AVfz+1Qkr/ncsTtElLkpUKkgQ8fPnz48E0aeWSQLDff2D2mzw+xtfVDTo8PHz58+PDlfO1BsfaSbVye36qnav58Vfjw4cOHD9+dr/2ab0eNfHTIx6bLJvMd1QcC8OHDhw8fvoAvf/BOtpQPEG3I3q6zHVwe7jrw4cOHDx++gK99RN9q5nareRlweU97CAAfPnz48OHb+PKH+bZQf3bc2Y6ytTVAW7rjw4cPHz58LV8eZxf3IY7v7wH9U/X5WPnjw4cPHz58B742Psg3kF+lfYDfHv7bUv/lX+HDhw8fPnwlXwuxFdv3kaWNLTbubaDBhw8fPnz4cr52e3l13X5mG9ZvI9c9rMeHDx8+fPgufO2BrTxMf+qh/VKKt2vLx6a6z8eHDx8+fPjiC2zHy95vuI34n6q3L2QvPxMfPnz48OGL+dpiOC+nL7V3y9TGFvexBh8+fPjw4dv4LmRt/J3X3u04kt/OS2DxITLAhw8fPnz4gvdsxfMYak/l9L0gb/eVF/z48OHDhw9fy9cusQW9FO2XYuBSzCd7x4cPHz58+C58yaNy/hjfxgTbdS8F+VP7xYcPHz58+O58bYyeP7pvQUASyudXzyuB4lr48OHDhw9fzJcfDrsc5LrH8fkmk4f/tnr/0HXgw4cPHz58h5q8HSDayGCjz+vqNrK/rBMfPnz48OG78LVDSVtF5yF7e7PHpGQK7l8OLvjw4cOHD9+yl/qLPD9kltyALXbfjtC1UUJ0m/Hhw4cPH764IN/GiCRQyIeDe429hSPj2vDhw4cPH74D3xaRf99D+FZyJyvMQ/wP4xE+fPjw4cNX8j31qN9C5HxblLBdfQsU8OHDhw8fvpyvjb/zr/N77N4OGXkccC/1x94eHz58+PD97/naEaEdVi5xQLvC/B+ivcFRZI8PHz58+PDFfPkDf055GUfaaD4vG/Jhpb3B+PDhw4cPX8LXRgD5uax8WUmJnv/c/u3lhuHDhw8fPnwXvhw0jwO24ea+vbY4H6MEfPjw4cOHb+LbhoY2Um9Hn+3qlyCgXg8+fPjw4cO3rOerfWj/jiHj2fggaiem4B4fPnz48OF7iu8ydmyL2MagLe5Pxp0xsseHDx8+fPji37SLzi+wQbRXuccND4f1+PDhw4cP3+cJoeh822j7Pu5cjsdtVf0YzePDhw8fPnwB36Xqbm/GFse3QHmJnt+8DwE9Pnz48OHDV/JtQUDyBf9sgZ2HGsk/xyXu/y2sx4cPHz58+A5837Gse0G+VfXbaJK/Bx8+fPjw4Wv5tnEheRRvabZofivIL5XANmzhw4cPHz58fx5TuxwRa2P3p96/YW2DCz58+PDhw/csX76lZBv5bdhe+RR2f/j/8E58+PDhw4fvR/gukf1lVMor83wMuoQj+PDhw4cP38/wJQPEU2HEVuG3rHmogQ8fPnz48N35LhfLC+bt0Ng9DqjHkTyewIcPHz58+PZk+ytfaFtCb3BJSZCvJBlTLjcbHz58+PDhe7uqfwERRTB3gKsSvgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACu0lEQVR42u3a22rDMBAFwP7/T7fQp0IT++xFaQrjpxAcWaOAJc7ux0d8fX5fv7/5+f3nr+t6tGf3J89avvDw8PBaU08emT/42VQm918v5dMlwMPDwzvGu94M8qGvX+I5LJlDMj4eHh7e3/KqsASTH6bx8PDw/i+vek8eYbzFxoCHh4cX8/JXfDWYuIZNPi9nLXh4eHi1lKBQAHuHzwfre3h4eHiDqvpWYaw6Tu+eB7/Cw8PDO8BLjqp5s1S1xJU/Nw8ybrIWPDw8vCVefiKtTiUfJ1m+PM7Aw8PDO8fLY9C8LSAvgyVPydkPRsbDw8N7CS8PcCftBVvR7c32g4eHh3eA12uW2ppidWtpBh94eHh4L+FVS1x5uDDh5RsDHh4e3mt4kzgg2WCqR/ZenNFcAzw8PLyYl8Sp1YNsbyGSI3v1D8DDw8N7PS8Pc/NtpteSlR/BHwS4eHh4eKu85ESaD3p9zUPhvIEADw8P7xwvn1Ae+OZBQ/Up5eYGPDw8vAO8PHrI44bJYs0brW6arvDw8PDGvGqZvzqhagyRLFm+xHh4eHgnePkkJjHuVpNWtVCHh4eHd47XCwiajwlGy4thC+UuPDw8vNYIvSaqeSRRHSdfrJv+CDw8PLwDvK02gmSx8mXFw8PDewdeDutNLg9we60Ga/8bHh4eXiuDTQLW6iG7ukz5AlUXDg8PD2+LlxelJoWoKiD/HHVG4OHh4a3yJm0EeTGs+lovVO2SHQ8PDw9vlTcpbuUv6JxRLapF2wAeHh7eKm++q/QChV7JrRcN4+Hh4Z3g9ZqoqklpXr7KD+uFKh8eHh7eAV6vJJY3Rc2/77WF4eHh4b0DL4kDJptN9RB/c+DGw8PD+1Pebozba0EowPDw8PAO8+bFp0mIkCxfc2nw8PDwDvC2CmDVYlUe7CbsUZUPDw8PL+V9ASdU+T75qbWAAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 
