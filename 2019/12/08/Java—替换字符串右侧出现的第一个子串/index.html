@@ -39,16 +39,16 @@
 
 
     
-    <meta name="description" content="🔺需求 👇 编程实现一个方法，能把一个字符串src的右侧出现的第一个olds子串替换为news，并把替换后的结果返回。 🔺代码 👇 123456789101112131415161718192021public class StringReplaceLast {    public static String replaceLast(String src, String olds, Str">
+    <meta name="description" content="🔺需求 👇 编程实现一个方法，能把一个字符串src的右侧出现的第一个olds子串替换为news，并把替换后的结果返回。">
 <meta name="keywords" content="Java,笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java—替换字符串右侧出现的第一个子串">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;08&#x2F;Java%E2%80%94%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%B3%E4%BE%A7%E5%87%BA%E7%8E%B0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AD%90%E4%B8%B2&#x2F;index.html">
 <meta property="og:site_name" content="MelodyHub">
-<meta property="og:description" content="🔺需求 👇 编程实现一个方法，能把一个字符串src的右侧出现的第一个olds子串替换为news，并把替换后的结果返回。 🔺代码 👇 123456789101112131415161718192021public class StringReplaceLast {    public static String replaceLast(String src, String olds, Str">
+<meta property="og:description" content="🔺需求 👇 编程实现一个方法，能把一个字符串src的右侧出现的第一个olds子串替换为news，并把替换后的结果返回。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;08&#x2F;KYLGsJ42glm7FEO.png">
-<meta property="og:updated_time" content="2019-12-08T04:47:12.619Z">
+<meta property="og:updated_time" content="2019-12-08T09:18:36.934Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;12&#x2F;08&#x2F;KYLGsJ42glm7FEO.png">
     
@@ -230,6 +230,8 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>🔺需求 👇</p>
 <p>编程实现一个方法，能把一个字符串src的右侧出现的第一个olds子串替换为news，并把替换后的结果返回。</p>
+<a id="more"></a>
+
 <p>🔺代码 👇</p>
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringReplaceLast</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">replaceLast</span><span class="params">(String src, String olds, String news)</span></span>{</span><br><span class="line">        <span class="comment">/* 实现一个尾部替换方法 */</span></span><br><span class="line">        System.out.println(src);</span><br><span class="line">        StringBuffer sbsrc = <span class="keyword">new</span> StringBuffer(src);</span><br><span class="line">        <span class="keyword">int</span> lenolds = olds.length();</span><br><span class="line">        <span class="keyword">int</span> tail = src.lastIndexOf(olds);</span><br><span class="line">        sbsrc = sbsrc.replace(tail,tail+lenolds, news);</span><br><span class="line">        src = sbsrc.toString();</span><br><span class="line">        <span class="keyword">return</span> src;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        System.out.println(replaceLast(<span class="string">"goodJava,I love it, very good,Truly."</span>, <span class="string">"good"</span>, <span class="string">"yes"</span> ));</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
@@ -265,7 +267,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新：<time datetime="2019-12-08T04:47:12.619Z" itemprop="dateUpdated">2019-12-08 12:47:12</time>
+    最后更新：<time datetime="2019-12-08T09:18:36.934Z" itemprop="dateUpdated">2019-12-08 17:18:36</time>
 </span>
 
 
@@ -312,7 +314,8 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/12/08/Java%E2%80%94%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%B3%E4%BE%A7%E5%87%BA%E7%8E%B0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AD%90%E4%B8%B2/&title=《Java—替换字符串右侧出现的第一个子串》 — MelodyHub&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/12/08/Java%E2%80%94%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%B3%E4%BE%A7%E5%87%BA%E7%8E%B0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AD%90%E4%B8%B2/&title=《Java—替换字符串右侧出现的第一个子串》 — MelodyHub&source=🔺需求 👇
+编程实现一个方法，能把一个字符串src的右侧出现的第一个olds子串替换为news，并把替换后的结果返回。" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -492,7 +495,8 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/12/08/Java%E2%80%94%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%B3%E4%BE%A7%E5%87%BA%E7%8E%B0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AD%90%E4%B8%B2/&title=《Java—替换字符串右侧出现的第一个子串》 — MelodyHub&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/12/08/Java%E2%80%94%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%B3%E4%BE%A7%E5%87%BA%E7%8E%B0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AD%90%E4%B8%B2/&title=《Java—替换字符串右侧出现的第一个子串》 — MelodyHub&source=🔺需求 👇
+编程实现一个方法，能把一个字符串src的右侧出现的第一个olds子串替换为news，并把替换后的结果返回。" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
