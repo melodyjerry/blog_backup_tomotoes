@@ -194,6 +194,225 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-多图片滚动测试"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a href="/blog/2019/11/08/%E5%A4%9A%E5%9B%BE%E7%89%87%E6%BB%9A%E5%8A%A8%E6%B5%8B%E8%AF%95/">多图片滚动测试</a>
+    </h3>
+  
+
+
+
+
+     <div class="post-meta">
+        <time class="post-time" title="2019-11-08 07:10:13" datetime="2019-11-07T23:10:13.000Z"  itemprop="datePublished">2019-11-08</time>
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        <a id="more"></a>
+
+
+
+
+
+<!--【两端之间来回滚动behavior="alternate"】【onMouseOut="this.start()" ：用来设置鼠标移出该区域时继续滚动
+onMouseOver="this.stop()"：用来设置鼠标移入该区域时停止滚动】【scrollamount="10"】-->
+
+<!--图片等比例放缩【style等号"transform:scale(0.1)"】 -->
+
+<marquee scrolldelay="10" scrollamount="30" loop="2" direction="left" onmouseout="this.start()" onmouseover="this.stop()">
+<img height="30%" width="30%" src="https://i.loli.net/2019/11/28/IptHrPkBOhQLVbd.jpg">
+<img height="30%" width="30%" src="https://i.loli.net/2019/11/23/QzMuCJyZ8ibGc6h.png">
+<img height="30%" width="30%" src="https://i.loli.net/2019/12/01/X7MwlFICKtEf6D3.png">
+<img height="30%" width="30%" src="https://i.loli.net/2019/11/28/IptHrPkBOhQLVbd.jpg">
+<img height="30%" width="30%" src="https://i.loli.net/2019/12/01/X7MwlFICKtEf6D3.png">
+</marquee>
+
+<hr>
+
+    <title>无缝滚动</title>
+
+<style type="text/css">
+*{margin: 0;padding: 0;}
+    #div1{position: relative;border:1px solid #0ff;width:800px; height: 180px;margin:50px auto 0;overflow: hidden;} /* 修改容器规模 */
+    #div1 ul{position: absolute;left: 0;}
+    #div1 ul li{list-style: none;width:200px;float: left;padding: 10px;height: 160px;}
+    #div1 ul li img{width:100%;}
+</style>
+<script type="text/javascript">
+    window.onload=function(){
+        var oDiv=document.getElementById('div1');
+        var oUl=oDiv.getElementsByTagName('ul')[0];
+        var aLi=oUl.getElementsByTagName('li');
+        var aA=document.getElementsByTagName('a');//获取向右向左的箭头
+        var timer=null;
+        var iSpeed=10;
+        oUl.innerHTML+=oUl.innerHTML;//定义图片可以循环播放
+        oUl.style.width=aLi.length*aLi[0].offsetWidth+'px';//定义外层ul的宽度，根据图片的个数和每个图片的宽度计算，保证总宽度是可调整的
+        function fnMove(){
+            if(oUl.offsetLeft<-oUl.offsetWidth/2){
+                oUl.style.left=0;
+            }else if(oUl.offsetLeft>0){
+                oUl.style.left=-oUl.offsetWidth/2+'px';
+            }//定义到边界的时候，实现无缝衔接
+            oUl.style.left=oUl.offsetLeft+iSpeed+'px';
+//定义图片的右边距随着速度不断不断增加，或减小，实现运动的效果
+        }
+        timer=setInterval(fnMove,30);
+        aA[0].onclick=function(){
+            iSpeed=-10;
+//按下左箭头，定义向左运动
+        }
+        aA[1].onclick=function(){
+            iSpeed=10;
+//按下右箭头，定义向右运动
+        }
+        oDiv.onmouseover=function(){
+            clearInterval(timer);
+//鼠标移动到图片上，清除定时器，停止运动
+        }
+        oDiv.onmouseout=function(){
+            timer=setInterval(fnMove,30);
+//鼠标移出，重新开启定时器，重新运动
+        }
+    };
+</script><a href="javascript:;" target="_blank" rel="noopener">←</a><a href="javascript:;" target="_blank" rel="noopener">→</a><p>！！！方向选择按钮异常！！！</p><div id="div1"><ul><li><img src="https://i.loli.net/2019/12/01/X7MwlFICKtEf6D3.png"></li><li><img src="https://i.loli.net/2019/11/23/QzMuCJyZ8ibGc6h.png"></li><li><img src="https://i.loli.net/2019/11/28/IptHrPkBOhQLVbd.jpg"></li><div style="clear: none;"></div></ul></div>
+
+<hr>
+<!--参考资料：https://www.w3school.com.cn/tags/tag_img.asp】【http://www.fly63.com/article/detial/5296】【https://www.jianshu.com/p/6dcec8a9ea60】【https://www.cnblogs.com/694579350liuq/p/7052824.html--> 
+
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+    
+        <div>
+            <a href="/blog/2019/11/08/%E5%A4%9A%E5%9B%BE%E7%89%87%E6%BB%9A%E5%8A%A8%E6%B5%8B%E8%AF%95/" class="post-more waves-button">
+                阅读全文 »
+            </a>
+        </div>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Hexo/" rel="tag">Hexo</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-网页视频测试"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a href="/blog/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/">网页视频测试</a>
+    </h3>
+  
+
+
+
+
+     <div class="post-meta">
+        <time class="post-time" title="2019-11-08 00:00:00" datetime="2019-11-07T16:00:00.000Z"  itemprop="datePublished">2019-11-08</time>
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        <p>浏览测试效果👇</p>
+    
+        <div>
+            <a href="/blog/2019/11/08/%E7%BD%91%E9%A1%B5%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95/" class="post-more waves-button">
+                阅读全文 »
+            </a>
+        </div>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Hexo/" rel="tag">Hexo</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Hexo+GitHub"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a href="/blog/2019/11/07/Hexo+GitHub/">使用Hexo+GitHub建站</a>
+    </h3>
+  
+
+
+
+
+     <div class="post-meta">
+        <time class="post-time" title="2019-11-07 19:24:01" datetime="2019-11-07T11:24:01.000Z"  itemprop="datePublished">2019-11-07</time>
+
+    </div>
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        <p>前言： 使用CSDN平台撰写博客似乎是一件美事，只不过个人觉得太过于依赖他人平台，不如就自己搭建一个属于自己的博客。</p>
+    
+        <div>
+            <a href="/blog/2019/11/07/Hexo+GitHub/" class="post-more waves-button">
+                阅读全文 »
+            </a>
+        </div>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/GitHub/" rel="tag">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Hexo/" rel="tag">Hexo</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-文章截断"
   class="article-card article-type-post" itemprop="blogPost">
 
