@@ -39,15 +39,15 @@
 
 
     
-    <meta name="description" content="写的md文章太长，担心放到首页上浏览效果不好，怎么办？ 那就直接截断文章。 截断按钮文字不是通过配置文件_config.yml实现的，而是在文章内容里实现。 只要在需要被截断的文章位置加上： 1&amp;lt;!-- more --&amp;gt;  就可以了！ 效果就像下面的这个按钮 可以点点看哦👇          document.querySelectorAll(&amp;apos;.github-emoji&amp;apos;)">
+    <meta name="description" content="写的md文章太长，担心放到首页上浏览效果不好，怎么办？ 那就直接截断文章。 截断按钮文字不是通过配置文件_config.yml实现的，而是在文章内容里实现。 只要在需要被截断的文章位置加上： 1&amp;lt;!-- more --&amp;gt;  就可以了！ 效果就像下面的这个按钮 可以点点看哦👇">
 <meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="博客文章太长？截断！">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;06&#x2F;%E6%96%87%E7%AB%A0%E6%88%AA%E6%96%AD&#x2F;index.html">
 <meta property="og:site_name" content="MelodyHub">
-<meta property="og:description" content="写的md文章太长，担心放到首页上浏览效果不好，怎么办？ 那就直接截断文章。 截断按钮文字不是通过配置文件_config.yml实现的，而是在文章内容里实现。 只要在需要被截断的文章位置加上： 1&amp;lt;!-- more --&amp;gt;  就可以了！ 效果就像下面的这个按钮 可以点点看哦👇          document.querySelectorAll(&amp;apos;.github-emoji&amp;apos;)">
+<meta property="og:description" content="写的md文章太长，担心放到首页上浏览效果不好，怎么办？ 那就直接截断文章。 截断按钮文字不是通过配置文件_config.yml实现的，而是在文章内容里实现。 只要在需要被截断的文章位置加上： 1&amp;lt;!-- more --&amp;gt;  就可以了！ 效果就像下面的这个按钮 可以点点看哦👇">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-23T11:49:29.633Z">
+<meta property="og:updated_time" content="2020-01-04T01:51:09.574Z">
 <meta name="twitter:card" content="summary">
     
         <link rel="alternate" type="application/atom+xml" title="MelodyHub" href="/blog/atom.xml">
@@ -235,6 +235,12 @@
 <p>就可以了！</p>
 <p>效果就像下面的这个按钮</p>
 <p>可以点点看哦👇</p>
+<a id="more"></a>
+
+<p>插入测试代码</p>
+<p>（无任何作用、意义，仅提供该页面测试用）</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">javascript:<span class="built_in">window</span>.onblur=<span class="literal">null</span>;<span class="keyword">void</span> <span class="number">0</span>;</span><br><span class="line"><span class="comment">//all</span></span><br><span class="line"><span class="keyword">var</span> open_all_chapter = <span class="built_in">document</span>.getElementsByClassName(<span class="string">"fold_chapter"</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; open_all_chapter.length; i++) {</span><br><span class="line">open_all_chapter[i].click()</span><br><span class="line">}</span><br><span class="line"><span class="comment">//each</span></span><br><span class="line"><span class="keyword">var</span> chapters = <span class="built_in">document</span>.getElementsByClassName(<span class="string">"rate_box"</span>);</span><br><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line">chapters[++count].click();</span><br><span class="line">setInterval(<span class="function"><span class="params">()</span> =&gt;</span> {</span><br><span class="line"><span class="comment">// var playButton = document.getElementById("div_play_wrapper");</span></span><br><span class="line"><span class="comment">// if (playButton) {</span></span><br><span class="line"><span class="comment">// playButton.click();</span></span><br><span class="line"><span class="comment">// }</span></span><br><span class="line"><span class="keyword">var</span> TC = <span class="built_in">document</span>.getElementsByClassName(<span class="string">"layui-layer-close1"</span>);</span><br><span class="line"><span class="keyword">if</span> (TC.length &gt; <span class="number">0</span>) {</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"检测到弹窗"</span>);</span><br><span class="line">TC[<span class="number">0</span>].click();</span><br><span class="line">}</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"正在"</span> + count + <span class="string">"个"</span>);</span><br><span class="line"><span class="keyword">var</span> isFinish = chapters[count].getElementsByClassName(<span class="string">"round_complete"</span>);</span><br><span class="line"><span class="keyword">if</span> (isFinish.length &gt; <span class="number">0</span>) {</span><br><span class="line">chapters[++count].click()</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"进入下"</span>);</span><br><span class="line"><span class="keyword">if</span>(chapters[count].className===<span class="string">"rate_box"</span>){</span><br><span class="line">chapters[++count].click()</span><br><span class="line">}</span><br><span class="line">}</span><br><span class="line">}, <span class="number">5000</span>);</span><br></pre></td></tr></tbody></table></figure>
+
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -260,7 +266,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新：<time datetime="2019-11-23T11:49:29.633Z" itemprop="dateUpdated">2019-11-23 19:49:29</time>
+    最后更新：<time datetime="2020-01-04T01:51:09.574Z" itemprop="dateUpdated">2020-01-04 09:51:09</time>
 </span>
 
 
@@ -307,7 +313,9 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/06/%E6%96%87%E7%AB%A0%E6%88%AA%E6%96%AD/&title=《博客文章太长？截断！》 — MelodyHub&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/06/%E6%96%87%E7%AB%A0%E6%88%AA%E6%96%AD/&title=《博客文章太长？截断！》 — MelodyHub&source=写的md文章太长，担心放到首页上浏览效果不好，怎么办？
+那就直接截断文章。
+截断按钮文字不是通过配置文件_config.yml实现的，而是在文章内容里实现..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -489,7 +497,9 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/06/%E6%96%87%E7%AB%A0%E6%88%AA%E6%96%AD/&title=《博客文章太长？截断！》 — MelodyHub&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/11/06/%E6%96%87%E7%AB%A0%E6%88%AA%E6%96%AD/&title=《博客文章太长？截断！》 — MelodyHub&source=写的md文章太长，担心放到首页上浏览效果不好，怎么办？
+那就直接截断文章。
+截断按钮文字不是通过配置文件_config.yml实现的，而是在文章内容里实现..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>

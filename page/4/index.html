@@ -445,25 +445,6 @@ onMouseOver="this.stop()"：用来设置鼠标移入该区域时停止滚动】�
 <p>就可以了！</p>
 <p>效果就像下面的这个按钮</p>
 <p>可以点点看哦👇</p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
     
         <div>
             <a href="/blog/2019/11/06/%E6%96%87%E7%AB%A0%E6%88%AA%E6%96%AD/" class="post-more waves-button">
